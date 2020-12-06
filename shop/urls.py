@@ -5,5 +5,7 @@ from . import views
 app_name = 'shop'
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
+    path('', views.IndexView.as_view(), name='home'),
+    path('index/', views.IndexView.as_view(), name='index'),
+    path('ajax/', views.AjaxHandlerView.as_view(), name='ajax'),
 ]

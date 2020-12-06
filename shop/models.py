@@ -1,19 +1,16 @@
 from django.db import models
 
-import locale
-locale.setlocale(locale.LC_ALL, '')
 
 PRODUCT_CATEGORY_CHOICES = [
     ('GENERAL', 'GENERAL'),
     ('PHONES', 'PHONES'),
-    ('COMPUTERS', 'COMPUTERS'),
-    ('PRINTERS', 'PRINTERS'),
+    ('PCs', 'PCs'),
 ]
 
 
 class Product(models.Model):
     product_name = models.CharField(max_length=100)
-    price = models.IntegerField(max_length=100)
+    price = models.IntegerField()
     product_category = models.CharField(max_length=100,
                                         choices=PRODUCT_CATEGORY_CHOICES,
                                         null=True,
