@@ -13,15 +13,16 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """Returns 5 pictures and 20 products."""
         query = {
-            "products": Product.objects.filter(main_page=True).order_by('ordering')[:20],  # noqa E501
-            "pictures": Picture.objects.filter(display=True).order_by('ordering')[:5]  # noqa E501
+            # the dash (-ordering) implies we order by descending
+            "products": Product.objects.filter(main_page=True).order_by('-ordering')[:20],  # noqa E501
+            "pictures": Picture.objects.filter(display=True).order_by('-ordering')[:5]  # noqa E501
         }
         return query
 
 
 class AjaxHandlerView(View):
     def get(self, request):
-        data = Product.objects.filter(main_page=True).order_by('ordering')[:20].values()  # noqa E501
+        data = Product.objects.filter(main_page=True).order_by('-ordering')[:20].values()  # noqa E501
 
         if request.is_ajax():
             category = request.GET.get("category")
