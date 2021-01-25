@@ -20,28 +20,27 @@ class IndexView(generic.ListView):
         return query
 
 
-class AjaxHandlerView(View):
+class AjaxSearchView(View):
     def get(self, request):
-        data = Product.objects.filter(main_page=True).order_by('-ordering')[:20].values()  # noqa E501
+        data = Product.objects.filter(main_page=True).order_by('ordering')[:20].values()  # noqa E501
 
-        if request.is_ajax():
-            category = request.GET.get("category")
-            search = request.GET.get("search")
+        category = request.GET.get("category")
+        search = request.GET.get("search")
 
-            if search and category == "All":
-                data = Product.objects.filter(
-                    Q(product_name__icontains=search)
-                    | Q(price__icontains=search)
-                    | Q(description__icontains=search)).values()
+        if search and category == "All":
+            data = Product.objects.filter(
+                Q(product_name__icontains=search)
+                | Q(price__icontains=search)
+                | Q(description__icontains=search)).values()
 
-            if search and category != "All":
-                data = Product.objects.filter(
-                    Q(product_name__icontains=search)
-                    | Q(price__icontains=search)
-                    | Q(description__icontains=search)).filter(
-                    Q(product_category__icontains=category)).values()
+        if search and category != "All":
+            data = Product.objects.filter(
+                Q(product_name__icontains=search)
+                | Q(price__icontains=search)
+                | Q(description__icontains=search)).filter(
+                Q(product_category__icontains=category)).values()
 
-            if category != "All" and not search:
-                data = Product.objects.filter(Q(product_category__icontains=category)).values()  # noqa E501
+        if category != "All" and not search:
+            data = Product.objects.filter(Q(product_category__icontains=category)).values()  # noqa E501
 
-            return JsonResponse({"data": list(data)}, status=200)
+        return JsonResponse({"data": list(data)}, status=200)
