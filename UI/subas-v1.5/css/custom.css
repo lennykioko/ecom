@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+
+  Template Name: Subas Ecommerce Responsive Bootstrap Template
+  Description: This is html5 template
+  Author: codecarnival
+  Version: 1.0
+  Design and Developed by: codecarnival
+
+Note: This is the file where you can add your custom styles to change the look of the theme. But don't modify "style.css" file.
+
+---------------------------------------------------------------*/
+
+/* ----------------------------------------------------
+	You can put your custom css code here:
+-------------------------------------------------------*/
+
+
+.footer-brief p i {
+  text-align: center;
+  font-size: 1.7rem;
+  padding-right: 5px;
+}
+
+.product-info > ul > li > a > i {
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 50%;
+  color: #999;
+  height: 30px;
+  width: 30px;
+  font-size: 2.2rem;
+}
+
+.call-button {
+  background: #666 none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 3px;
+  color: #ffffff;
+  float: left;
+  font-weight: 700;
+  height: 45px;
+  margin-left: 15px;
+  padding: 0 55px;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+}
+
+.call-button:hover {
+  background: #ff1744 none repeat scroll 0 0;
+}
