@@ -205,7 +205,8 @@ NOTE: This is Header style file. All Header related style included in this file.
  }
 
 .logo {
-  padding: 44px 0;
+  /* padding: 44px 0; */
+  padding: 0;
   transition: all 0.3s ease 0s;
 }
 .logo img{
@@ -213,10 +214,12 @@ NOTE: This is Header style file. All Header related style included in this file.
 }
 .sticky .logo img {
   transition: all 0.3s ease 0s;
-    width: 100px;
+  width: 100px;
 }
 .sticky .logo {
-  padding: 20px 0;
+  /* padding: 20px 0; */
+  padding: 0;
+
 }
 
 /* - - - header-top-bar - - - */

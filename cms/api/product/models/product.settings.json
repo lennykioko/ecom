@@ -20,9 +20,6 @@
     "brand": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
     "old_price": {
       "type": "string"
     },
@@ -38,6 +35,9 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

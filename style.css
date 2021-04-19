@@ -7,23 +7,23 @@
   Version: 1.0
 
 -----------------------------------------------------------------------------------  */
- /*----------------------------------------------------------------------------------- 
-    
+ /*-----------------------------------------------------------------------------------
+
   CSS INDEX
   ===================
-	
+
   1. Theme Default CSS (css/shortcode/default.css)
   2. Header CSS (css/shortcode/header.css)
   3. Slider CSS (css/shortcode/slider.css)
   4. Footer CSS (css/shortcode/footer.css)
   5. Google Fonts
   6. Custom-content all
-  7. Home-1 
-    7.1 By brand section 
+  7. Home-1
+    7.1 By brand section
     7.2 Featured product section
     7.3 Up comming product section
     7.4 Banner section
-    7.5 Product tab section 
+    7.5 Product tab section
     7.6 Blog section
   8.  Home version-2
     8.1 Banner section 2
@@ -83,7 +83,7 @@
 
 
 /*************************************
-  6. Custom-content all   
+  6. Custom-content all
  **************************************/
 .boxed-layout .wrapper {
     box-shadow: -3px 0 50px -2px rgba(0, 0, 0, 0.14);
@@ -100,7 +100,7 @@
   7. Home Version-1
 ======================================== */
 /* -------------------------------------
-    7.1 By brand section 
+    7.1 By brand section
 ------------------------------------- */
 .single-brand-product {
   position: relative;
@@ -554,7 +554,7 @@ transform: scale(1);
   top: -20px;
 }
 .product-item-2:hover .product-info {
-  border-radius: 0;  
+  border-radius: 0;
 }
 .product-item-2:hover .action-button {
   bottom: -40px;
@@ -716,9 +716,9 @@ transform: scale(1);
 ------------------------------------- */
 .breadcrumbs-section {}
 .breadcrumbs {
-  background: #f6f6f6 url("img/breadcrumb/1.png") no-repeat scroll center center; 
+  background: #f6f6f6 url("our-images/banner.jpg") no-repeat scroll center center;
 }
-.overlay-bg { 
+.overlay-bg {
   position: relative;
 }
 .overlay-bg::before {
@@ -761,11 +761,11 @@ transform: scale(1);
 .breadcrumb-list > li::before {
   content: "_";
   left: 0;
-  color: #666666; 
+  color: #666666;
   transition: all 0.3s ease 0s;
 }
 .breadcrumb-list > li:hover::before {
-  color: #ff7f00; 
+  color: #ff7f00;
 }
 .breadcrumb-list > li > a {
   color: #666666;
@@ -1410,7 +1410,7 @@ table {width: 100%}
   border-top: 1px solid #eee;
 }
 .order-info-list {
-  text-transform: uppercase;  
+  text-transform: uppercase;
   text-align: center;
 }
 .order-info-list li {
