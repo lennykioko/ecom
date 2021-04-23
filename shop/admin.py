@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Product, Picture
+from .models import Product
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -10,12 +10,4 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ('product_name', 'price', 'description')
 
 
-class PictureAdmin(admin.ModelAdmin):
-    list_display = ('picture_name', 'display', 'ordering')
-    list_filter = ('display',)
-    list_editable = ('display', 'ordering')
-    search_fields = ('picture_name',)
-
-
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Picture, PictureAdmin)

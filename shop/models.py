@@ -9,26 +9,17 @@ PRODUCT_CATEGORY_CHOICES = [
 
 
 class Product(models.Model):
-    product_name = models.CharField(max_length=100)
+    product_name = models.CharField(max_length=200)
     price = models.IntegerField()
-    product_category = models.CharField(max_length=100,
+    old_price = models.IntegerField(null=True, blank=True)
+    product_category = models.CharField(max_length=200,
                                         choices=PRODUCT_CATEGORY_CHOICES,
                                         null=True,
                                         blank=True)
     main_page = models.BooleanField(default=False)
     ordering = models.IntegerField(null=True, blank=True, default=1000)
-    description = models.CharField(max_length=500, null=True, blank=True)
     product_image = models.ImageField(upload_to='products/', max_length=500)
+    description = models.TextField(max_length=1000, null=True, blank=True)
 
     def __str__(self):
         return self.product_name
-
-
-class Picture(models.Model):
-    picture_name = models.CharField(max_length=100)
-    display = models.BooleanField(default=False)
-    ordering = models.IntegerField(null=True, blank=True, default=1000)
-    picture_image = models.ImageField(upload_to='pictures/', max_length=500)
-
-    def __str__(self):
-        return self.picture_name

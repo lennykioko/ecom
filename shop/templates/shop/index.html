@@ -1,234 +1,345 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 
 <head>
-
-  {% load static %}
+  {%load static %}
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Abufulan">
-  <meta name="keywords" content="electronics, e-commerce, shop, buy electronics, buy electronics online, dealer, jamia mall, nairobi ,kenya">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Abufulan</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <meta name="author" content="Lenny Kioko">
+  <meta name="keywords"
+    content="electronics, e-commerce, shop, buy electronics, buy electronics online, dealer, jamia mall, nairobi ,kenya">
   <meta name="description" content="E-commerce store for phones, tablets, computers and other electronics">
   <meta name="google-site-verification" content="W5sK6p7l7esRL9ii-yOMFsxK-Kzoqhyt-HatVMyTbVs" />
 
-  <title>Abufulan</title>
-  <link rel="shortcut icon" type="image/png" href="{% static 'shop/favicon.ico' %}"/>
-  <!-- font-awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'shop/img/icon/favicon.png' %}">
 
-  <!-- Custom styles for this template -->
-  <link href="{% static 'shop/styles.css' %}" rel="stylesheet">
+  <!-- All CSS Files -->
+  <!-- Bootstrap fremwork main css -->
+  <link rel="stylesheet" href="{% static 'shop/css/bootstrap.min.css' %}">
+  <!-- Nivo-slider css -->
+  <link rel="stylesheet" href="{% static 'shop/lib/css/nivo-slider.css' %}">
+  <!-- This core.css file contents all plugings css file. -->
+  <link rel="stylesheet" href="{% static 'shop/css/core.css' %}">
+  <!-- Theme shortcodes/elements style -->
+  <link rel="stylesheet" href="{% static 'shop/css/shortcode/shortcodes.css' %}">
+  <!-- Theme main style -->
+  <link rel="stylesheet" href="{% static 'shop/style.css' %}">
+  <!-- Responsive css -->
+  <link rel="stylesheet" href="{% static 'shop/css/responsive.css' %}">
+  <!-- User style -->
+  <link rel="stylesheet" href="{% static 'shop/css/custom.css' %}">
 
-  <!-- Google fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <!-- Modernizr JS -->
+  <script src="{% static 'shop/js/vendor/modernizr-2.8.3.min.js' %}" async></script>
 
-  <style>
-    body {
-      font-family: 'Roboto Condensed', sans-serif;
-    }
-  </style>
+  <!-- Custom js file. -->
+  <script src="{% static 'shop/app.js' %}" async></script>
 </head>
 
 <body>
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-2">
-    <div class="container">
-      <div class="col-12 col-md-4">
-        <!-- <a class="navbar-brand" href="#">ProTech</a> -->
-        <img src="{% static 'shop/logo.png' %}" width="140" height="40">
-      </div>
-      <div class="col-12 col-md-8">
-        <form id="searchForm" class="form-inline" action="#" >
-          <div class="input-group col-12 pl-0">
-            <div class="input-group-prepend">
-              <button class="btn btn-light btn-light border border-dark dropdown-toggle" type="button" id="dropdownCatBtn" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" value="All">
-              All
-            </button>
-            <div class="dropdown-menu" id="categoryDropdown" aria-labelledby="dropdownCatBtn">
-              <li class="dropdown-item">All</li>
-              <li class="dropdown-item">Phones</li>
-              <li class="dropdown-item">PCs</li>
-            </div>
-            </div>
-            <input type="text" id="searchInput" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="Search" value="">
-            <div class="input-group-append">
-              <button class="btn btn-light border border-dark" type="button" id="searchBtn"><i class="fa fa-search fa-icon-black"></i></button>
+  <!-- Body main wrapper start -->
+  <div id="index" class="wrapper">
+
+    <!-- START HEADER AREA -->
+    <header class="header-area header-wrapper">
+      <!-- header-top-bar -->
+      <div class="header-top-bar plr-185">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 d-none d-md-block">
+              <div class="call-us">
+                <a href="tel:0722650647" class="text-decoration-none mb-0">0722 650 647</a>
+              </div>
             </div>
           </div>
-        </form>
+        </div>
       </div>
+      <!-- header-middle-area -->
+      <div id="sticky-header" class="header-middle-area plr-185">
+        <div class="container-fluid">
+          <div class="full-width-mega-dropdown">
+            <div class="row">
+              <!-- logo -->
+              <div class="col-lg-2 col-md-4">
+                <div class="logo">
+                  <a href="#">
+                    <img src="{% static 'shop/our-images/logo.svg' %}" alt="logo" width="150" height="100">
+                  </a>
+                </div>
+              </div>
+              <!-- primary-menu -->
+              <div class="col-lg-8 d-none d-lg-block">
+              </div>
+              <!-- header-search & total-cart -->
+              <div class="col-lg-2 col-md-8">
+                <div class="search-top-cart  f-right">
+                  <!-- header-search -->
+                  <div class="header-search f-left">
+                    <div class="header-search-inner">
+                      <button class="search-toggle">
+                        <i class="zmdi zmdi-search"></i>
+                      </button>
+                      <form id="searchForm1">
+                        <div class="top-search-box">
+                          <input id="searchInput1" type="text" placeholder="Search here...">
+                          <button type="submit">
+                            <i class="zmdi zmdi-search"></i>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- END HEADER AREA -->
+
+    <!-- START MOBILE MENU AREA -->
+    <!-- END MOBILE MENU AREA -->
+
+    <!-- BREADCRUMBS SETCTION START -->
+    <div class="breadcrumbs-section plr-200 mb-80 section">
+      <div class="breadcrumbs">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="breadcrumbs-inner">
+                <h1 class="breadcrumbs-title"></h1>
+                <ul class="breadcrumb-list">
+                  <!-- <li><a href="#">Home</a></li> -->
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BREADCRUMBS SETCTION END -->
+
+    <!-- Start page content -->
+    <div id="page-content" class="page-wrapper section">
+
+      <!-- SHOP SECTION START -->
+      <div class="shop-section mb-80">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9 order-lg-2 order-1">
+              <div class="shop-content">
+                <!-- shop-option start -->
+                <div class="shop-option box-shadow mb-30 clearfix">
+                  <!-- Nav tabs -->
+                  <ul class="nav shop-tab f-left" role="tablist">
+                    <li>
+                      <a class="active" href="#grid-view" data-toggle="tab"><i class="zmdi zmdi-view-module"></i></a>
+                    </li>
+                  </ul>
+                  <!-- sort-by -->
+                  <!-- <div class="short-by f-left text-center">
+                                        <span>Sort by :</span>
+                                        <select>
+                                            <option value="volvo">Newest items</option>
+                                            <option value="saab">Saab</option>
+                                            <option value="mercedes">Mercedes</option>
+                                            <option value="audi">Audi</option>
+                                        </select>
+                                    </div> -->
+                </div>
+                <!-- shop-option end -->
+                <!-- Tab Content start -->
+                <div class="tab-content">
+                  <!-- grid-view -->
+                  <div id="grid-view" class="tab-pane active show" role="tabpanel">
+                    <div id="mainContent" class="row">
+                      <!-- product-item start -->
+                      <!-- product-item end -->
+                    </div>
+                  </div>
+                </div>
+                <!-- Tab Content end -->
+                <!-- shop-pagination start -->
+                <ul class="shop-pagination box-shadow text-center ptblr-10-30">
+                  <li><a href="#"><i class="zmdi zmdi-chevron-left"></i></a></li>
+                  <li class="active"><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
+                </ul>
+                <!-- shop-pagination end -->
+              </div>
+            </div>
+            <div class="col-lg-3 order-lg-1 order-2">
+              <!-- widget-search -->
+              <aside class="widget-search mb-30">
+                <form id="searchForm2">
+                  <input id="searchInput2" type="text" placeholder="Search here...">
+                  <button type="submit"><i class="zmdi zmdi-search"></i></button>
+                </form>
+              </aside>
+              <!-- widget-categories -->
+              <aside class="widget widget-categories box-shadow mb-30">
+                <h6 class="widget-title border-left mb-20">Categories</h6>
+                <div id="cat-treeview" class="product-cat">
+                  <ul>
+                    <li class="closed"><a href="#">Phones</a>
+                      <ul>
+                        <li><a href="#">Phones</a></li>
+                        <li><a href="#">Tablets</a></li>
+                      </ul>
+                    </li>
+                    <li class="open"><a href="#">Computers</a>
+                      <ul>
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">Desktops</a></li>
+                        <li><a href="#">Monitors</a></li>
+                        <li><a href="#">Printers</a></li>
+                      </ul>
+                    </li>
+                    <li class="closed"><a href="#">Accessories</a>
+                      <ul>
+                        <li><a href="#">General</a></li>
+                        <li><a href="#">For phones</a></li>
+                        <li><a href="#">For computers</a></li>
+                      </ul>
+                    </li>
+                    <li class="closed"><a href="#">Top Brands</a>
+                      <ul>
+                        <li><a href="#">Samsung</a></li>
+                        <li><a href="#">LG</a></li>
+                        <li><a href="#">Apple</a></li>
+                        <li><a href="#">Lenovo</a></li>
+                        <li><a href="#">hp</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SHOP SECTION END -->
 
     </div>
-  </nav>
+    <!-- End page content -->
 
-  <!-- Page Content -->
-  <div class="container my-5 py-3">
-
-    <div class="row">
-
-      <!-- set a max of 5 items here -->
-      <div id="maincrsol" class="carousel slide my-4" data-ride="carousel">
-        <ol class="carousel-indicators">
-
-          {% for pic in query_dict.pictures %}
-          {% if forloop.first %}
-          <li data-target="#maincrsol" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
-          {% else %}
-          <li data-target="#maincrsol" data-slide-to="{{ forloop.counter0 }}"></li>
-          {% endif %}
-          {% endfor %}
-
-        </ol>
-        <div id="carousel" class="carousel-inner" role="listbox">
-
-          {% for pic in query_dict.pictures %}
-          {% if forloop.first %}
-          <div class="carousel-item active">
-            <img class="d-block img-fluid" src="{{ pic.picture_image.url }}" alt="{{ pic.picture_name }}">
+    <!-- START FOOTER AREA -->
+    <footer id="footer" class="footer-area section">
+      <div class="footer-top">
+        <div class="container-fluid">
+          <div class="plr-185">
+            <div class="footer-top-inner gray-bg">
+              <div class="row">
+                <div class="col-xl-4 col-lg-5 col-md-5">
+                  <div class="single-footer footer-about">
+                    <div class="footer-logo">
+                      <img src="{% static 'shop/our-images/logo.svg' %}" alt="logo" width="150" height="100">
+                    </div>
+                    <div class="footer-brief">
+                      <p>We are distinguished dealers in computers, printers, phones and other electronics. We are based
+                        in Nairobi, Kenya
+                      </p>
+                      <p><i class="zmdi zmdi-home"></i></a>Jamia Mall, CBD</p>
+                      <p><i class="zmdi zmdi-email"></i></a>info@abufulan.co.ke</p>
+                      <p><i class="zmdi zmdi-phone"></i></a> + 254 717 834 567</p>
+                    </div>
+                    <ul class="footer-social">
+                      <li>
+                        <a class="facebook" href="" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a class="instagram" href="" title="Instagram"><i class="zmdi zmdi-instagram"></i></a>
+                      </li>
+                      <li>
+                        <a class="twitter" href="" title="Twitter"><i class="zmdi zmdi-twitter"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xl-2 d-block d-xl-block d-lg-none d-md-none">
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3">
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                  <div class="single-footer">
+                    <h4 class="footer-title border-left">Get in touch</h4>
+                    <div class="footer-message">
+                      <form action="#">
+                        <input type="text" name="name" placeholder="Your name here...">
+                        <input type="text" name="email" placeholder="Your email here...">
+                        <textarea class="height-80" name="message" placeholder="Your messege here..."></textarea>
+                        <button class="submit-btn-1 mt-20 btn-hover-1" type="submit">submit
+                          message</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          {% else %}
-          <div class="carousel-item">
-            <img class="d-block img-fluid" src="{{ pic.picture_image.url }}" alt="{{ pic.picture_name }}">
-          </div>
-          {% endif %}
-          {% endfor %}
         </div>
-
-        <a class="carousel-control-prev" href="#maincrsol" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#maincrsol" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
+      <div class="footer-bottom black-bg">
+        <div class="container-fluid">
+          <div class="plr-185">
+            <div class="copyright">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="copyright-text">
+                    <p class="copy-text"> © 2021 <strong>Abufulan</strong> Made With <i class="zmdi zmdi-favorite"
+                        style="color: red;" aria-hidden="true"></i> By <a class="company-name"
+                        href="https://lennykioko.github.io">
+                        <strong> Certitude</strong></a>.</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END FOOTER AREA -->
+
+    <!-- START QUICKVIEW PRODUCT -->
+    <div id="quickview-wrapper">
+      <!-- Customized modal -->
+      <!-- Modal -->
+
+      <!-- END Modal -->
     </div>
-
-    <div id="mainDisplay" class="row">
-
-      {% for prod in query_dict.products %}
-      <div class="col-6 col-md-4 col-lg-3 mb-4">
-        <div class="card h-100 border-secondary">
-          <img class="card-img-top img-thumbnail img-fluid" src="{{ prod.product_image.url }}" alt="{{ prod.product_name }}">
-          <div class="card-body">
-            <h5 class="card-title text-capitalize">{{ prod.product_name }}</h5>
-            <h5><small class="text-muted">KES </small>{{ prod.price }}</h5>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
+    <!-- END QUICKVIEW PRODUCT -->
+  </div>
+  <!-- Body main wrapper end -->
 
 
-    </div> <!-- /.row -->
+  <!-- Placed JS at the end of the document so the pages load faster -->
 
-  </div> <!-- /.container -->
-
-  <!-- Footer Section (Both) -->
-  <footer class="page-footer font-small bg-dark text-white py-3">
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left">
-      <!-- Footer links -->
-      <div class="row text-center text-md-left mt-3 pb-3">
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold letter-space">Abufulan</h6>
-          <p>We are distinguished dealers in computers, printers, phones and other electronics. We are based in Nairobi, Kenya.</p>
-        </div>
-        <!-- Grid column -->
-
-        <hr class="w-100 clearfix d-md-none">
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold letter-space">Contact</h6>
-          <p><i class="fa fa-home mr-3"></i> Jamia Mall, CBD</p>
-          <a href="mailto:info@protech.co.ke" class="text-reset text-decoration-none"><p><i class="fa fa-envelope mr-3"></i> info@abufulan.co.ke</p></a>
-          <a href="tel:0722650647" class="text-reset text-decoration-none"><p><i class="fa fa-phone mr-3"></i> + 254 717 834 567</p></a>
-        </div>
-        <!-- Grid column -->
-
-        <hr class="w-100 clearfix d-md-none">
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold letter-space">Social</h6>
-          <a href="https://www.facebook.com/" class="text-reset text-decoration-none"><p><i class="fa fa-facebook mr-3"></i> Facebook</p></a>
-          <a href="https://www.instagram.com/" class="text-reset text-decoration-none"><p><i class="fa fa-instagram mr-3"></i> Instagram</p></a>
-          <a href="https://www.twitter.com/" class="text-reset text-decoration-none"><p><i class="fa fa-twitter mr-3"></i> Twitter</p></a>
-        </div> <!-- Grid column -->
-      </div> <!-- Footer links -->
-
-      <hr>
-
-      <!-- Grid row -->
-      <div class="row d-flex align-items-center">
-        <!-- Grid column -->
-        <div class="col-md-7 col-lg-8">
-          <!--Copyright-->
-          <p class="text-center text-md-left">© 2020 Copyright Abufulan</p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-5 col-lg-4 ml-lg-0">
-
-          <!-- Social buttons -->
-          <div class="text-center text-md-right">
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item">
-                <a href="https://www.facebook.com/" class="btn-floating btn-sm rgba-white-slight mx-1">
-                  <i class="fa fa-facebook-f fa-icon"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.instagram.com/" class="btn-floating btn-sm rgba-white-slight mx-1">
-                  <i class="fa fa-instagram fa-icon"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.twitter.com/" class="btn-floating btn-sm rgba-white-slight mx-1">
-                  <i class="fa fa-twitter fa-icon"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div> <!-- Grid column -->
-      </div> <!-- Grid row -->
-    </div> <!-- Footer Links -->
-  </footer> <!-- Footer -->
-
-
-  <!-- Footer (Mobile Only) -->
-  <footer class="py-3 bg-dark fixed-bottom py-2 d-lg-none d-xl-none">
-    <div class="container">
-      <a href="tel:0722650647" class="text-decoration-none">
-      <div class="row justify-content-center">
-        <i class="fa fa-phone fa-2x btn-icon-prepend fa-icon"></i>
-        <p class="m-0 ml-2 text-center text-white"> +254 722 650 647</p>
-      </div>
-      </a>
-    </div> <!-- /.container -->
-  </footer>
-
-  <!-- Popper, Jquery and JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-
-  <!-- Custom js for this template -->
-  <script src="{% static 'shop/scripts.js' %}"></script>
+  <!-- jquery latest version -->
+  <script src="{% static 'shop/js/vendor/jquery-3.1.1.min.js' %}"></script>
+  <!-- Popper js -->
+  <script src="{% static 'shop/js/popper.min.js' %}"></script>
+  <!-- Bootstrap framework js -->
+  <script src="{% static 'shop/js/bootstrap.min.js' %}"></script>
+  <!-- jquery.nivo.slider js -->
+  <script src="{% static 'shop/lib/js/jquery.nivo.slider.js' %}"></script>
+  <!-- All js plugins included in this file. -->
+  <script src="{% static 'shop/js/plugins.js' %}"></script>
+  <!-- Main js file that contents all jQuery plugins activation. -->
+  <script src="{% static 'shop/js/main.js' %}"></script>
 
 </body>
 
