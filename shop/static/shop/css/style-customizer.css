@@ -24,7 +24,7 @@ div.style-customizer {
 }
 
 .style-customizer a.button:hover {
-    color:#ff7f00 !important; 
+    color:#ff7f00 !important;
 }
 
 .style-customizer.closed {
@@ -116,7 +116,7 @@ div.style-customizer a.opener {
     box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.14), -1px 0 3px 0 rgba(0, 0, 0, 0.14);
 }
 div.style-customizer a.opener i {
-    line-height: 45px;	
+    line-height: 45px;
 }
 div.style-customizer.opened a.opener {
     right: -45px;
@@ -260,30 +260,6 @@ div.style-customizer .skin-teal {
 
 /*Background Patterns*/
 
-.pattern-1 {
-    background-image: url("../images/customizer/pattern/1.png");
-}
-.pattern-2 {
-    background-image: url("../images/customizer/pattern/2.png");
-}
-.pattern-3 {
-    background-image: url("../images/customizer/pattern/3.png");
-}
-.pattern-4 {
-    background-image: url("../images/customizer/pattern/4.png");
-}
-.pattern-5 {
-    background-image: url("../images/customizer/pattern/5.png");
-}
-.pattern-6 {
-    background-image: url("../images/customizer/pattern/6.png");
-}
-.pattern-7 {
-    background-image: url("../images/customizer/pattern/7.png");
-}
-.pattern-8 {
-    background-image: url("../images/customizer/pattern/8.png");
-}
 
 /*Background Images*/
 
@@ -296,35 +272,7 @@ div.style-customizer .skin-teal {
     width: 100%;
 }
 
-.main-bg-1,.main-bg-2,.main-bg-3,.main-bg-4,.main-bg-5,.main-bg-6,.main-bg-7,.main-bg-8 {
-    background-image: url("../images/customizer/bodybg/01.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
-}
 
-.main-bg-2 {
-    background-image: url("../images/customizer/bodybg/02.jpg");
-}
-.main-bg-3 {
-    background-image: url("../images/customizer/bodybg/03.jpg");
-}
-.main-bg-4 {
-    background-image: url("../images/customizer/bodybg/04.jpg");
-}
-.main-bg-5 {
-    background-image: url("../images/customizer/bodybg/05.jpg");
-}
-.main-bg-6 {
-    background-image: url("../images/customizer/bodybg/06.jpg");
-}
-.main-bg-7 {
-    background-image: url("../images/customizer/bodybg/07.jpg");
-}
-.main-bg-8 {
-    background-image: url("../images/customizer/bodybg/08.jpg");
-}
 
 
 
@@ -500,7 +448,6 @@ div.style-customizer .skin-teal {
 }
 
 .patternChange .main-bg-change li.main-bg-1 {
-    background-image: url("../images/main-bg-0.jpg");
 }
 
 @media( max-width:992px) {
