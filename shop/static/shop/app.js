@@ -50,7 +50,6 @@ const getSearchItems = async (search) => {
 const handleSearch = async (search) => {
     const response = await getSearchItems(search);
     const data = response.data
-    console.log(data)
     products = response.data
 
     data?.map((item) => {
