@@ -1338,7 +1338,7 @@ textarea:focus {
  .bg-opacity-black-30:before {  background: rgba(0, 0, 0, 0.3);}
  .bg-opacity-black-40:before {  background: rgba(0, 0, 0, 0.4);}
  .bg-opacity-black-50:before {  background: rgba(0, 0, 0, 0.5);}
- .bg-opacity-black-60:before {  background: rgba(0, 0, 0, 0.6);}
+ .bg-opacity-black-60:before {  background: #ff7f00;}
  .bg-opacity-black-70:before {  background: rgba(0, 0, 0, 0.7);}
  .bg-opacity-black-80:before {  background: rgba(0, 0, 0, 0.8);}
  .bg-opacity-black-90:before {  background: rgba(0, 0, 0, 0.9);}

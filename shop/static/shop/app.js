@@ -115,7 +115,7 @@ const setProduct = async (item_id) => {
                             <span class="old-price">KSh ${ commaThousand(item.old_price) }</span>
                         </div>
                     </div>
-                    <a href="tel:0722650647" class="see-all font-weight-bold ">0722 650 647</a>
+                    <a href="tel:0792029968" class="see-all font-weight-bold ">0792 029 968</a>
                     <div class="quick-add-to-cart">
                         <button class="single_add_to_cart_button" type="button">Call Now</buton>
                     </div>
