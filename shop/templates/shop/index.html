@@ -1,377 +1,1519 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   {%load static %}
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Abufulan</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Mobile Web-app fullscreen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Meta tags -->
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
 
-  <!-- SEO -->
-  <meta name="author" content="Lenny Kioko">
-  <meta name="keywords"
-    content="electronics, e-commerce, shop, buy electronics, buy electronics online, dealer, jamia mall, nairobi ,kenya">
-  <meta name="description" content="E-commerce store for phones, tablets, computers and other electronics">
-  <meta name="google-site-verification" content="W5sK6p7l7esRL9ii-yOMFsxK-Kzoqhyt-HatVMyTbVs" />
+  <!--Title-->
+  <title>Lager - eCommerce HTML Template</title>
+
+  <!--CSS bundle -->
+
+  <link rel="stylesheet" href="{% static 'shop/css/bootstrap.css' %}">
+
+  <link rel="stylesheet" href="{% static 'shop/css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/font-awesome.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/font-awesome.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/linear-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/owl.carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/ion-range-slider.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/theme.css' %}">
+
+  <!--Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
 
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="{% static 'shop/img/icon/favicon.png' %}">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-  <!-- All CSS Files -->
-  <!-- Bootstrap fremwork main css -->
-  <link rel="stylesheet" href="{% static 'shop/css/bootstrap.min.css' %}">
-  <!-- Nivo-slider css -->
-  <link rel="stylesheet" href="{% static 'shop/lib/css/nivo-slider.css' %}">
-  <!-- This core.css file contents all plugings css file. -->
-  <link rel="stylesheet" href="{% static 'shop/css/core.css' %}">
-  <!-- Theme shortcodes/elements style -->
-  <link rel="stylesheet" href="{% static 'shop/css/shortcode/shortcodes.css' %}">
-  <!-- Theme main style -->
-  <link rel="stylesheet" href="{% static 'shop/style.css' %}">
-  <!-- Responsive css -->
-  <link rel="stylesheet" href="{% static 'shop/css/responsive.css' %}">
-  <!-- User style -->
-  <link rel="stylesheet" href="{% static 'shop/css/custom.css' %}">
-
-  <!-- Modernizr JS -->
-  <script src="{% static 'shop/js/vendor/modernizr-2.8.3.min.js' %}" async></script>
-
-  <!-- Custom js file. -->
-  <script src="{% static 'shop/app.js' %}" async></script>
 </head>
 
 <body>
-  <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
-  <!-- Body main wrapper start -->
-  <div id="index" class="wrapper">
+  <div class="page-loader"></div>
 
-    <!-- START HEADER AREA -->
-    <header class="header-area header-wrapper">
-      <!-- header-top-bar -->
-      <div class="header-top-bar plr-185">
-        <div class="container-fluid">
+  <div class="wrapper">
+
+    <!-- ======================== Navigation ======================== -->
+
+    <nav>
+
+      <div class="clearfix">
+
+        <a href="index.html" class="logo"><img src="{% static 'shop/images/logoAbu.png' %}" alt="" /></a>
+
+        <!-- ==========  Pre navigation ========== -->
+
+        <div class="navigation navigation-pre clearfix">
           <div class="row">
-            <div class="col-lg-6 col-md-6 d-none d-md-block">
-              <div class="call-us">
-                <a href="tel:0792029968" class="text-decoration-none mb-0">0792 029 968</a>
-              </div>
+            <div class="col-md-3">
+              <a href="#"><i class="icon icon-heart-pulse"></i> Call Now +254 792 029 968</a>
+            </div>
+            <div class="col-md-3">
+              <a><i class="icon icon-cog"></i> Quality Products</a>
+            </div>
+            <div class="col-md-3">
+              <a><i class="icon icon-cog"></i> Fast Delivery</a>
+            </div>
+            <div class="col-md-3">
+              <a><i class="icon icon-map"></i> Affordable Prices</a>
             </div>
           </div>
         </div>
-      </div>
-      <!-- header-middle-area -->
-      <div id="sticky-header" class="header-middle-area plr-185">
-        <div class="container-fluid">
-          <div class="full-width-mega-dropdown">
-            <div class="row">
-              <!-- logo -->
-              <div class="col-lg-2 col-md-4">
-                <div class="logo">
-                  <a href="#">
-                    <img src="{% static 'shop/our-images/logo.svg' %}" alt="logo" width="150" height="100">
-                  </a>
-                </div>
-              </div>
-              <!-- primary-menu -->
-              <div class="col-lg-8 d-none d-lg-block">
-              </div>
-              <!-- header-search & total-cart -->
-              <div class="col-lg-2 col-md-8">
-                <div class="search-top-cart  f-right">
-                  <!-- header-search -->
-                  <div class="header-search f-left">
-                    <div class="header-search-inner">
-                      <button class="search-toggle">
-                        <i class="zmdi zmdi-search"></i>
-                      </button>
-                      <form id="searchForm1">
-                        <div class="top-search-box">
-                          <input id="searchInput1" type="text" placeholder="Search here...">
-                          <button type="submit">
-                            <i class="zmdi zmdi-search"></i>
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
 
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- ==========  Top navigation ========== -->
+
+        <div class="navigation navigation-top clearfix">
+          <ul>
+            <!--add active class for current page-->
+            <!-- <li class="left-side"><a href="index.html" class="logo-icon"><img src="assets/images/icon.png"
+                                    alt="Alternate Text" /></a></li> -->
+            <!-- <li class="left-side"><a href="#">Call Now +254 792 029 968</a></li> -->
+            <!--
+
+                            // Use active class for current state
+
+                            <li class="left-side active"><a href="#">Man</a></li>
+
+                        -->
+            <!-- <li class="left-side"><a href="#">Woman</a></li> -->
+            <!-- <li class="left-side"><a href="#">Kids</a></li> -->
+            <!-- <li><a href="javascript:void(0);" class="open-login"><i class="icon icon-user"></i></a></li> -->
+            <li><a href="javascript:void(0);" class="open-search"><i class="icon icon-magnifier"></i></a>
+            </li>
+            <!-- <li><a href="javascript:void(0);" class="open-cart"><i class="icon icon-cart"></i>
+                                <span>4</span></a>
+                            </li> -->
+          </ul>
         </div>
-      </div>
-    </header>
-    <!-- END HEADER AREA -->
 
-    <!-- START MOBILE MENU AREA -->
-    <!-- END MOBILE MENU AREA -->
-    <!-- START SLIDER AREA -->
-    <div class="slider-area bg-3 bg-opacity-black-60 ptb-150 mb-80 section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="slider-desc-3 slider-desc-4  text-center">
-              <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
-                <h1 class="slider2-title-2 cd-headline clip is-full-width">
-                  <span>New</span>
-                  <span class="cd-words-wrapper">
-                    <b class="is-visible">Phones</b>
-                    <b>Laptops</b>
-                    <b>Accessories</b>
-                    <b>Iphones</b>
-                  </span>
-                </h1>
-              </div>
-              <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">
-                <h2 class="slider2-title-3">BEST QUALITY AT THE BEST PRICE</h2>
-              </div>
-              <div class="slider-button wow fadeInUp" data-wow-duration="1s" data-wow-delay="2.5s">
-                <a href="tel:0792029968" class="button extra-small button-white">
-                  <span class="text-uppercase">Call now</span>
+        <!-- ==========  Main navigation ========== -->
+
+        <div class="navigation navigation-main">
+          <a href="#" class="open-login"><i class="icon icon-user"></i></a>
+          <a href="#" class="open-cart"><i class="icon icon-cart"></i></a>
+          <a href="#" class="open-search"><i class="icon icon-magnifier"></i></a>
+          <a href="#" class="open-menu"><i class="icon icon-menu"></i></a>
+          <div class="floating-menu">
+            <!--mobile toggle menu trigger-->
+            <div class="close-menu-wrapper">
+              <span class="close-menu"><i class="icon icon-cross"></i></span>
+            </div>
+            <ul>
+              <li>
+                <a href="javascript:void(0);">Phones </a>
+                <!-- <div class="navbar-dropdown navbar-dropdown-single">
+                                    <div class="navbar-box">
+                                        <div class="box-full">
+                                            <div class="box clearfix">
+                                                <ul>
+                                                    <li class="label">Homepages</li>
+                                                    <li><a href="index.html">Home - Slider</a></li>
+                                                    <li><a href="index-2.html">Home - Tabsy</a></li>
+                                                    <li><a href="index-3.html">Home intro</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+              </li>
+              <li>
+                <a href="javascript:void(0);">Laptops <span class="open-dropdown">
+                    <!-- <i class="fa fa-angle-down"></i></span> -->
                 </a>
+                <!-- <div class="navbar-dropdown navbar-dropdown-single">
+                                    <div class="navbar-box">
+                                        <div class="box-full">
+                                            <div class="box clearfix">
+                                                <ul>
+                                                    <li class="label">Single dropdown</li>
+                                                    <li><a href="about.html">About us</a></li>
+                                                    <li><a href="contact.html">Contact</a></li>
+                                                    <li><a href="404.html">Not found 404</a></li>
+                                                    <li><a href="login.html">Login & Register</a></li>
+                                                    <li><a href="email-receipt.html">Email - Receipt template</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+              </li>
+              <li>
+                <a href="javascript:void(0);">Macbooks <span class="open-dropdown">
+                    <!-- <i class="fa fa-angle-down"></i></span> -->
+                </a>
+                <!-- <div class="navbar-dropdown navbar-dropdown-single">
+                                    <div class="navbar-box">
+                                        <div class="box-full">
+                                            <div class="box clearfix">
+                                                <ul>
+                                                    <li class="label">Product page</li>
+                                                    <li><a href="category.html">Products categories</a></li>
+                                                    <li><a href="products-grid.html">Products grid</a></li>
+                                                    <li><a href="products-list.html">Products list</a></li>
+                                                    <li><a href="products-grid-intro.html">Products grid intro</a></li>
+                                                    <li><a href="products-topbar.html">Products topbar filter</a></li>
+                                                    <li><a href="product.html">Product overview</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+              </li>
+              <li>
+                <a href="javascript:void(0);">Smart Watches <span class="open-dropdown">
+                    <!-- <i class="fa fa-angle-down"></i></span> -->
+                </a>
+                <!-- <div class="navbar-dropdown navbar-dropdown-single">
+                                    <div class="navbar-box">
+                                        <div class="box-full">
+                                            <div class="box clearfix">
+                                                <ul>
+                                                    <li class="label">Blog pages</li>
+                                                    <li><a href="blog-grid.html">Blog grid</a></li>
+                                                    <li><a href="blog-list.html">Blog list</a></li>
+                                                    <li><a href="blog-grid-fullpage.html">Blog fullpage</a></li>
+                                                    <li><a href="ideas.html">Blog ideas</a></li>
+                                                    <li><a href="article.html">Article</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+              </li>
+              <li>
+                <a href="javascript:void(0);">Sound <span class="open-dropdown">
+                    <!-- <i class="fa fa-angle-down"></i></span> -->
+                </a>
+                <!-- <div class="navbar-dropdown navbar-dropdown-single">
+                                    <div class="navbar-box">
+                                        <div class="box-full">
+                                            <div class="box clearfix">
+                                                <ul>
+                                                    <li class="label">Checkout</li>
+                                                    <li><a href="checkout-1.html">Checkout - Cart items</a></li>
+                                                    <li><a href="checkout-2.html">Checkout - Delivery</a></li>
+                                                    <li><a href="checkout-3.html">Checkout - Payment</a></li>
+                                                    <li><a href="checkout-4.html">Checkout - Receipt</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+              </li>
+              <li><a href="javascript:void(0);">Accessories</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ==========  Search wrapper ========== -->
+
+        <div class="search-wrapper">
+          <input class="form-control" placeholder="Search..." />
+          <button class="btn btn-main">Go!</button>
+        </div>
+
+        <!-- ==========  Login wrapper ========== -->
+
+        <div class="login-wrapper">
+          <div class="h4">Sign in</div>
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <a href="#forgotpassword" class="open-popup">Forgot password?</a>
+              <a href="#createaccount" class="open-popup">Don't have an account?</a>
+            </div>
+            <button type="submit" class="btn btn-block btn-main">Submit</button>
+          </form>
+        </div>
+
+        <!-- ==========  Cart wrapper ========== -->
+
+      </div>
+    </nav>
+
+
+    <!-- ========================  Header content ======================== -->
+
+    <section class="header-content">
+
+      <div class="clearifx">
+
+        <div class="owl-slider">
+          <!-- === slide item === -->
+          <!-- <style="background-image: url({% static 'images/cover.jpg' %})"></style> -->
+          <div class="item" style="background-image: url({% static 'shop/images/gallery-1.jpg' %});">
+            <div class="box box-left">
+              <div class="text-right">
+                <!-- <h2 class="title animated h1" data-animation="fadeInDown">Abufulan</h2> -->
+                <div class="animated" data-animation="fadeInUp">
+                  Welcome to the home of Quality
+                  <br />
+                  We are Authorised Apple & Samsung Resellers.
+                </div>
+                <div class="animated" data-animation="fadeInUp">
+                  <a href="#" target="_blank" class="btn btn-clean"><i class="icon icon-phone"></i>
+                    Call Now</a>
+                  <!-- <a href="#" target="_blank" class="btn btn-clean"><i class="icon icon-eye"></i>
+                                        Details</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- === slide item === -->
+          <div class="item" style="background-image: url({% static 'shop/images/gallery-2.jpg' %});">
+            <div class="box box-right">
+              <div class="text-left">
+                <!-- <h2 class="title animated h1" data-animation="fadeInDown">Buy this template</h2> -->
+                <div class="animated" data-animation="fadeInUp">
+                  Phones | TVs | Computers 💻 | Drones and all Accessories.
+                  <br />
+                  TRADEIN 📱 Accepted | 📍JAMIA MALL G64
+                </div>
+                <div class="animated" data-animation="fadeInUp">
+                  <a href="#" target="_blank" class="btn btn-clean"><i class="icon icon-phone"></i>
+                    Call Now</a>
+                  <!-- <a href="#" target="_blank" class="btn btn-clean"><i class="icon icon-eye"></i>
+                                        Details</a> -->
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <!--/owl-slider-->
       </div>
-    </div>
-    <!-- END SLIDER AREA -->
+    </section>
 
-    <!-- BREADCRUMBS SETCTION START -->
-    <div class="breadcrumbs-section plr-200 mb-80 section">
-      <div class="breadcrumbs">
-        <div class="container">
+    <!-- ========================  Blog Block ======================== -->
+
+    <section class="blog blog-block blog-intro">
+
+      <div class="container">
+
+        <!-- === blog header === -->
+
+        <header class="hidden">
           <div class="row">
-            <div class="col-lg-12">
-              <div class="breadcrumbs-inner">
-                <h1 class="breadcrumbs-title"></h1>
-                <ul class="breadcrumb-list">
-                  <!-- <li><a href="#">Home</a></li> -->
-                  <li></li>
-                </ul>
+            <div class="col-md-offset-2 col-md-8 text-center">
+              <h2 class="title">Check out our featured news</h2>
+              <div class="text">
+                <p>Keeping things minimal</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <!-- BREADCRUMBS SETCTION END -->
+        </header>
 
-    <!-- Start page content -->
-    <div id="page-content" class="page-wrapper section">
+        <div class="row row-clean">
 
-      <!-- SHOP SECTION START -->
-      <div class="shop-section mb-80">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-9 order-lg-2 order-1">
-              <div class="shop-content">
-                <!-- shop-option start -->
-                <div class="shop-option box-shadow mb-30 clearfix">
-                  <!-- Nav tabs -->
-                  <ul class="nav shop-tab f-left" role="tablist">
-                    <li>
-                      <a class="active" href="#grid-view" data-toggle="tab"><i class="zmdi zmdi-view-module"></i></a>
-                    </li>
-                  </ul>
-                  <!-- sort-by -->
-                  <!-- <div class="short-by f-left text-center">
-                                        <span>Sort by :</span>
-                                        <select>
-                                            <option value="volvo">Newest items</option>
-                                            <option value="saab">Saab</option>
-                                            <option value="mercedes">Mercedes</option>
-                                            <option value="audi">Audi</option>
-                                        </select>
+          <!-- === blog item === -->
+
+          <div class="col-xs-6 col-sm-3">
+            <article>
+              <a href="products-grid.html">
+                <div class="image">
+                  <img src="{% static 'shop/images/project-1.jpg' %}" alt="" />
+                </div>
+                <div class="entry entry-block">
+                  <!-- <div class="date">2018 Collection</div> -->
+                  <div class="title">
+                    <h2 class="h3">Phones</h2>
+                  </div>
+                  <!-- <div class="description">
+                                        <p>
+                                            Top picks four your desire
+                                        </p>
                                     </div> -->
                 </div>
-                <!-- shop-option end -->
-                <!-- Tab Content start -->
-                <div class="tab-content">
-                  <!-- grid-view -->
-                  <div id="grid-view" class="tab-pane active show" role="tabpanel">
-                    <div id="mainContent" class="row">
-                      <!-- product-item start -->
-                      <!-- product-item end -->
-                    </div>
+                <!-- <div class="show-more">
+                                    <span class="btn btn-clean">Shop now</span>
+                                </div> -->
+              </a>
+            </article>
+          </div>
+
+          <!-- === blog item === -->
+
+          <div class="col-xs-6 col-sm-3">
+            <article>
+              <a href="products-grid.html">
+                <div class="image">
+                  <img src="{% static 'shop/images/project-2.jpg' %}" alt="" />
+                </div>
+                <div class="entry entry-block">
+                  <!-- <div class="date">New arrivals</div> -->
+                  <div class="title">
+                    <h2 class="h3">Laptops</h2>
                   </div>
+                  <!-- <div class="description">
+                                        <p>
+                                            Explore popular devices
+                                        </p>
+                                    </div> -->
                 </div>
-                <!-- Tab Content end -->
-                <!-- shop-pagination start -->
-                <ul class="shop-pagination box-shadow text-center ptblr-10-30">
-                  <li><a href="#"><i class="zmdi zmdi-chevron-left"></i></a></li>
-                  <li class="active"><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
-                </ul>
-                <!-- shop-pagination end -->
-              </div>
-            </div>
-            <div class="col-lg-3 order-lg-1 order-2">
-              <!-- widget-search -->
-              <aside class="widget-search mb-30">
-                <form id="searchForm2">
-                  <input id="searchInput2" type="text" placeholder="Search here...">
-                  <button type="submit"><i class="zmdi zmdi-search"></i></button>
-                </form>
-              </aside>
-              <!-- widget-categories -->
-              <aside class="widget widget-categories box-shadow mb-30">
-                <h6 class="widget-title border-left mb-20">Categories</h6>
-                <div id="cat-treeview" class="product-cat">
-                  <ul>
-                    <li class="closed"><a href="#">Phones</a>
-                      <ul>
-                        <li><a href="#">Phones</a></li>
-                        <li><a href="#">Tablets</a></li>
-                      </ul>
-                    </li>
-                    <li class="open"><a href="#">Computers</a>
-                      <ul>
-                        <li><a href="#">Laptops</a></li>
-                        <li><a href="#">Desktops</a></li>
-                        <li><a href="#">Monitors</a></li>
-                        <li><a href="#">Printers</a></li>
-                      </ul>
-                    </li>
-                    <li class="closed"><a href="#">Accessories</a>
-                      <ul>
-                        <li><a href="#">General</a></li>
-                        <li><a href="#">For phones</a></li>
-                        <li><a href="#">For computers</a></li>
-                      </ul>
-                    </li>
-                    <li class="closed"><a href="#">Top Brands</a>
-                      <ul>
-                        <li><a href="#">Samsung</a></li>
-                        <li><a href="#">LG</a></li>
-                        <li><a href="#">Apple</a></li>
-                        <li><a href="#">Lenovo</a></li>
-                        <li><a href="#">hp</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+                <!-- <div class="show-more">
+                                    <span class="btn btn-clean">Shop now</span>
+                                </div> -->
+              </a>
+            </article>
+          </div>
+
+          <!-- === blog item === -->
+
+          <div class="col-xs-6 col-sm-3">
+            <article>
+              <a href="products-grid.html">
+                <div class="image">
+                  <img src="{% static 'shop/images/Untitled-1.jpg' %}" alt="" />
                 </div>
-              </aside>
+                <div class="entry entry-block">
+                  <!-- <div class="date">Up to 50% off</div> -->
+                  <div class="title">
+                    <h2 class="h3">Sound</h2>
+                  </div>
+                  <!-- <div class="description">
+                                        <p>
+                                            Available for quick shipping
+                                        </p>
+                                    </div> -->
+                </div>
+                <!-- <div class="show-more">
+                                    <span class="btn btn-clean">Shop now</span>
+                                </div> -->
+              </a>
+            </article>
+          </div>
+
+          <!-- === blog item === -->
+
+          <div class="col-xs-6 col-sm-3">
+            <article>
+              <a href="products-grid.html">
+                <div class="image">
+                  <img src="{% static 'shop/images/project-3.jpg' %}" alt="" />
+                </div>
+                <div class="entry entry-block">
+                  <!-- <div class="date">Save big on</div> -->
+                  <div class="title">
+                    <h2 class="h3">Other Accessories</h2>
+                  </div>
+                  <!-- <div class="description">
+                                        <p>
+                                            Fun to explore
+                                        </p>
+                                    </div> -->
+                </div>
+                <!-- <div class="show-more">
+                                    <span class="btn btn-clean">Shop now</span>
+                                </div> -->
+              </a>
+            </article>
+          </div>
+
+        </div>
+        <!--/row-->
+
+        <!-- === button more === -->
+
+        <div class="wrapper-more">
+          <a class="btn btn-lg"></a>
+        </div>
+
+      </div>
+      <!--/container-->
+    </section>
+
+    <!-- ========================  Block banner category ======================== -->
+
+
+    <!-- ========================  Icons slider ======================== -->
+
+    <section class="owl-icons-wrapper">
+
+      <!-- === header === -->
+
+      <header class="hidden">
+        <div class="text-center">
+          <h2 class="title">Product categories</h2>
+        </div>
+      </header>
+
+      <div class="clearfix">
+
+        <div class="owl-icons owl-icons-rounded owl-icons-frontpage">
+
+          <!-- === icon item === -->
+
+
+          <img src="{% static 'shop/images/product-1.jpg' %}" alt="Alternate Text" />
+
+          <img src="{% static 'shop/images/product-2.jpg' %}" alt="Alternate Text" />
+
+          <img src="{% static 'shop/images/product-3.jpg' %}" alt="Alternate Text" />
+
+          <img src="{% static 'shop/images/product-4.jpg' %}" alt="Alternate Text" />
+
+          <img src="{% static 'shop/images/product-5.jpg' %}" alt="Alternate Text" />
+
+          <img src="{% static 'shop/images/product-6.jpg' %}" alt="Alternate Text" />
+
+          <img src="{% static 'shop/images/product-7.jpg' %}" alt="Alternate Text" />
+
+          <img src="{% static 'shop/images/product-8.jpg' %}" alt="Alternate Text" />
+
+          <img src="{% static 'shop/images/product-9.jpg' %}" alt="Alternate Text" />
+
+
+
+
+
+        </div>
+        <!--/owl-icons-->
+      </div>
+      <!--/container-->
+    </section>
+
+    <!-- ========================  Best seller ======================== -->
+
+    <section class="products">
+
+      <!-- === header title === -->
+
+      <header>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8 text-center">
+            <h2 class="title">Best Sellers</h2>
+            <div class="text">
+              <p>Check out our latest collections</p>
             </div>
           </div>
         </div>
+      </header>
+
+      <div class="row row-clean">
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/1.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">Samsung A12</a>
+                </h2>
+                <sub>KSh 18,000-</sub>
+                <sup>KSh 15,899,-</sup>
+                <span class="description clearfix">Samsung Galaxy A12 – 6.5″ – 64GB ROM + 4GB RAM – Dual
+                  SIM – Black</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <span class="label label-danger">-50%</span>
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/1.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">Samsung A12</a>
+                </h2>
+                <sub>KSh 18,000-</sub>
+                <sup>KSh 15,899,-</sup>
+                <span class="description clearfix">Samsung Galaxy A12 – 6.5″ – 64GB ROM + 4GB RAM – Dual
+                  SIM – Black</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/1.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">Samsung A12</a>
+                </h2>
+                <sub>KSh 18,000-</sub>
+                <sup>KSh 15,899,-</sup>
+                <span class="description clearfix">Samsung Galaxy A12 – 6.5″ – 64GB ROM + 4GB RAM – Dual
+                  SIM – Black</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <span class="label label-info">-20%</span>
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/1.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">Samsung A12</a>
+                </h2>
+                <sub>KSh 18,000-</sub>
+                <sup>KSh 15,899,-</sup>
+                <span class="description clearfix">Samsung Galaxy A12 – 6.5″ – 64GB ROM + 4GB RAM – Dual
+                  SIM – Black</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/1.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">Samsung A12</a>
+                </h2>
+                <sub>KSh 18,000-</sub>
+                <sup>KSh 15,899,-</sup>
+                <span class="description clearfix">Samsung Galaxy A12 – 6.5″ – 64GB ROM + 4GB RAM – Dual
+                  SIM – Black</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/1.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">E-shaver 500</a>
+                </h2>
+                <sub>$ 1999,-</sub>
+                <sup>$ 1499,-</sup>
+                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
+                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
+                  nulla</span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-      <!-- SHOP SECTION END -->
+      <!--/row-->
+      <!-- === button more === -->
 
-    </div>
-    <!-- End page content -->
+      <div class="wrapper-more">
+        <!-- <a href="products-grid.html" class="btn btn-lg">View all</a> -->
+        <a class="btn btn-lg"></a>
 
-    <!-- START FOOTER AREA -->
-    <footer id="footer" class="footer-area section">
-      <div class="footer-top">
-        <div class="container-fluid">
-          <div class="plr-185">
-            <div class="footer-top-inner gray-bg">
+      </div>
+
+      <!-- ========================  Product info popup - quick view ======================== -->
+
+      <div class="popup-main mfp-hide" id="productid1">
+
+        <!-- === product popup === -->
+
+        <div class="product">
+
+          <!-- === popup-title === -->
+
+          <div class="popup-title">
+            <div class="h1 title">
+              Samsung A12
+              <small>Phones</small>
+            </div>
+          </div>
+
+          <!-- === product gallery === -->
+
+          <div class="owl-product-gallery">
+            <img src="{% static 'shop/images/1.jpg' %}" alt="" width="640" />
+            <!-- <img src="assets/images/product-10a.png" alt="" width="640" /> -->
+          </div>
+
+          <!-- === product-popup-info === -->
+
+          <div class="popup-content">
+            <div class="product-info-wrapper">
               <div class="row">
-                <div class="col-xl-4 col-lg-5 col-md-5">
-                  <div class="single-footer footer-about">
-                    <div class="footer-logo">
-                      <img src="{% static 'shop/our-images/logo.svg' %}" alt="logo" width="150" height="100">
-                    </div>
-                    <div class="footer-brief">
-                      <p>We are distinguished dealers in computers, printers, phones and other electronics. We are based
-                        in Nairobi, Kenya
-                      </p>
-                      <p><i class="zmdi zmdi-home"></i></a>Jamia Mall, CBD</p>
-                      <p><i class="zmdi zmdi-email"></i></a>info@abufulan.co.ke</p>
-                      <p><i class="zmdi zmdi-phone"></i></a> +254 792 029 968</p>
-                    </div>
-                    <ul class="footer-social">
-                      <li>
-                        <a class="facebook" href="" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
-                      </li>
-                      <li>
-                        <a class="instagram" href="" title="Instagram"><i class="zmdi zmdi-instagram"></i></a>
-                      </li>
-                      <li>
-                        <a class="twitter" href="" title="Twitter"><i class="zmdi zmdi-twitter"></i></a>
-                      </li>
-                    </ul>
+
+                <!-- === left-column === -->
+
+                <div class="col-sm-6">
+                  <div class="info-box">
+                    <strong>Maifacturer</strong>
+                    <span>Brand name</span>
+                  </div>
+                  <div class="info-box">
+                    <strong>Materials</strong>
+                    <span>Wood, Leather, Acrylic</span>
+                  </div>
+                  <div class="info-box">
+                    <strong>Availability</strong>
+                    <span><i class="fa fa-check-square-o"></i> in stock</span>
                   </div>
                 </div>
-                <div class="col-xl-2 d-block d-xl-block d-lg-none d-md-none">
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-3">
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4">
-                  <div class="single-footer">
-                    <h4 class="footer-title border-left">Get in touch</h4>
-                    <div class="footer-message">
-                      <form action="#">
-                        <input type="text" name="name" placeholder="Your name here...">
-                        <input type="text" name="email" placeholder="Your email here...">
-                        <textarea class="height-80" name="message" placeholder="Your messege here..."></textarea>
-                        <button class="submit-btn-1 mt-20 btn-hover-1" type="submit">submit
-                          message</button>
-                      </form>
-                    </div>
+
+                <!-- === right-column === -->
+
+                <div class="col-sm-6">
+                  <div class="info-box">
+
+                  </div>
+                  <div class="info-box">
+
                   </div>
                 </div>
+
+              </div>
+              <!--/row-->
+            </div>
+            <!--/product-info-wrapper-->
+          </div>
+          <!--/popup-content-->
+          <!-- === product-popup-footer === -->
+
+          <div class="popup-table">
+            <div class="popup-cell">
+              <div class="price">
+                <span class="h3">$ 1999,00 <small>$ 2999,00</small></span>
+              </div>
+            </div>
+            <div class="popup-cell">
+              <div class="popup-buttons">
+                <!-- <a href="product.html"><span class="icon icon-eye"></span> <span class="hidden-xs">View
+                                        more</span></a> -->
+                <a href="javascript:void(0);"><span class="icon icon-phone"></span> <span class="hidden-xs">Call
+                    Now</span></a>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="footer-bottom black-bg">
-        <div class="container-fluid">
-          <div class="plr-185">
-            <div class="copyright">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="copyright-text">
-                    <p class="copy-text"> © 2021 <strong>Abufulan</strong> Made With <i class="zmdi zmdi-favorite"
-                        style="color: red;" aria-hidden="true"></i> By <a class="company-name"
-                        href="https://lennykioko.github.io">
-                        <strong> Certitude</strong></a>.</p>
 
-                  </div>
+        </div>
+        <!--/product-->
+      </div>
+      <!--popup-main-->
+      <!--/container-->
+
+    </section>
+
+    <!-- ========================  Block banner fashion ======================== -->
+
+    <section class="blog blog-block">
+
+      <!-- === header === -->
+
+      <header class="hidden">
+        <div class="text-center">
+          <h2 class="title">Fashion</h2>
+        </div>
+      </header>
+
+      <div class="row row-clean">
+
+        <!-- === blog item === -->
+
+        <div class="col-sm-4">
+          <article>
+            <div>
+              <div class="image">
+                <img src="{% static 'shop/images/shop-3.jpg' %}" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <div class="date">Shop for</div>
+                <div class="title">
+                  <h2 class="h3">HP Laptops</h2>
                 </div>
+                <!-- <div class="description">
+                                    <ul>
+                                        <li>
+                                            <a href="#">New arrivals</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Doscount sale collection</a>
+                                        </li>
+                                        <li class="more">
+                                            <a href="#">More</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
               </div>
             </div>
+          </article>
+        </div>
+
+        <!-- === blog item === -->
+
+        <div class="col-sm-4">
+          <article>
+            <div>
+              <div class="image">
+                <img src="{% static 'shop/images/shop-4.jpg' %}" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <div class="date">Shop for</div>
+                <div class="title">
+                  <h2 class="h3">Asus Laptops</h2>
+                </div>
+                <!-- <div class="description">
+                                    <ul class="col">
+                                        <li>
+                                            <a href="#">New arrivals</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Doscount sale collection</a>
+                                        </li>
+                                        <li class="more">
+                                            <a href="#">More</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === blog item === -->
+
+        <div class="col-sm-4">
+          <article>
+            <div>
+              <div class="image">
+                <img src="{% static 'shop/images/shop-5.jpg' %}" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <div class="date">Shop for</div>
+                <div class="title">
+                  <h2 class="h3">Dell Laptops</h2>
+                </div>
+                <!-- <div class="description">
+                                    <ul class="col">
+                                        <li>
+                                            <a href="#">New arrivals</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Doscount sale collection</a>
+                                        </li>
+                                        <li class="more">
+                                            <a href="#">More</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+      <!--/row-->
+    </section>
+
+    <!-- ========================  Products widget ======================== -->
+
+    <section class="products">
+
+      <!-- === header title === -->
+
+      <header>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8 text-center">
+            <h2 class="title">Laptops</h2>
+            <div class="text">
+              <p>Check out our latest collection of Laptops</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="row row-clean">
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">HP 1020</a>
+                </h2>
+                <sub>Ksh 20000-</sub>
+                <sup>Ksh 11000-</sup>
+                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
+                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
+                  nulla</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">HP 1020</a>
+                </h2>
+                <sub>Ksh 20000-</sub>
+                <sup>Ksh 11000-</sup>
+                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
+                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
+                  nulla</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <span class="label label-warning">New</span>
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">HP 1020</a>
+                </h2>
+                <sub>Ksh 20000-</sub>
+                <sup>Ksh 11000-</sup>
+                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
+                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
+                  nulla</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite added">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">HP 1020</a>
+                </h2>
+                <sub>Ksh 20000-</sub>
+                <sup>Ksh 11000-</sup>
+                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
+                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
+                  nulla</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <span class="label label-info">-50%</span>
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">HP 1020</a>
+                </h2>
+                <sub>Ksh 20000-</sub>
+                <sup>Ksh 11000-</sup>
+                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
+                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
+                  nulla</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === product-item === -->
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          <article>
+            <div class="info">
+              <span class="add-favorite">
+                <a href="javascript:void(0);" data-title="Add to favorites"
+                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
+              </span>
+              <span>
+                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+              </span>
+            </div>
+            <div class="btn btn-add">
+              <i class="icon icon-cart"></i>
+            </div>
+            <div class="figure-grid">
+              <div class="image">
+                <a href="#productid1" class="mfp-open">
+                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
+                </a>
+              </div>
+              <div class="text">
+                <h2 class="title h5">
+                  <a href="product.html">HP 1020</a>
+                </h2>
+                <sub>Ksh 20000-</sub>
+                <sup>Ksh 11000-</sup>
+                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
+                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
+                  nulla</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- === button more === -->
+
+      <div class="wrapper-more">
+        <!-- <a href="products-grid.html" class="btn btn-lg">View store</a> -->
+        <a class="btn btn-lg"></a>
+
+      </div>
+    </section>
+
+    <!-- ========================  Block banner shop  ======================== -->
+
+    <section class="blog blog-block">
+
+      <!-- === header === -->
+
+      <header class="hidden">
+        <div class="text-center">
+          <h2 class="title">Banner</h2>
+        </div>
+      </header>
+
+      <div class="row row-clean">
+
+        <!-- === blog item === -->
+
+        <div class="col-lg-6">
+          <article>
+            <div>
+              <div class="image">
+                <img src="{% static 'shop/images/cat-1.jpg' %}" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <!-- <div class="date">Shop for</div> -->
+                <div class="title">
+                  <h2 class="h3">Macbooks</h2>
+                </div>
+                <!-- <div class="description">
+                                    <ul>
+                                        <li>
+                                            <a href="#">New arrivals</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Doscount sale collection</a>
+                                        </li>
+                                        <li class="more">
+                                            <a href="#">More</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- === blog item === -->
+
+        <div class="col-lg-6">
+          <article>
+            <div>
+              <div class="image">
+                <img src="{% static 'shop/images/cat-2.jpg' %}" alt="" />
+              </div>
+              <div class="entry entry-block">
+                <!-- <div class="date">Shop for</div> -->
+                <div class="title">
+                  <h2 class="h3">Apple Accessories</h2>
+                </div>
+                <!-- <div class="description">
+                                    <ul class="col">
+                                        <li>
+                                            <a href="#">New arrivals</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Doscount sale collection</a>
+                                        </li>
+                                        <li class="more">
+                                            <a href="#">More</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+              </div>
+            </div>
+          </article>
+        </div>
+
+
+      </div>
+      <!--/row-->
+    </section>
+
+
+    <!-- ========================  Stretcher widget ======================== -->
+
+    <section class="stretcher-wrapper">
+
+      <!-- === stretcher header === -->
+
+      <header>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8 text-center">
+            <h1 class="h2 title">Smart watches</h1>
+            <div class="text">
+              <p>Give the gift of polished punctuality</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- === stretcher === -->
+
+      <ul class="stretcher">
+
+        <!-- === stretcher item === -->
+
+        <li class="stretcher-item" style="background-image: url({% static 'shop/images/shop-6.jpg' %});">
+          <!--logo-item-->
+          <div class="stretcher-logo">
+            <div class="text">
+              <!-- <span class="text-intro">Man's</span> -->
+            </div>
+          </div>
+          <!--main text-->
+          <!-- <figure>
+                        <h4>Man's watches</h4>
+                        <figcaption>Collection of prestigious, high precision timepieces</figcaption>
+                    </figure> -->
+          <!--anchor-->
+          <!-- <a href="#">Anchor link</a> -->
+        </li>
+
+        <!-- === stretcher item === -->
+
+        <li class="stretcher-item" style="background-image: url({% static 'shop/images/shop-7.jpg' %});">
+          <!--logo-item-->
+          <div class="stretcher-logo">
+            <div class="text">
+              <!-- <span class="text-intro">Woman's</span> -->
+            </div>
+          </div>
+          <!--main text-->
+          <!-- <figure>
+                        <h4>Womans's watches</h4>
+                        <figcaption>Choose among a wonderful variety of quality smart watches</figcaption>
+                    </figure> -->
+          <!--anchor-->
+          <!-- <a href="#">Anchor link</a> -->
+        </li>
+
+        <!-- === stretcher item === -->
+
+        <li class="stretcher-item" style="background-image: url({% static 'shop/images/shop-8.jpg' %});">
+          <!--logo-item-->
+          <div class="stretcher-logo">
+            <div class="text">
+              <!-- <span class="text-intro">Professional Quality</span> -->
+            </div>
+          </div>
+          <!--main text-->
+          <!-- <figure>
+                        <h4>Professional watches</h4>
+                        <figcaption>Discover your favourite model by combining materials</figcaption>
+                    </figure> -->
+          <!--anchor-->
+          <!-- <a href="">Anchor link</a> -->
+        </li>
+
+        <!-- === stretcher item === -->
+
+        <li class="stretcher-item" style="background-image: url({% static 'shop/images/shop-9.jpg' %});">
+          <!--logo-item-->
+          <div class="stretcher-logo">
+            <div class="text">
+              <!-- <span class="text-intro">Diamond bezzels</span> -->
+            </div>
+          </div>
+          <!--main text-->
+          <!-- <figure>
+                        <h4>Diamond bezzels</h4>
+                        <figcaption>Diamond bezel watch collection of luxurious pieces</figcaption>
+                    </figure> -->
+          <!--anchor-->
+          <!-- <a href="#">Anchor link</a> -->
+        </li>
+
+        <!-- === stretcher item more=== -->
+
+        <li class="stretcher-item more" style="background-image: url({% static 'shop/images/watches_1.jpg' %});">
+          <div class="more-icon">
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ========================  Cards ======================== -->
+
+    <section id="page-interiors" class="cards">
+
+      <!-- === cards header === -->
+
+      <header>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8 text-center">
+            <h2 class="title">Sound</h2>
+            <div class="text">
+              <p>Get premium sound performance without compromise!</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="row row-clean">
+
+        <!-- === item === -->
+
+        <div class="col-md-8">
+          <figure>
+            <figcaption style="background-image: url({% static 'shop/images/block-1.jpg' %});">
+              <img src="{% static 'shop/images/block-1.jpg' %}" alt="" />
+            </figcaption>
+            <!-- <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Mobile phones</a> -->
+          </figure>
+        </div>
+
+        <!-- === item === -->
+
+        <div class="col-md-4">
+          <figure>
+            <figcaption style="background-image: url({% static 'shop/images/block-2.jpg' %});">
+              <img src="{% static 'shop/images/block-2.jpg' %}" alt="" />
+            </figcaption>
+            <!-- <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Home accessories</a> -->
+          </figure>
+        </div>
+
+        <!-- === item === -->
+
+        <div class="col-md-4">
+          <figure>
+            <figcaption style="background-image: url({% static 'shop/images/block-4.jpg' %});">
+              <img src="{% static 'shop/images/block-4.jpg' %}" alt="" />
+            </figcaption>
+            <!-- <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Smart TV</a> -->
+          </figure>
+        </div>
+
+        <!-- === item === -->
+
+        <div class="col-md-4">
+          <figure>
+            <figcaption style="background-image: url({% static 'shop/images/block-3.jpg' %});">
+              <img src="{% static 'shop/images/block-3.jpg' %}" alt="" />
+            </figcaption>
+            <!-- <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Chairs</a> -->
+          </figure>
+        </div>
+
+        <!-- === item === -->
+
+        <div class="col-md-4">
+          <figure>
+            <figcaption style="background-image: url({% static 'shop/images/block-5.jpg' %});">
+              <img src="{% static 'shop/images/block-5.jpg' %}" alt="" />
+            </figcaption>
+            <!-- <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Gaming</a> -->
+          </figure>
+        </div>
+
+      </div>
+      <!--/row-->
+      <!--/container-->
+      <!-- === button more === -->
+      <div class="wrapper-more">
+        <!-- <a href="products-grid.html" class="btn btn-lg">View more</a> -->
+      </div>
+
+    </section>
+
+    <!-- ========================  Banner ======================== -->
+
+    <section class="banner" style="background-color:#ff7f00">
+
+      <!-- === header === -->
+
+      <h2 class="hidden">Banner</h2>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8 text-center">
+            <h2 class="title">Our story</h2>
+            <p>
+              We believe in creativity as one of the major forces of progress. With this idea, we traveled
+              throughout Italy to find exceptional
+              artisans and bring their unique handcrafted objects to connoisseurs everywhere.
+            </p>
+            <p>
+              <a href="about.html" class="btn btn-clean">CALL NOW</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== Footer  ================== -->
+
+    <footer>
+
+
+      <!--footer social-->
+
+      <div class="footer-social">
+        <div class="row">
+          <div class="col-sm-6">
+            <a href="#"></i> Jamia Mall</a> &nbsp; | &nbsp; <a href="#">Shop G64</a> &nbsp; | &nbsp;
+            <a href="#">Home & Country Delivery🛵🇰🇪</a>
+          </div>
+          <div class="col-sm-6 links">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
           </div>
         </div>
       </div>
     </footer>
-    <!-- END FOOTER AREA -->
 
-    <!-- START QUICKVIEW PRODUCT -->
-    <div id="quickview-wrapper">
-      <!-- Customized modal -->
-      <!-- Modal -->
-
-      <!-- END Modal -->
-    </div>
-    <!-- END QUICKVIEW PRODUCT -->
   </div>
-  <!-- Body main wrapper end -->
+  <!--/wrapper-->
 
-
-  <!-- Placed JS at the end of the document so the pages load faster -->
-
-  <!-- jquery latest version -->
-  <script src="{% static 'shop/js/vendor/jquery-3.1.1.min.js' %}"></script>
-  <!-- Popper js -->
-  <script src="{% static 'shop/js/popper.min.js' %}"></script>
-  <!-- Bootstrap framework js -->
-  <script src="{% static 'shop/js/bootstrap.min.js' %}"></script>
-  <!-- jquery.nivo.slider js -->
-  <script src="{% static 'shop/lib/js/jquery.nivo.slider.js' %}"></script>
-  <!-- All js plugins included in this file. -->
-  <script src="{% static 'shop/js/plugins.js' %}"></script>
-  <!-- Main js file that contents all jQuery plugins activation. -->
+  <!--JS files-->
+  <script src="{% static 'shop/js/jquery.min.js' %}"></script>
+  <script src="{% static 'shop/js/jquery.bootstrap.js' %}"></script>
+  <script src="{% static 'shop/js/jquery.magnific-popup.js' %}"></script>
+  <script src="{% static 'shop/js/jquery.owl.carousel.js' %}"></script>
+  <script src="{% static 'shop/js/jquery.ion.rangeSlider.js' %}"></script>
   <script src="{% static 'shop/js/main.js' %}"></script>
-
 </body>
 
 </html>
