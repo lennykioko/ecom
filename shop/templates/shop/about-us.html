@@ -56,7 +56,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-8 col-xs-7 logo">
-                        <a href="#" title="Clickbuy"><img src="img/images/logoleft.png" alt="images"
+                        <a href="#" title="Clickbuy"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
                                 class="img-reponsive"></a>
                     </div>
                     <div class="col-md-9 col-sm-4 col-xs-5 nextlogo">
@@ -205,7 +205,8 @@
                 <div class="clearfix"></div>
             </div>
             <div class="widget-about-us">
-                <a href="#"><img src="img/images/About.jpg" alt="imgages" class="img-responsive"></a>
+                <a href="#"><img src="{% static 'shop/img/images/About.jpg' %}" alt="imgages"
+                        class="img-responsive"></a>
                 <div class="text-description">
                     <p>We are dealers in phones, laptops and all accessories</p>
                     <p>To see a selection of my designs and sketches, which is how all my best designs start, take a
@@ -223,34 +224,34 @@
         <div class="container">
             <div class="owl-carousel owl-theme js-owl-brand">
                 <div class="item">
-                    <a href="#"><img src="img/images/logo-11.jpg" alt="images"></a>
+                    <a href="#"><img src="{% static 'shop/img/images/logo-11.jpg' %}" alt="images"></a>
                 </div>
                 <div class="item">
-                    <a href="#"><img src="img/images/logo-12.jpg" alt="images"></a>
+                    <a href="#"><img src="{% static 'shop/img/images/logo-12.jpg' %}" alt="images"></a>
                 </div>
                 <div class="item">
-                    <a href="#"><img src="img/images/logo-13.jpg" alt="images"></a>
+                    <a href="#"><img src="{% static 'shop/img/images/logo-13.jpg' %}" alt="images"></a>
                 </div>
                 <div class="item">
-                    <a href="#"><img src="img/images/logo-14.jpg" alt="images"></a>
+                    <a href="#"><img src="{% static 'shop/img/images/logo-14.jpg' %}" alt="images"></a>
                 </div>
                 <div class="item">
-                    <a href="#"><img src="img/images/logo-15.jpg" alt="images"></a>
+                    <a href="#"><img src="{% static 'shop/img/images/logo-15.jpg' %}" alt="images"></a>
                 </div>
                 <div class="item">
-                    <a href="#"><img src="img/images/logo-16.jpg" alt="images"></a>
+                    <a href="#"><img src="{% static 'shop/img/images/logo-16.jpg' %}" alt="images"></a>
                 </div>
                 <div class="item">
-                    <a href="#"><img src="img/images/logo-17.jpg" alt="images"></a>
+                    <a href="#"><img src="{% static 'shop/img/images/logo-17.jpg' %}" alt="images"></a>
                 </div>
                 <!-- <div class="item">
-                        <a href="#"><img src="img/brand/midnight.jpg" alt="images"></a>
+                        <a href="#"><img src="{% static 'shop/img/brand/midnight.jpg' %}" alt="images"></a>
                     </div>
                     <div class="item">
-                        <a href="#"><img src="img/brand/midnight.jpg" alt="images"></a>
+                        <a href="#"><img src="{% static 'shop/img/brand/midnight.jpg' %}" alt="images"></a>
                     </div>
                     <div class="item">
-                        <a href="#"><img src="img/brand/midnight.jpg" alt="images"></a>
+                        <a href="#"><img src="{% static 'shop/img/brand/midnight.jpg' %}" alt="images"></a>
                     </div> -->
             </div>
         </div>
@@ -261,7 +262,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
                     <div class="fea-box">
                         <div class="photo">
-                            <img src="img/gift.png" alt="images" class="img-reponsive">
+                            <img src="{% static 'shop/img/gift.png' %}" alt="images" class="img-reponsive">
                         </div>
                         <p class="inform-ver2">
                             <span class="strong">Deal of the day<br></span> check out today's deal
@@ -271,7 +272,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
                     <div class="fea-box">
                         <div class="photo">
-                            <img src="img/fly.png" alt="images" class="img-reponsive">
+                            <img src="{% static 'shop/img/fly.png' %}" alt="images" class="img-reponsive">
                         </div>
                         <p class="inform-ver2">
                             <span class="strong">We Deliver<br></span> Right to your doorstep
@@ -281,7 +282,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
                     <div class="fea-box">
                         <div class="photo">
-                            <img src="img/return.png" alt="images" class="img-reponsive">
+                            <img src="{% static 'shop/img/return.png' %}" alt="images" class="img-reponsive">
                         </div>
                         <p class="inform-ver2">
                             <span class="strong">Quality Products<br></span> Certified Dealer
@@ -291,7 +292,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
                     <div class="fea-box">
                         <div class="photo">
-                            <img src="img/secu.png" alt="images" class="img-reponsive">
+                            <img src="{% static 'shop/img/secu.png' %}" alt="images" class="img-reponsive">
                         </div>
                         <p class="inform-ver2">
                             <span class="strong">Customer Service<br></span> We are proud of best service
@@ -307,9 +308,11 @@
                 <div class="row ">
                     <div class="col-md-3 col-xs-12 ">
                         <div class="photo">
-                            <a href="#"><img src="img/images/logoleft.png" alt="images" class="img-responsive"></a>
+                            <a href="#"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
+                                    class="img-responsive"></a>
                         </div>
-                        <p class="info-desc">Welcome to the home of quality. We are authorised Apple and Samsung resellers</p>
+                        <p class="info-desc">Welcome to the home of quality. We are authorised Apple and Samsung
+                            resellers</p>
                         <div class="widget-info">
                             <ul>
                                 <li><i class="ion-ios-location fa-4" aria-hidden="true"></i>Jamia shopping mall, Shop
@@ -368,19 +371,23 @@
             <div class="container">
                 <span>© <a href="#" title="">Abufulan store</a> - All Rights Reserved.</span>
                 <ul class="payment">
-                    <li><a href="#"><img src="img/paypal.png" alt="images" class="img-responsive"></a></li>
-                    <li><a href="#"><img src="img/visa.png" alt="images" class="img-responsive"></a></li>
-                    <li><a href="#"><img src="img/american.png" alt="images" class="img-responsive"></a></li>
-                    <li><a href="#"><img src="img/mastercard.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="{% static 'shop/img/paypal.png' %}" alt="images"
+                                class="img-responsive"></a></li>
+                    <li><a href="#"><img src="{% static 'shop/img/visa.png' %}" alt="images" class="img-responsive"></a>
+                    </li>
+                    <li><a href="#"><img src="{% static 'shop/img/american.png' %}" alt="images"
+                                class="img-responsive"></a></li>
+                    <li><a href="#"><img src="{% static 'shop/img/mastercard.png' %}" alt="images"
+                                class="img-responsive"></a></li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="js/slick.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/bootstrap.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/owl.carousel.min.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/slick.min.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/main.js' %}"></script>
 </body>
 
 </html>

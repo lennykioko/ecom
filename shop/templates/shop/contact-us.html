@@ -57,11 +57,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-8 col-xs-7 logo">
-                        <a href="#" title="Clickbuy"><img src="img/images/logoleft.png" alt="images"
+                        <a href="#" title="Abufulan"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
                                 class="img-reponsive"></a>
                     </div>
                     <div class="col-md-9 col-sm-4 col-xs-5 nextlogo">
-
                         <div class="search hidden-xs hidden-sm">
                             <form action="#" class="search-form">
                                 <input type="text" name="s" class="form-control" placeholder="SEARCH...">
@@ -202,7 +201,7 @@
                                                 <li class="sub-menu col-3">
                                                     <a href="#">NEW Arrival</a>
                                                     <ul class="level2">
-                                                        <li class="text-center"><a href="comming-soon.html"><img src="img/megaimg.png" alt="images" class="img-responsive"></a></li>
+                                                        <li class="text-center"><a href="comming-soon.html"><img src="{% static 'shop/img/megaimg.png' %}" alt="images" class="img-responsive"></a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -312,7 +311,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
                     <div class="fea-box">
                         <div class="photo">
-                            <img src="img/gift.png" alt="images" class="img-reponsive">
+                            <img src="{% static 'shop/img/gift.png' %}" alt="images" class="img-reponsive">
                         </div>
                         <p class="inform-ver2">
                             <span class="strong">Deal of the day<br></span> check out today's deal
@@ -322,7 +321,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
                     <div class="fea-box">
                         <div class="photo">
-                            <img src="img/fly.png" alt="images" class="img-reponsive">
+                            <img src="{% static 'shop/img/fly.png' %}" alt="images" class="img-reponsive">
                         </div>
                         <p class="inform-ver2">
                             <span class="strong">We Deliver<br></span> Right to your doorstep
@@ -332,7 +331,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
                     <div class="fea-box">
                         <div class="photo">
-                            <img src="img/return.png" alt="images" class="img-reponsive">
+                            <img src="{% static 'shop/img/return.png' %}" alt="images" class="img-reponsive">
                         </div>
                         <p class="inform-ver2">
                             <span class="strong">Quality Products<br></span> Certified Dealer
@@ -342,7 +341,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
                     <div class="fea-box">
                         <div class="photo">
-                            <img src="img/secu.png" alt="images" class="img-reponsive">
+                            <img src="{% static 'shop/img/secu.png' %}" alt="images" class="img-reponsive">
                         </div>
                         <p class="inform-ver2">
                             <span class="strong">Customer Service<br></span> We are proud of best service
@@ -358,10 +357,11 @@
                 <div class="row ">
                     <div class="col-md-3 col-xs-12 ">
                         <div class="photo">
-                            <a href="#"><img src="img/images/logoleft.png" alt="images" class="img-responsive"></a>
+                            <a href="#"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
+                                    class="img-responsive"></a>
                         </div>
                         <p class="info-desc">Welcome to the home of quality. We are authorised Apple and Samsung
-                            resellers.</p>
+                            resellers. </p>
                         <div class="widget-info">
                             <ul>
                                 <li><i class="ion-ios-location fa-4" aria-hidden="true"></i>Jamia shopping mall, Shop
@@ -420,22 +420,30 @@
             <div class="container">
                 <span>© <a href="#" title="">Abufulan store</a> - All Rights Reserved.</span>
                 <ul class="payment">
-                    <li><a href="#"><img src="img/paypal.png" alt="images" class="img-responsive"></a></li>
-                    <li><a href="#"><img src="img/visa.png" alt="images" class="img-responsive"></a></li>
-                    <li><a href="#"><img src="img/american.png" alt="images" class="img-responsive"></a></li>
-                    <li><a href="#"><img src="img/mastercard.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="{% static 'shop/img/paypal.png' %}" alt="images"
+                                class="img-responsive"></a>
+                    </li>
+                    <li><a href="#"><img src="{% static 'shop/img/visa.png' %}" alt="images" class="img-responsive"></a>
+                    </li>
+                    <li><a href="#"><img src="{% static 'shop/img/american.png' %}" alt="images"
+                                class="img-responsive"></a>
+                    </li>
+                    <li><a href="#"><img src="{% static 'shop/img/mastercard.png' %}" alt="images"
+                                class="img-responsive"></a>
+                    </li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/bootstrap.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/owl.carousel.min.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/slick.min.js' %}"></script>
+    <script defer src="http://maps.googleapis.com/maps/api/js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMfhtZN7ZukEAEQcgR_GszRE4x338Bu9M&callback=initMap"
         type="text/javascript"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/main.js' %}"></script>
     <script>
         function initMap() {
 
