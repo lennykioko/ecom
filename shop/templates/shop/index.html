@@ -165,11 +165,11 @@
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="menubar js-menubar">
                                 <li class=" menu-homepage menu-item-has-child dropdown">
-                                    <a href="index.html" title="Home"><i class="fa fa-home"></i>home</a>
+                                    <a href="{% url 'shop:home' %}" title="Home"><i class="fa fa-home"></i>home</a>
                                     <span class="plus js-plus-icon"></span>
                                 </li>
                                 <li class="menu-collection-page menu-item-has-child dropdown">
-                                    <a href="shop.html" title="Products"><i class="fa fa-shopping-cart"></i>&nbsp;
+                                    <a href="{% url 'shop:shop' %}" title="Products"><i class="fa fa-shopping-cart"></i>&nbsp;
                                         Products</a>
                                     <span class="plus js-plus-icon"></span>
                                     <!-- <ul class="dropdown-menu menu-level">
@@ -180,7 +180,7 @@
                                     </ul> -->
                                 </li>
                                 <li class=" menu-demo-page menu-item-has-child dropdown">
-                                    <a href="about-us.html" title="About Us"><i class="fa fa-info-circle"></i>&nbsp;
+                                    <a href="{% url 'shop:about' %}" title="About Us"><i class="fa fa-info-circle"></i>&nbsp;
                                         About Us </a>
                                     <span class="plus js-plus-icon"></span>
                                     <!-- <div class="dropdown-menu dropdown-menu-bg">
@@ -212,7 +212,7 @@
                                     </div> -->
                                 </li>
                                 <li class="dropdown menu-contact-page menu-item-has-child">
-                                    <a href="contact_us.html" title="Contact Us"><i class="fa fa-paper-plane"></i>&nbsp;
+                                    <a href="{% url 'shop:contact' %}" title="Contact Us"><i class="fa fa-paper-plane"></i>&nbsp;
                                         CONTACT US</a>
                                     <span class="plus js-plus-icon"></span>
                                     <!-- <ul class="dropdown-menu menu-level">
@@ -1205,10 +1205,10 @@
                             <div class="col-md-6 col-xs-12 pd-left">
                                 <h3>useful links</h3>
                                 <ul class="fmenu">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="#">Shop</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Contact us</a></li>
+                                    <li><a href="{% url 'shop:home' %}">Home</a></li>
+                                    <li><a href="{% url 'shop:shop' %}">Shop</a></li>
+                                    <li><a href="{% url 'shop:about' %}">About</a></li>
+                                    <li><a href="{% url 'shop:contact' %}">Contact us</a></li>
                                 </ul>
                             </div>
                         </div>
