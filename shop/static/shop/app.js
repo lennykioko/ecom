@@ -1,15 +1,15 @@
-const BASE_URL = `${window.location.href}`
+const BASE_URL = "http://127.0.0.1:8000/";
 let products;
 
 const mainContent = document.querySelector("#mainContent");
 
-const searchForm1 = document.querySelector("#searchForm1");
-const searchInput1 = document.querySelector("#searchInput1");
+// const searchForm1 = document.querySelector("#searchForm1");
+// const searchInput1 = document.querySelector("#searchInput1");
 
-const searchForm2 = document.querySelector("#searchForm2");
-const searchInput2 = document.querySelector("#searchInput2");
+// const searchForm2 = document.querySelector("#searchForm2");
+// const searchInput2 = document.querySelector("#searchInput2");
 
-const quickview = document.querySelector("#productid1");
+// const quickview = document.querySelector("#productid1");
 
 
 // searchForm1.addEventListener("submit", (event) => {
@@ -49,131 +49,37 @@ const getSearchItems = async (search) => {
 
 const handleSearch = async (search) => {
   const response = await getSearchItems(search);
-  const data = response.data
-  products = response.data
+  const data = response.data;
+  console.log(data);
+  products = response.data;
 
   data?.map((item) => {
     mainContent.insertAdjacentHTML(
       "beforeend",
-      `<div class="col-xs-6 col-sm-4 col-lg-2">
-          <article>
-            <div class="info">
-              <span class="add-favorite">
-                <a href="#productid1" onclick="setProduct(${item.id})" data-title="Add to favorites"
-                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-              </span>
-              <span>
-                <a href="#productid1" onclick="setProduct(${item.id})" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-              </span>
-            </div>
-            <div class="btn btn-add">
-              <i class="icon icon-cart"></i>
-            </div>
-            <div class="figure-grid">
-              <div class="image">
-                <a href="#productid1" class="mf onclick="setProduct(${item.id})" p-open">
-                  <img src="/media/${item.product_image}" alt="${item.product_name} width="360" />
-                </a>
-              </div>
-              <div class="text">
-                <h2 class="title h5">
-                  <a href="product.html">${item.product_name}</a>
-                </h2>
-                <sub>KSh ${commaThousand(item.old_price)}</sub>
-                <sup>KSh ${commaThousand(item.price)}</sup>
-                <span class="description clearfix">Samsung Galaxy A12 – 6.5″ – 64GB ROM + 4GB RAM – Dual
-                  SIM – Black</span>
-              </div>
-            </div>
-          </article>
-        </div>`
+      `<div class= "product-list-item">
+      <div style="height:270px; display:flex; align-items:center;" class="product-item-img">
+        <a href="#"><img src="../media/${item.product_image}" alt="images"
+          class="img-responsive"></a>
+          <div class="label label-2 red label-top-20">Hot</div>
+        </div>
+        <div class="product-item-info">
+          <h3 class="black" style="font-weight:bold><a href="#" title="">${item.product_name}</a></h3>
+          <div style="height:50px; overflow:auto"}>${item.description}</div>
+          <div class="prod-price">
+            <span class="price black">${commaThousand(item.price)}</span>
+          </div>
+
+
+          <div class="button-ver2">
+            <a href="tel:254792029968" class="addcart-ver2" title="Add to cart"><span
+              class="icon"></span>CALL TO ORDER</a>
+            <!-- <a href="#" class="quickview" title="quick view"><i class="ion-eye fa-4" aria-hidden="true"></i></a>
+            <a href="#" class="wishlist" title="wishlist"><i class="ion-heart fa-4" aria-hidden="true"></i></a> -->
+          </div>
+        </div>
+      </div>`
     );
   });
-};
-
-
-const setProduct = async (item_id) => {
-  let item = products.filter(item => item.id == item_id);
-  item = item[0];
-  quickview.className = 'popup-main mfp-open';
-  quickview.innerHTML =
-    `<div class="product">
-
-          <!-- === popup-title === -->
-
-          <div class="popup-title">
-            <div class="h1 title">
-              ${item.product_name}
-              <small>Phones</small>
-            </div>
-          </div>
-
-          <!-- === product gallery === -->
-
-          <div class="owl-product-gallery">
-            <img src="/media/${item.product_image}" alt="${item.product_name}  width="640" />
-            <!-- <img src="assets/images/product-10a.png" alt="" width="640" /> -->
-          </div>
-
-          <!-- === product-popup-info === -->
-
-          <div class="popup-content">
-            <div class="product-info-wrapper">
-              <div class="row">
-
-                <!-- === left-column === -->
-
-                <div class="col-sm-6">
-                  <div class="info-box">
-                    <strong>Maifacturer</strong>
-                    <span>Brand name</span>
-                  </div>
-                  <div class="info-box">
-                    <strong>Materials</strong>
-                    <span>Wood, Leather, Acrylic</span>
-                  </div>
-                  <div class="info-box">
-                    <strong>Availability</strong>
-                    <span><i class="fa fa-check-square-o"></i> in stock</span>
-                  </div>
-                </div>
-
-                <!-- === right-column === -->
-
-                <div class="col-sm-6">
-                  <div class="info-box">
-
-                  </div>
-                  <div class="info-box">
-
-                  </div>
-                </div>
-
-              </div>
-              <!--/row-->
-            </div>
-            <!--/product-info-wrapper-->
-          </div>
-          <!--/popup-content-->
-          <!-- === product-popup-footer === -->
-
-          <div class="popup-table">
-            <div class="popup-cell">
-              <div class="price">
-                <span class="h3">KSh ${commaThousand(item.price)} <small>KSh ${commaThousand(item.old_price)}</small></span>
-              </div>
-            </div>
-            <div class="popup-cell">
-              <div class="popup-buttons">
-                <!-- <a href="product.html"><span class="icon icon-eye"></span> <span class="hidden-xs">View
-                                        more</span></a> -->
-                <a href="javascript:void(0);"><span class="icon icon-phone"></span> <span class="hidden-xs">Call
-                    Now</span></a>
-              </div>
-            </div>
-          </div>
-
-        </div>`;
 };
 
 // empty search returns all
