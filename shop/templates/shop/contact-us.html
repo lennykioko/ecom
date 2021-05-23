@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Abufulan</title>
+    <link rel="stylesheet" href="{% static 'shop/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet' %}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet' %}">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet' %}">
+    <script async type="text/javascript" src="{% static 'shop/js/jquery.js' %}"></script>
+</head>
+
+<body>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">SEARCH HERE</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <form method="get" class="searchform" action="/search" role="search">
+                            <input type="hidden" name="type" value="product">
+                            <input type="text" name="q" class="form-control control-search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default button_search" type="button"><i data-toggle="dropdown"
+                                        class="ion-ios-search"></i></button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+
+        <div class="topbar-mobile hidden-lg hidden-md" style="padding: 20px;">
+            <form action="#" class="search-form">
+                <input type="text" name="s" class="form-control" placeholder="SEARCH...">
+                <button type="submit" class="search-icon"></button>
+            </form>
+        </div>
+
+        <div class="bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-8 col-xs-7 logo">
+                        <a href="#" title="Clickbuy"><img src="img/images/logoleft.png" alt="images"
+                                class="img-reponsive"></a>
+                    </div>
+                    <div class="col-md-9 col-sm-4 col-xs-5 nextlogo">
+
+                        <div class="search hidden-xs hidden-sm">
+                            <form action="#" class="search-form">
+                                <input type="text" name="s" class="form-control" placeholder="SEARCH...">
+                                <button type="submit" class="search-icon"></button>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-6 column-left">
+                        <aside id="column-left">
+                            <nav class="navbar-default">
+                                <div class="menu-heading js-nav-menu">ALL CATEGORIES</div>
+                                <div class="vertical-wrapper v3 js-dropdown-menu">
+                                    <ul class="level0">
+                                        <!-- <li><a href="#">camera</a><span class="icon icon-camera"></span></li> -->
+                                        <li>
+                                            <a href="#">Phones</a><span class="icon"></span>
+                                            <div class="dropdown-content">
+                                                <ul class="level1">
+                                                    <li class="sub-menu col-3">
+                                                        <a href="#">PHONES</a>
+                                                        <ul class="level2">
+                                                            <li class="col-inner"><a href="#">Samsang</a></li>
+                                                            <li class="col-inner"><a href="#">Iphone</a></li>
+                                                            <li class="col-inner"><a href="#">Xiaomi</a></li>
+                                                            <li class="col-inner"><a href="#">Tecno</a></li>
+                                                            <li class="col-inner"><a href="#">Infinix</a></li>
+                                                            <li class="col-inner"><a href="#">Huawei</a></li>
+                                                            <li class="col-inner"><a href="#">Xtigi</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <a href="#">Laptops</a><span class="icon"></span>
+                                            <div class="dropdown-content">
+                                                <ul class="level1">
+                                                    <li class="sub-menu col-3">
+                                                        <a href="#">LAPTOPS</a>
+                                                        <ul class="level2">
+                                                            <li class="col-inner"><a href="#">MAC Book</a></li>
+                                                            <li class="col-inner"><a href="#">HP</a></li>
+                                                            <li class="col-inner"><a href="#">Dell</a></li>
+                                                            <li class="col-inner"><a href="#">Acer</a></li>
+                                                            <li class="col-inner"><a href="#">Lenovo</a></li>
+                                                            <li class="col-inner"><a href="#">Toshiba</a></li>
+                                                            <li class="col-inner"><a href="#">ASUS</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                        </li>
+
+                                        <li class="game">
+                                            <a href="#">Accessories</a>
+                                            <div class="dropdown-content">
+                                                <ul class="level1">
+                                                    <li class="sub-menu col-3">
+                                                        <a href="#">ACCESSORIES</a>
+                                                        <ul class="level2">
+                                                            <li class="col-inner"><a href="#">Smart Watch</a></li>
+                                                            <li class="col-inner"><a href="#">Headphones</a></li>
+                                                            <li class="col-inner"><a href="#">Phone case</a></li>
+                                                            <li class="col-inner"><a href="#">Straps</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                        </li>
+                                        <!-- <li><a href="#">headphone</a></li> -->
+                                        <!-- <li><a href="#">mouse</a></li> -->
+                                        <!-- <li><a href="#">washing machine</a></li> -->
+                                        <!-- <li><a href="#">air conditional</a></li> -->
+                                        <!-- <li><a href="#">accessories</a></li> -->
+                                        <!-- <li><a href="#">others</a></li> -->
+
+                                    </ul>
+                                </div>
+                            </nav>
+                        </aside>
+                    </div>
+                    <div class="col-md-9 col-sm-8 col-xs-6 column-right">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="menu-title">MENU</span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="menubar js-menubar">
+                                <li class=" menu-homepage menu-item-has-child dropdown">
+                                    <a href="index.html" title="Home"><i class="fa fa-home"></i>home</a>
+                                    <span class="plus js-plus-icon"></span>
+                                </li>
+                                <li class="menu-collection-page menu-item-has-child dropdown">
+                                    <a href="shop.html" title="Products"><i class="fa fa-shopping-cart"></i>&nbsp;
+                                        Products</a>
+                                    <span class="plus js-plus-icon"></span>
+                                    <!-- <ul class="dropdown-menu menu-level">
+                                            <li><a href="product-collection.html" title="shop collection">Shop Collection</a></li>
+                                            <li><a href="shop-list-v2.html" title="shop list v1">Shop List V1</a></li>
+                                            <li><a href="shop-list-v3.html" title="shop list v2">Shop List V2</a></li>
+                                            <li><a href="#" title="shoplist v3">Shop List V3</a></li>
+                                        </ul> -->
+                                </li>
+                                <li class=" menu-demo-page menu-item-has-child dropdown">
+                                    <a href="about-us.html" title="About Us"><i class="fa fa-info-circle"></i>&nbsp;
+                                        About Us </a>
+                                    <span class="plus js-plus-icon"></span>
+                                    <!-- <div class="dropdown-menu dropdown-menu-bg">
+                                            <ul class="level1">
+                                                <li class="sub-menu col-3">
+                                                    <a href="#">Cart pages</a>
+                                                    <ul class="level2">
+                                                        <li class="col-inner"><a href="checkout-1.html" title="">Shopping Cart</a></li>
+                                                        <li class="col-inner"><a href="checkout-2.html" title="">Check Out</a></li>
+                                                        <li class="col-inner"><a href="checkout-3.html" title="">Order</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sub-menu col-3">
+                                                    <a href="#">Product Pages</a>
+                                                    <ul class="level2">
+                                                        <li class="col-inner"><a href="shop-single.html" title="">Shop Single V1</a></li>
+                                                        <li class="col-inner"><a href="shop-single-v2.html" title="">Shop Single V2</a></li>
+                                                        <li class="col-inner"><a href="#" title="">Shop Single V3</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sub-menu col-3">
+                                                    <a href="#">NEW Arrival</a>
+                                                    <ul class="level2">
+                                                        <li class="text-center"><a href="comming-soon.html"><img src="img/megaimg.png" alt="images" class="img-responsive"></a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                        </div> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+    <section class="contact-us">
+        <div class="container">
+            <div class="heading-sub">
+                <h3 class="pull-left">contact</h3>
+                <ul class="other-link-sub pull-right">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#pages">Pages</a></li>
+                    <li><a class="active" href="#aboutus">About Us</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="contact-info-heading">
+                <div class="row">
+                    <div class="col-md-4 contact-column-inner">
+                        <div class="contact-box">
+                            <div class="contact-box-icon"><i class="ion-ios-location icon-contact"></i></div>
+                            <div class="contact-box-information">
+                                Jamia shopping mall, Shop G64, Nairobi, Kenya.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 contact-column-inner">
+                        <div class="contact-box">
+                            <div class="contact-box-icon"><i class="ion-ios-telephone icon-contact"></i></div>
+                            <div class="contact-box-information">
+                                +254 792 029 698
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 contact-column-inner">
+                        <div class="contact-box">
+                            <div class="contact-box-icon"><i class="ion-email icon-contact"></i></div>
+                            <div class="contact-box-information">
+                                sales@abufulan.co.ke
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form action="#" class="contact-form">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6 col-xs-12">
+                                        <strong>First Name</strong>
+                                        <input type="text" name="first_name" class="form-control" value="">
+                                    </div>
+                                    <div class="col-md-6 col-xs-12">
+                                        <strong>Email *</strong>
+                                        <input type="text" name="last_name" class="form-control" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6 col-xs-12">
+                                        <strong>Phone Number</strong>
+                                        <input type="text" name="first_name" class="form-control" value="">
+                                    </div>
+                                    <div class="col-md-6 col-xs-12">
+                                        <strong>Subject</strong>
+                                        <input type="text" name="last_name" class="form-control" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <strong>Your Message</strong>
+                                        <textarea name="note" id="message" tabindex="2" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-send-message">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8178797530977!2d36.817967013842264!3d-1.2831156359823894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f113249319fd1%3A0xe44d59a6a2d90f0!2sAbufulan%20Store!5e0!3m2!1sen!2ske!4v1621697272304!5m2!1sen!2ske"
+                            width="600" height="370" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/gift.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Deal of the day<br></span> check out today's deal
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/fly.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">We Deliver<br></span> Right to your doorstep
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/return.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Quality Products<br></span> Certified Dealer
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="img/secu.png" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Customer Service<br></span> We are proud of best service
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="info">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-3 col-xs-12 ">
+                        <div class="photo">
+                            <a href="#"><img src="img/images/logoleft.png" alt="images" class="img-responsive"></a>
+                        </div>
+                        <p class="info-desc">Welcome to the home of quality. We are authorised Apple and Samsung
+                            resellers.</p>
+                        <div class="widget-info">
+                            <ul>
+                                <li><i class="ion-ios-location fa-4" aria-hidden="true"></i>Jamia shopping mall, Shop
+                                    G64,
+                                    Nairobi, Kenya.</li>
+                                <li class="clearfix"></li>
+                                <li><i class="ion-ios-telephone fa-4" aria-hidden="true"></i>
+                                    <p class="title-contain">+254 792 029 968</p>
+                                </li>
+                                <li class="clearfix"></li>
+                                <li><i class="ion-email-unread fa-4" aria-hidden="true"></i>
+                                    <p class="title-contain"><a
+                                            href="mailto:sales@abufulan.co.ke">sales@abufulan.co.ke</a>
+                                    </p>
+                                </li>
+                                <li class="clearfix"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <h3>let us help you</h3>
+                                <ul class="fmenu">
+                                    <li><a href="https://api.whatsapp.com/send?phone=254732029698"
+                                            target="_blank">whatsApp</a></li>
+                                    <li><a href="tel:+254792029698">Call us today</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 col-xs-12 pd-left">
+                                <h3>useful links</h3>
+                                <ul class="fmenu">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="#">Shop</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <h3 class="titles">FIND US ON:</h3>
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/Abufulanstore/?ref=py_c"><i
+                                        class="ion-social-facebook fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="https://twitter.com/abufulanstore"><i class="ion-social-twitter fa-3"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram fa-3" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div class="container">
+                <span>© <a href="#" title="">Abufulan store</a> - All Rights Reserved.</span>
+                <ul class="payment">
+                    <li><a href="#"><img src="img/paypal.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="img/visa.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="img/american.png" alt="images" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="img/mastercard.png" alt="images" class="img-responsive"></a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMfhtZN7ZukEAEQcgR_GszRE4x338Bu9M&callback=initMap"
+        type="text/javascript"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        function initMap() {
+
+            // Create a new StyledMapType object, passing it an array of styles,
+            // and the name to be displayed on the map type control.
+            var map = new google.maps.Map(document.getElementById('googlemap1'), {
+                center: { lat: 21.02765390610467, lng: 105.76363360000005 },
+                zoom: 15,
+                styles: [{
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#212121"
+                    }]
+                },
+                {
+                    "elementType": "labels.icon",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                },
+                {
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "color": "#757575"
+                    }]
+                },
+                {
+                    "elementType": "labels.text.stroke",
+                    "stylers": [{
+                        "color": "#212121"
+                    }]
+                },
+                {
+                    "featureType": "administrative",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#757575"
+                    }]
+                },
+                {
+                    "featureType": "administrative.country",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "color": "#9e9e9e"
+                    }]
+                },
+                {
+                    "featureType": "administrative.land_parcel",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                },
+                {
+                    "featureType": "administrative.locality",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "color": "#bdbdbd"
+                    }]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "color": "#757575"
+                    }]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#181818"
+                    }]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "color": "#616161"
+                    }]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [{
+                        "color": "#1b1b1b"
+                    }]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "geometry.fill",
+                    "stylers": [{
+                        "color": "#2c2c2c"
+                    }]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "color": "#8a8a8a"
+                    }]
+                },
+                {
+                    "featureType": "road.arterial",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#373737"
+                    }]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#3c3c3c"
+                    }]
+                },
+                {
+                    "featureType": "road.highway.controlled_access",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#4e4e4e"
+                    }]
+                },
+                {
+                    "featureType": "road.local",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "color": "#616161"
+                    }]
+                },
+                {
+                    "featureType": "transit",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "color": "#757575"
+                    }]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#000000"
+                    }]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "color": "#3d3d3d"
+                    }]
+                }
+                ]
+            });
+        }
+    </script>
+</body>
+
+</html>

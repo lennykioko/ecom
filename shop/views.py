@@ -9,6 +9,14 @@ from .models import Product
 class IndexView(TemplateView):
     template_name = 'shop/index.html'
 
+class AboutView(TemplateView):
+    template_name = 'shop/about-us.html'
+
+class ContactView(TemplateView):
+    template_name = 'shop/contact-us.html'
+
+class ShopView(TemplateView):
+    template_name = 'shop/shop.html'
 
 class AjaxSearchView(View):
     def get(self, request):
