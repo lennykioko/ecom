@@ -2,1237 +2,1334 @@
 <html lang="en">
 
 <head>
-  {%load static %}
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <!-- Mobile Web-app fullscreen -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-
-  <!-- SEO -->
-  <meta name="author" content="Lenny Kioko">
-  <meta name="keywords"
-    content="electronics, e-commerce, shop, buy electronics, buy electronics online, dealer, jamia mall, nairobi ,kenya">
-  <meta name="description" content="E-commerce store for phones, tablets, computers and other electronics">
-  <meta name="google-site-verification" content="W5sK6p7l7esRL9ii-yOMFsxK-Kzoqhyt-HatVMyTbVs" />
-
-  <link rel="icon" href="favicon.ico">
-
-  <!--Title-->
-  <title>AbuFulan</title>
-
-  <!--CSS bundle -->
-
-  <link rel="stylesheet" href="{% static 'shop/css/bootstrap.css' %}">
-
-  <link rel="stylesheet" href="{% static 'shop/css/animate.css' %}">
-  <link rel="stylesheet" href="{% static 'shop/css/font-awesome.css' %}">
-  <link rel="stylesheet" href="{% static 'shop/css/font-awesome.css' %}">
-  <link rel="stylesheet" href="{% static 'shop/css/linear-icons.css' %}">
-  <link rel="stylesheet" href="{% static 'shop/css/magnific-popup.css' %}">
-  <link rel="stylesheet" href="{% static 'shop/css/owl.carousel.css' %}">
-  <link rel="stylesheet" href="{% static 'shop/css/ion-range-slider.css' %}">
-  <link rel="stylesheet" href="{% static 'shop/css/theme.css' %}">
-
-  <!--Google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
-
-
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Abufulan</title>
+    <link rel="stylesheet" href="{% static 'shop/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet' %}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet' %}">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet' %}">
+    <script async type="text/javascript" src="{% static 'shop/js/jquery.js' %}"></script>
 </head>
 
 <body>
+    <div class="modal fade" id="myModal" role="dialog">
 
-  <div class="page-loader"></div>
-
-  <div class="wrapper">
-
-    <!-- ======================== Navigation ======================== -->
-
-    <nav>
-
-      <div class="clearfix">
-
-        <a href="" class="logo"><img src="{% static 'shop/images/logoAbu.png' %}" alt="" /></a>
-
-        <!-- ==========  Pre navigation ========== -->
-
-        <div class="navigation navigation-pre clearfix">
-          <div class="row">
-            <div class="col-md-3">
-              <a href="#"><i class="icon icon-heart-pulse"></i> Call Now +254 792 029 968</a>
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">SEARCH HERE</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <form method="get" class="searchform" action="/search" role="search">
+                            <input type="hidden" name="type" value="product">
+                            <input type="text" name="q" class="form-control control-search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default button_search" type="button"><i data-toggle="dropdown"
+                                        class="ion-ios-search"></i></button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3">
-              <a><i class="icon icon-cog"></i> Quality Products</a>
-            </div>
-            <div class="col-md-3">
-              <a><i class="icon icon-cog"></i> Fast Delivery</a>
-            </div>
-            <div class="col-md-3">
-              <a><i class="icon icon-map"></i> Affordable Prices</a>
-            </div>
-          </div>
+        </div>
+    </div>
+    <header>
+        <div class="topbar-mobile hidden-lg hidden-md" style="padding: 20px;">
+            <form action="#" class="search-form">
+                <input type="text" name="s" class="form-control" placeholder="SEARCH...">
+                <button type="submit" class="search-icon"></button>
+            </form>
         </div>
 
-        <!-- ==========  Top navigation ========== -->
-
-        <div class="navigation navigation-top clearfix">
-          <ul>
-            <!--add active class for current page-->
-            <!-- <li class="left-side"><a href="index.html" class="logo-icon"><img src="assets/images/icon.png"
-                                    alt="Alternate Text" /></a></li> -->
-            <!-- <li class="left-side"><a href="#">Call Now +254 792 029 968</a></li> -->
-            <!--
-
-                            // Use active class for current state
-
-                            <li class="left-side active"><a href="#">Man</a></li>
-
-                        -->
-            <!-- <li class="left-side"><a href="#">Woman</a></li> -->
-            <!-- <li class="left-side"><a href="#">Kids</a></li> -->
-            <!-- <li><a href="javascript:void(0);" class="open-login"><i class="icon icon-user"></i></a></li> -->
-            <li><a href="javascript:void(0);" class="open-search"><i class="icon icon-magnifier"></i></a>
-            </li>
-            <!-- <li><a href="javascript:void(0);" class="open-cart"><i class="icon icon-cart"></i>
-                                <span>4</span></a>
-                            </li> -->
-          </ul>
-        </div>
-
-        <!-- ==========  Main navigation ========== -->
-
-        <div class="navigation navigation-main">
-          <a href="#" class="open-login"><i class="icon icon-user"></i></a>
-          <a href="#" class="open-cart"><i class="icon icon-cart"></i></a>
-          <a href="#" class="open-search"><i class="icon icon-magnifier"></i></a>
-          <a href="#" class="open-menu"><i class="icon icon-menu"></i></a>
-          <div class="floating-menu">
-            <!--mobile toggle menu trigger-->
-            <div class="close-menu-wrapper">
-              <span class="close-menu"><i class="icon icon-cross"></i></span>
-            </div>
-            <ul>
-              <li>
-                <a href="javascript:void(0);">Phones </a>
-                <!-- <div class="navbar-dropdown navbar-dropdown-single">
-                                    <div class="navbar-box">
-                                        <div class="box-full">
-                                            <div class="box clearfix">
-                                                <ul>
-                                                    <li class="label">Homepages</li>
-                                                    <li><a href="index.html">Home - Slider</a></li>
-                                                    <li><a href="index-2.html">Home - Tabsy</a></li>
-                                                    <li><a href="index-3.html">Home intro</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+        <div class="bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-8 col-xs-7 logo">
+                        <a href="#" title="Abufulan"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
+                                class="img-reponsive"></a>
+                    </div>
+                    <div class="col-md-9 col-sm-4 col-xs-5 nextlogo">
+                        <!-- <div class="block block-2">
+                            <div class="cart">
+                                <a href="#" title="" id="label3" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <div class="photo photo-cart">
+                                        <img src="{% static 'shop/cart.png' %}" alt="images" class="img-reponsive">
+                                        <span class="lbl">05</span>
                                     </div>
-                                </div> -->
-              </li>
-              <li>
-                <a href="javascript:void(0);">Laptops <span class="open-dropdown">
-                    <!-- <i class="fa fa-angle-down"></i></span> -->
-                </a>
-                <!-- <div class="navbar-dropdown navbar-dropdown-single">
-                                    <div class="navbar-box">
-                                        <div class="box-full">
-                                            <div class="box clearfix">
-                                                <ul>
-                                                    <li class="label">Single dropdown</li>
-                                                    <li><a href="about.html">About us</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
-                                                    <li><a href="404.html">Not found 404</a></li>
-                                                    <li><a href="login.html">Login & Register</a></li>
-                                                    <li><a href="email-receipt.html">Email - Receipt template</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-              </li>
-              <li>
-                <a href="javascript:void(0);">Macbooks <span class="open-dropdown">
-                    <!-- <i class="fa fa-angle-down"></i></span> -->
-                </a>
-                <!-- <div class="navbar-dropdown navbar-dropdown-single">
-                                    <div class="navbar-box">
-                                        <div class="box-full">
-                                            <div class="box clearfix">
-                                                <ul>
-                                                    <li class="label">Product page</li>
-                                                    <li><a href="category.html">Products categories</a></li>
-                                                    <li><a href="products-grid.html">Products grid</a></li>
-                                                    <li><a href="products-list.html">Products list</a></li>
-                                                    <li><a href="products-grid-intro.html">Products grid intro</a></li>
-                                                    <li><a href="products-topbar.html">Products topbar filter</a></li>
-                                                    <li><a href="product.html">Product overview</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-              </li>
-              <li>
-                <a href="javascript:void(0);">Smart Watches <span class="open-dropdown">
-                    <!-- <i class="fa fa-angle-down"></i></span> -->
-                </a>
-                <!-- <div class="navbar-dropdown navbar-dropdown-single">
-                                    <div class="navbar-box">
-                                        <div class="box-full">
-                                            <div class="box clearfix">
-                                                <ul>
-                                                    <li class="label">Blog pages</li>
-                                                    <li><a href="blog-grid.html">Blog grid</a></li>
-                                                    <li><a href="blog-list.html">Blog list</a></li>
-                                                    <li><a href="blog-grid-fullpage.html">Blog fullpage</a></li>
-                                                    <li><a href="ideas.html">Blog ideas</a></li>
-                                                    <li><a href="article.html">Article</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-              </li>
-              <li>
-                <a href="javascript:void(0);">Sound <span class="open-dropdown">
-                    <!-- <i class="fa fa-angle-down"></i></span> -->
-                </a>
-                <!-- <div class="navbar-dropdown navbar-dropdown-single">
-                                    <div class="navbar-box">
-                                        <div class="box-full">
-                                            <div class="box clearfix">
-                                                <ul>
-                                                    <li class="label">Checkout</li>
-                                                    <li><a href="checkout-1.html">Checkout - Cart items</a></li>
-                                                    <li><a href="checkout-2.html">Checkout - Delivery</a></li>
-                                                    <li><a href="checkout-3.html">Checkout - Payment</a></li>
-                                                    <li><a href="checkout-4.html">Checkout - Receipt</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-              </li>
-              <li><a href="javascript:void(0);">Accessories</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- ==========  Search wrapper ========== -->
-
-        <div class="search-wrapper">
-          <input class="form-control" placeholder="Search..." />
-          <button class="btn btn-main">Go!</button>
-        </div>
-
-        <!-- ==========  Login wrapper ========== -->
-
-        <div class="login-wrapper">
-          <div class="h4">Sign in</div>
-          <form>
-            <div class="form-group">
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-group">
-              <a href="#forgotpassword" class="open-popup">Forgot password?</a>
-              <a href="#createaccount" class="open-popup">Don't have an account?</a>
-            </div>
-            <button type="submit" class="btn btn-block btn-main">Submit</button>
-          </form>
-        </div>
-
-        <!-- ==========  Cart wrapper ========== -->
-
-      </div>
-    </nav>
-
-
-    <!-- ========================  Header content ======================== -->
-
-    <section class="header-content">
-
-      <div class="clearifx">
-
-        <div class="owl-slider">
-          <!-- === slide item === -->
-          <!-- <style="background-image: url({% static 'images/cover.jpg' %})"></style> -->
-          <div class="item" style="background-image: url({% static 'shop/images/gallery-1.jpg' %});">
-            <div class="box box-left">
-              <div class="text-right">
-                <!-- <h2 class="title animated h1" data-animation="fadeInDown">Abufulan</h2> -->
-                <div class="animated" data-animation="fadeInUp">
-                  Welcome to the home of Quality
-                  <br />
-                  We are Authorised Apple & Samsung Resellers.
-                </div>
-                <div class="animated" data-animation="fadeInUp">
-                  <a href="#" target="_blank" class="btn btn-clean"><i class="icon icon-phone"></i>
-                    Call Now</a>
-                  <!-- <a href="#" target="_blank" class="btn btn-clean"><i class="icon icon-eye"></i>
-                                        Details</a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- === slide item === -->
-          <div class="item" style="background-image: url({% static 'shop/images/gallery-2.jpg' %});">
-            <div class="box box-right">
-              <div class="text-left">
-                <!-- <h2 class="title animated h1" data-animation="fadeInDown">Buy this template</h2> -->
-                <div class="animated" data-animation="fadeInUp">
-                  Phones | TVs | Computers 💻 | Drones and all Accessories.
-                  <br />
-                  TRADEIN 📱 Accepted | 📍JAMIA MALL G64
-                </div>
-                <div class="animated" data-animation="fadeInUp">
-                  <a href="#" target="_blank" class="btn btn-clean"><i class="icon icon-phone"></i>
-                    Call Now</a>
-                  <!-- <a href="#" target="_blank" class="btn btn-clean"><i class="icon icon-eye"></i>
-                                        Details</a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--/owl-slider-->
-      </div>
-    </section>
-
-    <!-- ========================  Blog Block ======================== -->
-
-    <section class="blog blog-block blog-intro">
-
-      <div class="container">
-
-        <!-- === blog header === -->
-
-        <header class="hidden">
-          <div class="row">
-            <div class="col-md-offset-2 col-md-8 text-center">
-              <h2 class="title">Check out our featured news</h2>
-              <div class="text">
-                <p>Keeping things minimal</p>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        <div class="row row-clean">
-
-          <!-- === blog item === -->
-
-          <div class="col-xs-6 col-sm-3">
-            <article>
-              <a href="products-grid.html">
-                <div class="image">
-                  <img src="{% static 'shop/images/project-1.jpg' %}" alt="" />
-                </div>
-                <div class="entry entry-block">
-                  <!-- <div class="date">2018 Collection</div> -->
-                  <div class="title">
-                    <h2 class="h3">Phones</h2>
-                  </div>
-                  <!-- <div class="description">
-                                        <p>
-                                            Top picks four your desire
-                                        </p>
-                                    </div> -->
-                </div>
-                <!-- <div class="show-more">
-                                    <span class="btn btn-clean">Shop now</span>
-                                </div> -->
-              </a>
-            </article>
-          </div>
-
-          <!-- === blog item === -->
-
-          <div class="col-xs-6 col-sm-3">
-            <article>
-              <a href="products-grid.html">
-                <div class="image">
-                  <img src="{% static 'shop/images/project-2.jpg' %}" alt="" />
-                </div>
-                <div class="entry entry-block">
-                  <!-- <div class="date">New arrivals</div> -->
-                  <div class="title">
-                    <h2 class="h3">Laptops</h2>
-                  </div>
-                  <!-- <div class="description">
-                                        <p>
-                                            Explore popular devices
-                                        </p>
-                                    </div> -->
-                </div>
-                <!-- <div class="show-more">
-                                    <span class="btn btn-clean">Shop now</span>
-                                </div> -->
-              </a>
-            </article>
-          </div>
-
-          <!-- === blog item === -->
-
-          <div class="col-xs-6 col-sm-3">
-            <article>
-              <a href="products-grid.html">
-                <div class="image">
-                  <img src="{% static 'shop/images/Untitled-1.jpg' %}" alt="" />
-                </div>
-                <div class="entry entry-block">
-                  <!-- <div class="date">Up to 50% off</div> -->
-                  <div class="title">
-                    <h2 class="h3">Sound</h2>
-                  </div>
-                  <!-- <div class="description">
-                                        <p>
-                                            Available for quick shipping
-                                        </p>
-                                    </div> -->
-                </div>
-                <!-- <div class="show-more">
-                                    <span class="btn btn-clean">Shop now</span>
-                                </div> -->
-              </a>
-            </article>
-          </div>
-
-          <!-- === blog item === -->
-
-          <div class="col-xs-6 col-sm-3">
-            <article>
-              <a href="products-grid.html">
-                <div class="image">
-                  <img src="{% static 'shop/images/project-3.jpg' %}" alt="" />
-                </div>
-                <div class="entry entry-block">
-                  <!-- <div class="date">Save big on</div> -->
-                  <div class="title">
-                    <h2 class="h3">Other Accessories</h2>
-                  </div>
-                  <!-- <div class="description">
-                                        <p>
-                                            Fun to explore
-                                        </p>
-                                    </div> -->
-                </div>
-                <!-- <div class="show-more">
-                                    <span class="btn btn-clean">Shop now</span>
-                                </div> -->
-              </a>
-            </article>
-          </div>
-
-        </div>
-        <!--/row-->
-
-        <!-- === button more === -->
-
-        <div class="wrapper-more">
-          <a class="btn btn-lg"></a>
-        </div>
-
-      </div>
-      <!--/container-->
-    </section>
-
-    <!-- ========================  Block banner category ======================== -->
-
-
-    <!-- ========================  Icons slider ======================== -->
-
-    <section class="owl-icons-wrapper">
-
-      <!-- === header === -->
-
-      <header class="hidden">
-        <div class="text-center">
-          <h2 class="title">Product categories</h2>
-        </div>
-      </header>
-
-      <div class="clearfix">
-
-        <div class="owl-icons owl-icons-rounded owl-icons-frontpage">
-
-          <!-- === icon item === -->
-
-
-          <img src="{% static 'shop/images/product-1.jpg' %}" alt="Alternate Text" />
-
-          <img src="{% static 'shop/images/product-2.jpg' %}" alt="Alternate Text" />
-
-          <img src="{% static 'shop/images/product-3.jpg' %}" alt="Alternate Text" />
-
-          <img src="{% static 'shop/images/product-4.jpg' %}" alt="Alternate Text" />
-
-          <img src="{% static 'shop/images/product-5.jpg' %}" alt="Alternate Text" />
-
-          <img src="{% static 'shop/images/product-6.jpg' %}" alt="Alternate Text" />
-
-          <img src="{% static 'shop/images/product-7.jpg' %}" alt="Alternate Text" />
-
-          <img src="{% static 'shop/images/product-8.jpg' %}" alt="Alternate Text" />
-
-          <img src="{% static 'shop/images/product-9.jpg' %}" alt="Alternate Text" />
-
-
-
-
-
-        </div>
-        <!--/owl-icons-->
-      </div>
-      <!--/container-->
-    </section>
-
-    <!-- ========================  Best seller ======================== -->
-
-    <section class="products">
-
-      <!-- === header title === -->
-
-      <header>
-        <div class="row">
-          <div class="col-md-offset-2 col-md-8 text-center">
-            <h2 class="title">Best Sellers</h2>
-            <div class="text">
-              <p>Check out our latest collections</p>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div id="mainContent" class="row row-clean">
-
-        <!-- === product-item === -->
-
-      </div>
-      <!--/row-->
-      <!-- === button more === -->
-
-      <div class="wrapper-more">
-        <!-- <a href="products-grid.html" class="btn btn-lg">View all</a> -->
-        <a class="btn btn-lg"></a>
-
-      </div>
-
-      <!-- ========================  Product info popup - quick view ======================== -->
-
-      <div class="popup-main mfp-hide" id="productid1">
-
-        <!-- === product popup === -->
-
-
-        <!--/product-->
-      </div>
-      <!--popup-main-->
-      <!--/container-->
-
-    </section>
-
-    <!-- ========================  Block banner fashion ======================== -->
-
-    <section class="blog blog-block">
-
-      <!-- === header === -->
-
-      <header class="hidden">
-        <div class="text-center">
-          <h2 class="title">Fashion</h2>
-        </div>
-      </header>
-
-      <div class="row row-clean">
-
-        <!-- === blog item === -->
-
-        <div class="col-sm-4">
-          <article>
-            <div>
-              <div class="image">
-                <img src="{% static 'shop/images/shop-3.jpg' %}" alt="" />
-              </div>
-              <div class="entry entry-block">
-                <div class="date">Shop for</div>
-                <div class="title">
-                  <h2 class="h3">HP Laptops</h2>
-                </div>
-                <!-- <div class="description">
+                                    <p class="inform inform-cart">
+                                        <span class="strong">CART<br></span>
+                                        <span class="price-cart">$1150.69</span>
+                                    </p>
+                                </a>
+                                <div class="dropdown-menu dropdown-cart" aria-labelledby="label3">
                                     <ul>
                                         <li>
-                                            <a href="#">New arrivals</a>
+                                            <div class="item-order">
+                                                <div class="item-photo">
+                                                    <a href="#"><img src="{% static 'shop/cart1.png' %}" alt="images" class="img-responsive"></a>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
+                                                    <p class="price black">$199.69</p>
+                                                    <p class="quantity">x1</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-delete"><a href="#" title="" class="btndel">x</a></div>
                                         </li>
                                         <li>
-                                            <a href="#">Doscount sale collection</a>
-                                        </li>
-                                        <li class="more">
-                                            <a href="#">More</a>
+                                            <div class="item-order">
+                                                <div class="item-photo">
+                                                    <a href="#"><img src="{% static 'shop/cart1.png' %}" alt="images" class="img-responsive"></a>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
+                                                    <p class="price black">$199.69</p>
+                                                    <p class="quantity">x1</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-delete"><a href="#" title="" class="btndel">x</a></div>
                                         </li>
                                     </ul>
-                                </div> -->
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- === blog item === -->
-
-        <div class="col-sm-4">
-          <article>
-            <div>
-              <div class="image">
-                <img src="{% static 'shop/images/shop-4.jpg' %}" alt="" />
-              </div>
-              <div class="entry entry-block">
-                <div class="date">Shop for</div>
-                <div class="title">
-                  <h2 class="h3">Asus Laptops</h2>
+                                    <div class="content-1">
+                                        <span class="total">Total: <strong class="price black">$399.00</strong></span>
+                                        <span class="quantity"><strong class="number">02</strong> products</span>
+                                    </div>
+                                    <div class="content-2">
+                                        <a href="#" class="addcart">ADD TO CART</a>
+                                        <a href="#" class="viewcart">View Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="block block-1">
+                            <div class="protect">
+                                <div class="photo">
+                                    <svg width="28" height="33" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.05 214.27">
+                                        <title>security</title>
+                                        <path d="M196.93,55.17c-.11-5.78-.21-11.25-.21-16.54a7.5,7.5,0,0,0-7.5-7.5c-32.07,0-56.5-9.22-76.85-29a7.5,7.5,0,0,0-10.46,0c-20.35,19.79-44.77,29-76.84,29a7.5,7.5,0,0,0-7.5,7.5c0,5.29-.1,10.76-.22,16.54-1,53.84-2.44,127.57,87.33,158.68a7.49,7.49,0,0,0,4.91,0C199.36,182.74,198,109,196.93,55.17ZM107.13,198.81c-77-28-75.82-89.23-74.79-143.35.06-3.25.12-6.4.16-9.48,30-1.27,54.06-10.37,74.63-28.28,20.57,17.91,44.59,27,74.63,28.28,0,3.08.1,6.23.16,9.48C183,109.58,184.12,170.84,107.13,198.81Z" transform="translate(-17.11 0)" />
+                                        <path d="M133,81.08l-36.2,36.2L81.31,101.83a7.5,7.5,0,0,0-10.61,10.61l20.75,20.75a7.5,7.5,0,0,0,10.61,0l41.5-41.5A7.5,7.5,0,1,0,133,81.08Z" transform="translate(-17.11 0)" />
+                                    </svg>
+                                </div>
+                                <p class="inform">
+                                    <span class="strong">Infomation<br></span> Protected
+                                </p>
+                            </div>
+                            <div class="return">
+                                <div class="photo">
+                                    <svg width="30" height="30" id="Capa_2" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612.85">
+                                        <title>update-arrows</title>
+                                        <path d="M600.48,221.79c-14.43-50.5-40.14-94.33-77.94-132.13a300.48,300.48,0,0,0-100-66.57C385,7.84,346.58,0,306.78,0V37.47c69.91,0,138.93,27,190,78.28A264.15,264.15,0,0,1,564.7,231.16c12.55,43.87,14.38,88,4.68,132.47A261.77,261.77,0,0,1,509.83,482l-52.18-51.18V558.33l130.13,2-52.18-52.18Q587.78,448.93,604.84,373A301.45,301.45,0,0,0,600.48,221.79Z" transform="translate(-0.43)" />
+                                        <path d="M47.85,382A267.44,267.44,0,0,1,43.5,249.56,263.58,263.58,0,0,1,103.38,130.8l52.18,51.85V54.53L25.44,53.19l51.85,51.52Q25.11,163.92,8,239.85a301.82,301.82,0,0,0,4.35,151.54c14.34,50.2,40.14,94,77.95,131.81a300.35,300.35,0,0,0,100,66.57,306.59,306.59,0,0,0,116.42,23.08v-36.8a267,267,0,0,1-190.35-78.94C83.54,464.09,60.41,425.9,47.85,382Z" transform="translate(-0.43)" />
+                                    </svg>
+                                </div>
+                                <p class="inform">
+                                    <span class="strong">Free<br></span> Return
+                                </p>
+                            </div>
+                        </div> -->
+                        <div class="search hidden-xs hidden-sm">
+                            <form action="#" class="search-form">
+                                <input type="text" name="s" class="form-control" placeholder="SEARCH...">
+                                <button type="submit" class="search-icon"></button>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
-                <!-- <div class="description">
-                                    <ul class="col">
-                                        <li>
-                                            <a href="#">New arrivals</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Doscount sale collection</a>
-                                        </li>
-                                        <li class="more">
-                                            <a href="#">More</a>
-                                        </li>
-                                    </ul>
-                                </div> -->
-              </div>
             </div>
-          </article>
         </div>
+        <div class="menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-6 column-left">
+                        <aside id="column-left">
+                            <nav class="navbar-default">
+                                <div class="menu-heading js-nav-menu">ALL CATEGORIES</div>
+                                <div class="vertical-wrapper js-dropdown-menu js-dropdown-open active">
+                                    <ul class="level0">
+                                        <!-- <li><a href="#">camera</a><span class="icon icon-camera"></span></li> -->
+                                        <li>
+                                            <a href="#">Phones</a><span class="icon"></span>
+                                            <div class="dropdown-content">
+                                                <ul class="level1">
+                                                    <li class="sub-menu col-3">
+                                                        <a href="#">PHONES</a>
+                                                        <ul class="level2">
+                                                            <li class="col-inner"><a href="#">Samsang</a></li>
+                                                            <li class="col-inner"><a href="#">Iphone</a></li>
+                                                            <li class="col-inner"><a href="#">Xiaomi</a></li>
+                                                            <li class="col-inner"><a href="#">Tecno</a></li>
+                                                            <li class="col-inner"><a href="#">Infinix</a></li>
+                                                            <li class="col-inner"><a href="#">Huawei</a></li>
+                                                            <li class="col-inner"><a href="#">Xtigi</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
 
-        <!-- === blog item === -->
+                                            </div>
 
-        <div class="col-sm-4">
-          <article>
-            <div>
-              <div class="image">
-                <img src="{% static 'shop/images/shop-5.jpg' %}" alt="" />
-              </div>
-              <div class="entry entry-block">
-                <div class="date">Shop for</div>
-                <div class="title">
-                  <h2 class="h3">Dell Laptops</h2>
+                                        </li>
+                                        <li>
+                                            <a href="#">Laptops</a><span class="icon"></span>
+                                            <div class="dropdown-content">
+                                                <ul class="level1">
+                                                    <li class="sub-menu col-3">
+                                                        <a href="#">LAPTOPS</a>
+                                                        <ul class="level2">
+                                                            <li class="col-inner"><a href="#">MAC Book</a></li>
+                                                            <li class="col-inner"><a href="#">HP</a></li>
+                                                            <li class="col-inner"><a href="#">Dell</a></li>
+                                                            <li class="col-inner"><a href="#">Acer</a></li>
+                                                            <li class="col-inner"><a href="#">Lenovo</a></li>
+                                                            <li class="col-inner"><a href="#">Toshiba</a></li>
+                                                            <li class="col-inner"><a href="#">ASUS</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                        </li>
+
+                                        <li class="game">
+                                            <a href="#">Accessories</a>
+                                            <div class="dropdown-content">
+                                                <ul class="level1">
+                                                    <li class="sub-menu col-3">
+                                                        <a href="#">ACCESSORIES</a>
+                                                        <ul class="level2">
+                                                            <li class="col-inner"><a href="#">Smart Watch</a></li>
+                                                            <li class="col-inner"><a href="#">Headphones</a></li>
+                                                            <li class="col-inner"><a href="#">Phone case</a></li>
+                                                            <li class="col-inner"><a href="#">Straps</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                        </li>
+                                        <!-- <li><a href="#">headphone</a></li> -->
+                                        <!-- <li><a href="#">mouse</a></li> -->
+                                        <!-- <li><a href="#">washing machine</a></li> -->
+                                        <!-- <li><a href="#">air conditional</a></li> -->
+                                        <!-- <li><a href="#">accessories</a></li> -->
+                                        <!-- <li><a href="#">others</a></li> -->
+
+                                    </ul>
+                                </div>
+                            </nav>
+                        </aside>
+                    </div>
+                    <div class="col-md-9 col-sm-8 col-xs-6 column-right">
+                        <div class="deal">
+                            <a href="#onsale" class="btn-deal">Hot Deal</a>
+                        </div>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="menu-title">MENU</span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="menubar js-menubar">
+                                <li class=" menu-homepage menu-item-has-child dropdown">
+                                    <a href="index.html" title="Home"><i class="fa fa-home"></i>home</a>
+                                    <span class="plus js-plus-icon"></span>
+                                </li>
+                                <li class="menu-collection-page menu-item-has-child dropdown">
+                                    <a href="shop.html" title="Products"><i class="fa fa-shopping-cart"></i>&nbsp;
+                                        Products</a>
+                                    <span class="plus js-plus-icon"></span>
+                                    <!-- <ul class="dropdown-menu menu-level">
+                                        <li><a href="product-collection.html" title="shop collection">Shop Collection</a></li>
+                                        <li><a href="shop-list-v2.html" title="shop list v1">Shop List V1</a></li>
+                                        <li><a href="shop-list-v3.html" title="shop list v2">Shop List V2</a></li>
+                                        <li><a href="#" title="shoplist v3">Shop List V3</a></li>
+                                    </ul> -->
+                                </li>
+                                <li class=" menu-demo-page menu-item-has-child dropdown">
+                                    <a href="about-us.html" title="About Us"><i class="fa fa-info-circle"></i>&nbsp;
+                                        About Us </a>
+                                    <span class="plus js-plus-icon"></span>
+                                    <!-- <div class="dropdown-menu dropdown-menu-bg">
+                                        <ul class="level1">
+                                            <li class="sub-menu col-3">
+                                                <a href="#">Cart pages</a>
+                                                <ul class="level2">
+                                                    <li class="col-inner"><a href="checkout-1.html" title="">Shopping Cart</a></li>
+                                                    <li class="col-inner"><a href="checkout-2.html" title="">Check Out</a></li>
+                                                    <li class="col-inner"><a href="checkout-3.html" title="">Order</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="sub-menu col-3">
+                                                <a href="#">Product Pages</a>
+                                                <ul class="level2">
+                                                    <li class="col-inner"><a href="shop-single.html" title="">Shop Single V1</a></li>
+                                                    <li class="col-inner"><a href="shop-single-v2.html" title="">Shop Single V2</a></li>
+                                                    <li class="col-inner"><a href="#" title="">Shop Single V3</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="sub-menu col-3">
+                                                <a href="#">NEW Arrival</a>
+                                                <ul class="level2">
+                                                    <li class="text-center"><a href="comming-soon.html"><img src="{% static 'shop/megaimg.png' %}" alt="images" class="img-responsive"></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div> -->
+                                </li>
+                                <li class="dropdown menu-contact-page menu-item-has-child">
+                                    <a href="contact_us.html" title="Contact Us"><i class="fa fa-paper-plane"></i>&nbsp;
+                                        CONTACT US</a>
+                                    <span class="plus js-plus-icon"></span>
+                                    <!-- <ul class="dropdown-menu menu-level">
+                                        <li><a href="contact_us.html" title="contact us">Contact Us </a></li>
+                                        <li><a href="about-us.html" title="about us">About Us</a></li>
+                                    </ul> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <!-- <div class="description">
-                                    <ul class="col">
-                                        <li>
-                                            <a href="#">New arrivals</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Doscount sale collection</a>
-                                        </li>
-                                        <li class="more">
-                                            <a href="#">More</a>
-                                        </li>
-                                    </ul>
-                                </div> -->
-              </div>
             </div>
-          </article>
         </div>
-
-      </div>
-      <!--/row-->
+    </header>
+    <!-- /header -->
+    <section class="slide">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="row top-row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="single-item js-banner">
+                                <div class="slide-img">
+                                    <img src="{% static 'shop/img/images/phones1.jpg' %}" alt="images"
+                                        class="img-reponsive">
+                                    <div class="slide-content ver2">
+                                        <h5 class="brand">Shop for</h5>
+                                        <h3><span class="strong">Phones</span><br>All Brands</h3>
+                                        <!-- <p>Dolor sit amet, consecte, adipiscing.</p> -->
+                                    </div>
+                                    <a href="#" class="slide-button">shop now</a>
+                                </div>
+                                <div class="slide-img">
+                                    <img src="{% static 'shop/img/images/laptops1.jpg' %}" alt="images"
+                                        class="img-reponsive">
+                                    <div class="slide-content ver2">
+                                        <h5 class="brand">Variety of</h5>
+                                        <h3><span class="strong">Laptops</span></h3>
+                                        <!-- <p>Dolor sit amet, consecte, adipiscing.</p> -->
+                                    </div>
+                                    <a href="#" class="slide-button">shop now</a>
+                                </div>
+                                <div class="slide-img">
+                                    <img src="{% static 'shop/img/images/accessories1.jpg' %}" alt="images"
+                                        class="img-reponsive">
+                                    <div class="slide-content ver2">
+                                        <h5 class="brand">Quality</h5>
+                                        <h3><span class="strong">Accessories</span></h3>
+                                        <p>Get the best today in stock!</p>
+                                    </div>
+                                    <a href="#" class="slide-button">shop now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="sub-banner">
+                                <a href="#"><img src="{% static 'shop/img/images/smbanner1.jpg' %}" alt="images"
+                                        class="img-reponsive"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="sub-banner">
+                                <a href="#"><img src="{% static 'shop/img/images/Smbanner2.jpg' %}" alt="images"
+                                        class="img-reponsive"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-banner"></div>
     </section>
-
-    <!-- ========================  Products widget ======================== -->
-
-    <section class="products">
-
-      <!-- === header title === -->
-
-      <header>
-        <div class="row">
-          <div class="col-md-offset-2 col-md-8 text-center">
-            <h2 class="title">Laptops</h2>
-            <div class="text">
-              <p>Check out our latest collection of Laptops</p>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div class="row row-clean">
-
-        <!-- === product-item === -->
-
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-
-          <article>
-            <div class="info">
-              <span class="add-favorite">
-                <a href="javascript:void(0);" data-title="Add to favorites"
-                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-              </span>
-              <span>
-                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-              </span>
-            </div>
-            <div class="btn btn-add">
-              <i class="icon icon-cart"></i>
-            </div>
-            <div class="figure-grid">
-              <div class="image">
-                <a href="#productid1" class="mfp-open">
-                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
-                </a>
-              </div>
-              <div class="text">
-                <h2 class="title h5">
-                  <a href="product.html">HP 1020</a>
-                </h2>
-                <sub>Ksh 20000-</sub>
-                <sup>Ksh 11000-</sup>
-                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
-                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
-                  nulla</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- === product-item === -->
-
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-          <article>
-            <div class="info">
-              <span class="add-favorite">
-                <a href="javascript:void(0);" data-title="Add to favorites"
-                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-              </span>
-              <span>
-                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-              </span>
-            </div>
-            <div class="btn btn-add">
-              <i class="icon icon-cart"></i>
-            </div>
-            <div class="figure-grid">
-              <div class="image">
-                <a href="#productid1" class="mfp-open">
-                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
-                </a>
-              </div>
-              <div class="text">
-                <h2 class="title h5">
-                  <a href="product.html">HP 1020</a>
-                </h2>
-                <sub>Ksh 20000-</sub>
-                <sup>Ksh 11000-</sup>
-                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
-                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
-                  nulla</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- === product-item === -->
-
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-          <article>
-            <div class="info">
-              <span class="add-favorite">
-                <a href="javascript:void(0);" data-title="Add to favorites"
-                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-              </span>
-              <span>
-                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-              </span>
-            </div>
-            <div class="btn btn-add">
-              <i class="icon icon-cart"></i>
-            </div>
-            <div class="figure-grid">
-              <span class="label label-warning">New</span>
-              <div class="image">
-                <a href="#productid1" class="mfp-open">
-                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
-                </a>
-              </div>
-              <div class="text">
-                <h2 class="title h5">
-                  <a href="product.html">HP 1020</a>
-                </h2>
-                <sub>Ksh 20000-</sub>
-                <sup>Ksh 11000-</sup>
-                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
-                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
-                  nulla</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- === product-item === -->
-
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-          <article>
-            <div class="info">
-              <span class="add-favorite added">
-                <a href="javascript:void(0);" data-title="Add to favorites"
-                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-              </span>
-              <span>
-                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-              </span>
-            </div>
-            <div class="btn btn-add">
-              <i class="icon icon-cart"></i>
-            </div>
-            <div class="figure-grid">
-              <div class="image">
-                <a href="#productid1" class="mfp-open">
-                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
-                </a>
-              </div>
-              <div class="text">
-                <h2 class="title h5">
-                  <a href="product.html">HP 1020</a>
-                </h2>
-                <sub>Ksh 20000-</sub>
-                <sup>Ksh 11000-</sup>
-                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
-                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
-                  nulla</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- === product-item === -->
-
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-          <article>
-            <div class="info">
-              <span class="add-favorite">
-                <a href="javascript:void(0);" data-title="Add to favorites"
-                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-              </span>
-              <span>
-                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-              </span>
-            </div>
-            <div class="btn btn-add">
-              <i class="icon icon-cart"></i>
-            </div>
-            <div class="figure-grid">
-              <span class="label label-info">-50%</span>
-              <div class="image">
-                <a href="#productid1" class="mfp-open">
-                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
-                </a>
-              </div>
-              <div class="text">
-                <h2 class="title h5">
-                  <a href="product.html">HP 1020</a>
-                </h2>
-                <sub>Ksh 20000-</sub>
-                <sup>Ksh 11000-</sup>
-                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
-                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
-                  nulla</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- === product-item === -->
-
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-          <article>
-            <div class="info">
-              <span class="add-favorite">
-                <a href="javascript:void(0);" data-title="Add to favorites"
-                  data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-              </span>
-              <span>
-                <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-              </span>
-            </div>
-            <div class="btn btn-add">
-              <i class="icon icon-cart"></i>
-            </div>
-            <div class="figure-grid">
-              <div class="image">
-                <a href="#productid1" class="mfp-open">
-                  <img src="{% static 'shop/images/3.jpg' %}" alt="" width="360" />
-                </a>
-              </div>
-              <div class="text">
-                <h2 class="title h5">
-                  <a href="product.html">HP 1020</a>
-                </h2>
-                <sub>Ksh 20000-</sub>
-                <sup>Ksh 11000-</sup>
-                <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur
-                  facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur
-                  nulla</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- === button more === -->
-
-      <div class="wrapper-more">
-        <!-- <a href="products-grid.html" class="btn btn-lg">View store</a> -->
-        <a class="btn btn-lg"></a>
-
-      </div>
-    </section>
-
-    <!-- ========================  Block banner shop  ======================== -->
-
-    <section class="blog blog-block">
-
-      <!-- === header === -->
-
-      <header class="hidden">
-        <div class="text-center">
-          <h2 class="title">Banner</h2>
-        </div>
-      </header>
-
-      <div class="row row-clean">
-
-        <!-- === blog item === -->
-
-        <div class="col-lg-6">
-          <article>
-            <div>
-              <div class="image">
-                <img src="{% static 'shop/images/cat-1.jpg' %}" alt="" />
-              </div>
-              <div class="entry entry-block">
-                <!-- <div class="date">Shop for</div> -->
-                <div class="title">
-                  <h2 class="h3">Macbooks</h2>
-                </div>
-                <!-- <div class="description">
+    <section class="bigdeal" id="onsale">
+        <div class="container">
+            <div class="label label-1">ONSALE</div>
+            <div class="sale-list">
+                <div class="row">
+                    <div class="col-md-7 col-sm-12">
+                        <div class="product-item ver4 top-inner">
+                            <div class="prod-item-img">
+                                <a href="#"><img src="{% static 'shop/img/products/iwatch2.jpg' %}" alt="images"
+                                        class="img-reponsive"></a>
+                                <div class="prod-choose">
+                                    <div class="prod-color">
+                                        <span class="dot"></span>
+                                        <span class="dot yellow"></span>
+                                        <span class="dot green"></span>
+                                    </div>
+                                    <div class="prod-price">
+                                        <span class="price old">$200.50</span>
+                                        <span class="price-ver2 price-lg">$125.00</span>
+                                        <span class="productPriceDiscount">Save<br><span
+                                                class="strong">$75.5</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="prod-info">
+                                <h3><a class="prod-name" href="#" title="">Sony Smartwatch 3 - 2016</a></h3>
+                                <p class="brand">SONY</p>
+                                <div class="ratingstar">
+                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                    <span class="number">(12)</span>
+                                </div>
+                                <div class="prod-description">
                                     <ul>
-                                        <li>
-                                            <a href="#">New arrivals</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Doscount sale collection</a>
-                                        </li>
-                                        <li class="more">
-                                            <a href="#">More</a>
-                                        </li>
+                                        <li>Plays all your music, fomat type (WAV, MP4, ...)</li>
+                                        <li>Fills the room with immersive</li>
+                                        <li>Allows hands-free</li>
+                                        <li>Controls lights, switches</li>
                                     </ul>
-                                </div> -->
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- === blog item === -->
-
-        <div class="col-lg-6">
-          <article>
-            <div>
-              <div class="image">
-                <img src="{% static 'shop/images/cat-2.jpg' %}" alt="" />
-              </div>
-              <div class="entry entry-block">
-                <!-- <div class="date">Shop for</div> -->
-                <div class="title">
-                  <h2 class="h3">Apple Accessories</h2>
+                                </div>
+                                <div class="countdown" data-countdown="countdown" data-date="08-31-2018-00-00-00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12 ">
+                        <div class="product-item ver1 padding--bottom margin-r">
+                            <div class="prod-item-img set--width">
+                                <a class="image" href="#"><img src="{% static 'shop/img/products/ipad.jpg' %}"
+                                        alt="images" class="img-responsive"></a>
+                            </div>
+                            <div class="prod-info ver1">
+                                <h3><a href="#" title="">iPad Pro MLMX2CL/A (MLMX2LL/A) 9.7-inch</a></h3>
+                                <div class="ratingstar sm">
+                                    <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                    <span class="number">(12)</span>
+                                </div>
+                                <div class="prod-price">
+                                    <span class="price old">$299.6</span>
+                                    <span class="price">$210.25</span>
+                                </div>
+                            </div>
+                            <div class="label label-2 blue">New</div>
+                        </div>
+                        <div class="product-item ver1 margin-r ">
+                            <div class="prod-item-img set--width">
+                                <a class="image" href="#"><img src="{% static 'shop/img/products/seiko.jpg' %}"
+                                        alt="images" class="img-responsive"></a>
+                            </div>
+                            <div class="prod-info ver1">
+                                <h3><a href="#" title="">Motorola Moto 360 Sport - 45mm, Black</a></h3>
+                                <div class="ratingstar sm">
+                                    <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                    <span class="number">(12)</span>
+                                </div>
+                                <div class="prod-price">
+                                    <span class="price old">$399.6</span>
+                                    <span class="price">$327.50</span>
+                                </div>
+                            </div>
+                            <div class="label label-2 red">Hot</div>
+                        </div>
+                    </div>
                 </div>
-                <!-- <div class="description">
-                                    <ul class="col">
-                                        <li>
-                                            <a href="#">New arrivals</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Doscount sale collection</a>
-                                        </li>
-                                        <li class="more">
-                                            <a href="#">More</a>
-                                        </li>
-                                    </ul>
-                                </div> -->
-              </div>
             </div>
-          </article>
         </div>
-
-
-      </div>
-      <!--/row-->
     </section>
-
-
-    <!-- ========================  Stretcher widget ======================== -->
-
-    <section class="stretcher-wrapper">
-
-      <!-- === stretcher header === -->
-
-      <header>
-        <div class="row">
-          <div class="col-md-offset-2 col-md-8 text-center">
-            <h1 class="h2 title">Smart watches</h1>
-            <div class="text">
-              <p>Give the gift of polished punctuality</p>
+    <section class="featured-product">
+        <div class="container">
+            <div class="heading-v1">
+                <h3 class="pull-left">featured products</h3>
+                <ul class="otherr-link pull-right">
+                    <li class="active"><a data-toggle="pill" href="#all">all</a></li>
+                    <li><a data-toggle="pill" href="#elec">Electronic</a></li>
+                    <li><a data-toggle="pill" href="#fashion">Fashion </a></li>
+                    <li><a data-toggle="pill" href="#it">IT </a></li>
+                    <li><a data-toggle="pill" href="#food">Food & Drink</a></li>
+                </ul>
+                <div class="clearfix"></div>
             </div>
-          </div>
+            <div class="tab-content">
+                <div id="all" class="tab-pane fade in active">
+                    <div class="prod-fea-list">
+                        <div class="row">
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/smarphone.jpg' %}"
+                                                alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$212.20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/sound3.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a>
+                                        </h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$699.6</span>
+                                            <span class="price">$510.02</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/tivi.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar sm" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price margin--top">
+                                            <span class="price old">$399.6</span>
+                                            <span class="price">$299.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/sony.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/macbook.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price margin--top">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price">$109.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="elec" class="tab-pane fade ">
+                    <div class="prod-fea-list">
+                        <div class="row">
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/smarphone.jpg' %}"
+                                                alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$212.20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/sound3.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a>
+                                        </h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$699.6</span>
+                                            <span class="price">$510.02</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/tivi.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar sm" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price margin--top">
+                                            <span class="price old">$399.6</span>
+                                            <span class="price">$299.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/sony.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/macbook.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price margin--top">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price">$109.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="fashion" class="tab-pane fade ">
+                    <div class="prod-fea-list">
+                        <div class="row">
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/smarphone.jpg' %}"
+                                                alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$212.20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/sound3.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a>
+                                        </h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$699.6</span>
+                                            <span class="price">$510.02</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/tivi.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar sm" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price margin--top">
+                                            <span class="price old">$399.6</span>
+                                            <span class="price">$299.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/sony.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/macbook.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price margin--top">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price">$109.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="it" class="tab-pane fade  ">
+                    <div class="prod-fea-list">
+                        <div class="row">
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/images/soundbanner.jpg' %}"
+                                                alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$212.20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/images/soundbanner.jpg' %}"
+                                                alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a>
+                                        </h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$699.6</span>
+                                            <span class="price">$510.02</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/tivi.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar sm" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price margin--top">
+                                            <span class="price old">$399.6</span>
+                                            <span class="price">$299.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/sony.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/macbook.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price margin--top">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price">$109.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="food" class="tab-pane fade  ">
+                    <div class="prod-fea-list">
+                        <div class="row">
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/smarphone.jpg' %}"
+                                                alt="images" class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony Xperia X Compact - Unlocked Smartphone...</a></h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="prod-price">
+                                            <span class="price black">$212.20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/sound3.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony MDRXB950BT/B Ex .fa-1tra Bass Bluetooth Headphones...</a>
+                                        </h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price old">$699.6</span>
+                                            <span class="price">$510.02</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/tivi.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Samsung UN65KS8000 65-Inch 4K Ultra HD Smart LED TV...</a></h3>
+                                        <div class="ratingstar sm" style="display:none;">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price margin--top">
+                                            <span class="price old">$399.6</span>
+                                            <span class="price">$299.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/sony.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Sony a7 Full-Frame Mirrorless Digital Camera...</a></h3>
+                                        <div class="ratingstar sm">
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                            <span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price">
+                                            <span class="price black">$199.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-15 col-sm-4 col-xs-6">
+                                <div class="product-item ver2">
+                                    <div class="prod-item-img bd-style-2">
+                                        <a href="#"><img src="{% static 'shop/img/products/macbook.jpg' %}" alt="images"
+                                                class="img-responsive"></a>
+                                        <div class="button">
+                                            <a href="#" class="addcart">ADD TO CART</a>
+                                            <a href="#" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-info">
+                                        <h3><a href="#">Apple iPad 4 16GB 9.7" Retina Display WiFi Bluetooth...</a></h3>
+                                        <div class="ratingstar" style="display:none;"><span class="number">(12)</span>
+                                        </div>
+                                        <div class="p-price margin--top">
+                                            <span class="price old">$299.6</span>
+                                            <span class="price">$109.69</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </header>
-
-      <!-- === stretcher === -->
-
-      <ul class="stretcher">
-
-        <!-- === stretcher item === -->
-
-        <li class="stretcher-item" style="background-image: url({% static 'shop/images/shop-6.jpg' %});">
-          <!--logo-item-->
-          <div class="stretcher-logo">
-            <div class="text">
-              <!-- <span class="text-intro">Man's</span> -->
-            </div>
-          </div>
-          <!--main text-->
-          <!-- <figure>
-                        <h4>Man's watches</h4>
-                        <figcaption>Collection of prestigious, high precision timepieces</figcaption>
-                    </figure> -->
-          <!--anchor-->
-          <!-- <a href="#">Anchor link</a> -->
-        </li>
-
-        <!-- === stretcher item === -->
-
-        <li class="stretcher-item" style="background-image: url({% static 'shop/images/shop-7.jpg' %});">
-          <!--logo-item-->
-          <div class="stretcher-logo">
-            <div class="text">
-              <!-- <span class="text-intro">Woman's</span> -->
-            </div>
-          </div>
-          <!--main text-->
-          <!-- <figure>
-                        <h4>Womans's watches</h4>
-                        <figcaption>Choose among a wonderful variety of quality smart watches</figcaption>
-                    </figure> -->
-          <!--anchor-->
-          <!-- <a href="#">Anchor link</a> -->
-        </li>
-
-        <!-- === stretcher item === -->
-
-        <li class="stretcher-item" style="background-image: url({% static 'shop/images/shop-8.jpg' %});">
-          <!--logo-item-->
-          <div class="stretcher-logo">
-            <div class="text">
-              <!-- <span class="text-intro">Professional Quality</span> -->
-            </div>
-          </div>
-          <!--main text-->
-          <!-- <figure>
-                        <h4>Professional watches</h4>
-                        <figcaption>Discover your favourite model by combining materials</figcaption>
-                    </figure> -->
-          <!--anchor-->
-          <!-- <a href="">Anchor link</a> -->
-        </li>
-
-        <!-- === stretcher item === -->
-
-        <li class="stretcher-item" style="background-image: url({% static 'shop/images/shop-9.jpg' %});">
-          <!--logo-item-->
-          <div class="stretcher-logo">
-            <div class="text">
-              <!-- <span class="text-intro">Diamond bezzels</span> -->
-            </div>
-          </div>
-          <!--main text-->
-          <!-- <figure>
-                        <h4>Diamond bezzels</h4>
-                        <figcaption>Diamond bezel watch collection of luxurious pieces</figcaption>
-                    </figure> -->
-          <!--anchor-->
-          <!-- <a href="#">Anchor link</a> -->
-        </li>
-
-        <!-- === stretcher item more=== -->
-
-        <li class="stretcher-item more" style="background-image: url({% static 'shop/images/watches_1.jpg' %});">
-          <div class="more-icon">
-          </div>
-        </li>
-
-      </ul>
     </section>
+    <div class="banner_1">
+        <div class="container">
+            <a href="#"><img src="{% static 'shop/img/images/soundbanner.jpg' %}" alt="images"
+                    class="img-responsive"></a>
+        </div>
+    </div>
 
-    <!-- ========================  Cards ======================== -->
-
-    <section id="page-interiors" class="cards">
-
-      <!-- === cards header === -->
-
-      <header>
-        <div class="row">
-          <div class="col-md-offset-2 col-md-8 text-center">
-            <h2 class="title">Sound</h2>
-            <div class="text">
-              <p>Get premium sound performance without compromise!</p>
+    <div class="brand">
+        <div class="container">
+            <div class="owl-carousel owl-theme js-owl-brand">
+                <div class="item">
+                    <a href="#"><img src="{% static 'shop/img/images/logo-11.jpg' %}" alt="images"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="{% static 'shop/img/images/logo-12.jpg' %}" alt="images"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="{% static 'shop/img/images/logo-13.jpg' %}" alt="images"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="{% static 'shop/img/images/logo-14.jpg' %}" alt="images"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="{% static 'shop/img/images/logo-15.jpg' %}" alt="images"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="{% static 'shop/img/images/logo-16.jpg' %}" alt="images"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="{% static 'shop/img/images/logo-17.jpg' %}" alt="images"></a>
+                </div>
+                <!-- <div class="item">
+                    <a href="#"><img src="{% static 'shop/brand/midnight' %} alt="images"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="{% static 'shop/brand/midnight' %} alt="images"></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="{% static 'shop/brand/midnight' %} alt="images"></a>
+                </div> -->
             </div>
-          </div>
         </div>
-      </header>
-
-      <div class="row row-clean">
-
-        <!-- === item === -->
-
-        <div class="col-md-8">
-          <figure>
-            <figcaption style="background-image: url({% static 'shop/images/block-1.jpg' %});">
-              <img src="{% static 'shop/images/block-1.jpg' %}" alt="" />
-            </figcaption>
-            <!-- <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Mobile phones</a> -->
-          </figure>
+    </div>
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="{% static 'shop/img/gift.png' %}" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Deal of the day<br></span> check out today's deal
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="{% static 'shop/img/fly.png' %}" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">We Deliver<br></span> Right to your doorstep
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="{% static 'shop/img/return.png' %}" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Quality Products<br></span> Certified Dealer
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="{% static 'shop/img/secu.png' %}" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Customer Service<br></span> We are proud of best service
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- === item === -->
-
-        <div class="col-md-4">
-          <figure>
-            <figcaption style="background-image: url({% static 'shop/images/block-2.jpg' %});">
-              <img src="{% static 'shop/images/block-2.jpg' %}" alt="" />
-            </figcaption>
-            <!-- <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Home accessories</a> -->
-          </figure>
-        </div>
-
-        <!-- === item === -->
-
-        <div class="col-md-4">
-          <figure>
-            <figcaption style="background-image: url({% static 'shop/images/block-4.jpg' %});">
-              <img src="{% static 'shop/images/block-4.jpg' %}" alt="" />
-            </figcaption>
-            <!-- <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Smart TV</a> -->
-          </figure>
-        </div>
-
-        <!-- === item === -->
-
-        <div class="col-md-4">
-          <figure>
-            <figcaption style="background-image: url({% static 'shop/images/block-3.jpg' %});">
-              <img src="{% static 'shop/images/block-3.jpg' %}" alt="" />
-            </figcaption>
-            <!-- <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Chairs</a> -->
-          </figure>
-        </div>
-
-        <!-- === item === -->
-
-        <div class="col-md-4">
-          <figure>
-            <figcaption style="background-image: url({% static 'shop/images/block-5.jpg' %});">
-              <img src="{% static 'shop/images/block-5.jpg' %}" alt="" />
-            </figcaption>
-            <!-- <a href="#interiorId1" class="btn btn-clean mfp-open mfp-open-scrollto">Gaming</a> -->
-          </figure>
-        </div>
-
-      </div>
-      <!--/row-->
-      <!--/container-->
-      <!-- === button more === -->
-      <div class="wrapper-more">
-        <!-- <a href="products-grid.html" class="btn btn-lg">View more</a> -->
-      </div>
-
-    </section>
-
-    <!-- ========================  Banner ======================== -->
-
-    <section class="banner" style="background-color:#ff7f00">
-
-      <!-- === header === -->
-
-      <h2 class="hidden">Banner</h2>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-offset-2 col-md-8 text-center">
-            <h2 class="title">Our story</h2>
-            <p>
-              We believe in creativity as one of the major forces of progress. With this idea, we traveled
-              throughout Italy to find exceptional
-              artisans and bring their unique handcrafted objects to connoisseurs everywhere.
-            </p>
-            <p>
-              <a href="about.html" class="btn btn-clean">CALL NOW</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================== Footer  ================== -->
-
+    </div>
     <footer>
-
-
-      <!--footer social-->
-
-      <div class="footer-social">
-        <div class="row">
-          <div class="col-sm-6">
-            <a href="#"></i> Jamia Mall</a> &nbsp; | &nbsp; <a href="#">Shop G64</a> &nbsp; | &nbsp;
-            <a href="#">Home & Country Delivery🛵🇰🇪</a>
-          </div>
-          <div class="col-sm-6 links">
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-          </div>
+        <div class="info">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-3 col-xs-12 ">
+                        <div class="photo">
+                            <a href="#"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
+                                    class="img-responsive"></a>
+                        </div>
+                        <p class="info-desc">Welcome to the home of quality. We are authorised Apple and Samsung
+                            resellers. </p>
+                        <div class="widget-info">
+                            <ul>
+                                <li><i class="ion-ios-location fa-4" aria-hidden="true"></i>Jamia shopping mall, Shop
+                                    G64,
+                                    Nairobi, Kenya.</li>
+                                <li class="clearfix"></li>
+                                <li><i class="ion-ios-telephone fa-4" aria-hidden="true"></i>
+                                    <p class="title-contain">+254 792 029 968</p>
+                                </li>
+                                <li class="clearfix"></li>
+                                <li><i class="ion-email-unread fa-4" aria-hidden="true"></i>
+                                    <p class="title-contain"><a
+                                            href="mailto:sales@abufulan.co.ke">sales@abufulan.co.ke</a>
+                                    </p>
+                                </li>
+                                <li class="clearfix"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <h3>let us help you</h3>
+                                <ul class="fmenu">
+                                    <li><a href="https://api.whatsapp.com/send?phone=254732029698"
+                                            target="_blank">whatsApp</a></li>
+                                    <li><a href="tel:+254792029698">Call us today</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 col-xs-12 pd-left">
+                                <h3>useful links</h3>
+                                <ul class="fmenu">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="#">Shop</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <h3 class="titles">FIND US ON:</h3>
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/Abufulanstore/?ref=py_c"><i
+                                        class="ion-social-facebook fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="https://twitter.com/abufulanstore"><i class="ion-social-twitter fa-3"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram fa-3" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="copyright">
+            <div class="container">
+                <span>© <a href="#" title="">Abufulan store</a> - All Rights Reserved.</span>
+                <ul class="payment">
+                    <li><a href="#"><img src="{% static 'shop/img/paypal.png' %}" alt="images"
+                                class="img-responsive"></a>
+                    </li>
+                    <li><a href="#"><img src="{% static 'shop/img/visa.png' %}" alt="images" class="img-responsive"></a>
+                    </li>
+                    <li><a href="#"><img src="{% static 'shop/img/american.png' %}" alt="images"
+                                class="img-responsive"></a>
+                    </li>
+                    <li><a href="#"><img src="{% static 'shop/img/mastercard.png' %}" alt="images"
+                                class="img-responsive"></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
     </footer>
-
-  </div>
-  <!--/wrapper-->
-  <!--JS files-->
-  <script src="{% static 'shop/app.js' %}" async></script>
-  <script src="{% static 'shop/js/jquery.min.js' %}"></script>
-  <script src="{% static 'shop/js/jquery.bootstrap.js' %}"></script>
-  <script src="{% static 'shop/js/jquery.magnific-popup.js' %}"></script>
-  <script src="{% static 'shop/js/jquery.owl.carousel.js' %}"></script>
-  <script src="{% static 'shop/js/jquery.ion.rangeSlider.js' %}"></script>
-  <script src="{% static 'shop/js/main.js' %}"></script>
-
+    <script defer type="text/javascript" src="{% static 'shop/js/bootstrap.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/owl.carousel.min.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/slick.min.js' %}"></script>
+    <script defer src="http://maps.googleapis.com/maps/api/js"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/main.js' %}"></script>
 </body>
 
 </html>
