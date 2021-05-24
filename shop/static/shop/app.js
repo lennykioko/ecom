@@ -1,5 +1,10 @@
-const BASE_URL = "https://abufulan.co.ke/";
+// const BASE_URL = "https://abufulan.co.ke/";
+const BASE_URL = "http://127.0.0.1:8000/";
+
+let categories;
+let brands;
 let products;
+
 
 const mainContent = document.querySelector("#mainContent");
 
@@ -33,11 +38,11 @@ const loader = `<div class="mx-auto vh-100 text-center d-flex justify-content-ce
 </div>`;
 
 
-const getSearchItems = async (search) => {
+const getCategories = async (search) => {
   mainContent.innerHTML = loader;
 
   try {
-    let url = search ? new URL(`${BASE_URL}ajax/?search=${search}`) : new URL(`${BASE_URL}ajax/`);
+    let url = new URL(`${BASE_URL}categories/`);
 
     const res = await fetch(url);
     mainContent.innerHTML = "";
@@ -47,23 +52,57 @@ const getSearchItems = async (search) => {
   }
 };
 
+const getBrands = async (category) => {
+  mainContent.innerHTML = loader;
+
+  try {
+    let url = category ? new URL(`${BASE_URL}brands?category=${category}`) : new URL(`${BASE_URL}brands/`);
+
+    const res = await fetch(url);
+    mainContent.innerHTML = "";
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const getProducts = async (search=false, limit=false, feature=false, category=false, brand=false) => {
+  mainContent.innerHTML = loader;
+
+  try {
+    let url = new URL(`${BASE_URL}products/`);
+
+    // url = search && new URL(`${BASE_URL}products?search=${search}`);
+    // url = limit && new URL(`${BASE_URL}products?limit=${limit}`);
+    // url = limit && featured && new URL(`${BASE_URL}products?limit=${limit}&featured=${featured}`);
+    // url = category && brand && new URL(`${BASE_URL}products?category=${category}&brand=${brand}`);
+
+    const res = await fetch(url);
+    mainContent.innerHTML = "";
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+
 const handleSearch = async (search) => {
-  const response = await getSearchItems(search);
-  const data = response.data;
+  const response = await getProducts(search);
+  const data = response.products;
   console.log(data);
-  products = response.data;
+  products = response.products;
 
   data?.map((item) => {
     mainContent.insertAdjacentHTML(
       "beforeend",
       `<div class= "product-list-item">
       <div style="height:270px; display:flex; align-items:center;" class="product-item-img">
-        <a href="#"><img src="../media/${item.product_image}" alt="images"
+        <a href="#"><img src="/media/${item.image}" alt=${item.name}
           class="img-responsive"></a>
           <div class="label label-2 red label-top-20">Hot</div>
         </div>
         <div class="product-item-info">
-          <h3 class="black" style="font-weight:bold><a href="#" title="">${item.product_name}</a></h3>
+          <h3 class="black" style="font-weight:bold><a href="#" title="">${item.name}</a></h3>
           <div style="height:70px; overflow:auto"}>${item.description}</div>
           <div class="prod-price">
             <span class="price black">Ksh. ${commaThousand(item.price)}</span>
