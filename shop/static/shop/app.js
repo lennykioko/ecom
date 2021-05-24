@@ -64,7 +64,7 @@ const handleSearch = async (search) => {
         </div>
         <div class="product-item-info">
           <h3 class="black" style="font-weight:bold><a href="#" title="">${item.product_name}</a></h3>
-          <div style="height:50px; overflow:auto"}>${item.description}</div>
+          <div style="height:70px; overflow:auto"}>${item.description}</div>
           <div class="prod-price">
             <span class="price black">${commaThousand(item.price)}</span>
           </div>
