@@ -30,6 +30,16 @@ class CategoryView(View):
         return JsonResponse({"categories": list(data)}, status=200)
 
 
+class CategoryBrandView(View):
+    def get(self, request):
+        data = []
+        categories = Category.objects.all()
+        for category in categories:
+            data.append({category.name: list(category.brand_set.all().values())})
+
+        return JsonResponse({"categorybrands": list(data)}, status=200)
+
+
 class BrandView(View):
     def get(self, request):
         data = Brand.objects.all().values()
@@ -76,7 +86,7 @@ class ProductView(View):
             except ValueError:
                 limit = 20
                 print("Error: Ensure limit is a valid number")
-                
+
             data = Product.objects.filter(featured=True)[:limit].values()
 
         if category and brand:
