@@ -11,15 +11,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/categories",
-					"protocol": "http",
+					"raw": "{{BASE_URL}}/categories",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{BASE_URL}}"
 					],
-					"port": "8000",
 					"path": [
 						"categories"
 					]
@@ -233,6 +228,29 @@
 						{
 							"key": "priceOrder",
 							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductsLimit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/products?limit=1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
 						}
 					]
 				}
