@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "9daf5ec0-382d-40d2-9b8b-6bc6002d378c",
+		"name": "Abufulan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCategories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/categories",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCategoryBrands",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/categorybrands",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"categorybrands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBrands",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/brands",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"brands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBrandsFilterByCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/brands?category=phones",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"brands"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "phones"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/products",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductsFeatured",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/products?featured=true",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "featured",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductsSearch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/products?search=mac",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "mac"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductsCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/products?category=phones",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "phones"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductsBrands",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/products?brands=macbook,",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "brands",
+							"value": "macbook,"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductsPriceDesc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/products?priceOrder=DESC",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "priceOrder",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductsPriceAsc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/products?priceOrder=ASC",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "priceOrder",
+							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductsCombined",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/products?priceDesc=true&limit=1&featured=true&brands=headphones,&category=accessories",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "priceDesc",
+							"value": "true"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "featured",
+							"value": "true"
+						},
+						{
+							"key": "brands",
+							"value": "headphones,"
+						},
+						{
+							"key": "category",
+							"value": "accessories"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

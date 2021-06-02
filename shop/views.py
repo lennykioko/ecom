@@ -54,22 +54,41 @@ class BrandView(View):
 
 class ProductView(View):
     def get(self, request):
-        category = request.GET.get("category")
-        brand = request.GET.get("brand")
-
-        featured = request.GET.get("featured")
         search = request.GET.get("search")
+        featured = request.GET.get("featured")
+        category = request.GET.get("category")
+        brands = request.GET.get("brands")
+
+        priceOrder = request.GET.get("priceOrder")
+
         limit = request.GET.get("limit")
 
-        data = Product.objects.filter(featured=True).values()
+        data = Product.objects.all()
 
         if search:
-            data = Product.objects.filter(
+            data = data.filter(
                 Q(name__icontains=search)
                 | Q(price__icontains=search)  # noqa: W503
                 | Q(category__name__icontains=search)  # noqa: W503
                 | Q(brand__name__icontains=search)  # noqa: W503
-                | Q(description__icontains=search)).values()  # noqa: W503
+                | Q(description__icontains=search))  # noqa: W503
+
+        if featured:
+            data = data.filter(featured=True)
+
+        if category:
+            data = data.filter(Q(category__name__icontains=category))
+
+        if brands:
+            brands = brands.split(',')
+            data = data.filter(brand__name__in=brands)
+
+        if priceOrder:
+            if priceOrder.upper() == 'DESC':
+                data = data.order_by('-price')
+
+            elif priceOrder.upper() == 'ASC':
+                data = data.order_by('price')
 
         if limit:
             try:
@@ -78,21 +97,6 @@ class ProductView(View):
                 limit = 20
                 print("Error: Ensure limit is a valid number")
 
-            data = Product.objects.all()[:limit].values()
+            data = data[:limit]
 
-        if featured and limit:
-            try:
-                limit = int(limit)
-            except ValueError:
-                limit = 20
-                print("Error: Ensure limit is a valid number")
-
-            data = Product.objects.filter(featured=True)[:limit].values()
-
-        if category and brand:
-            data = Brand.objects.filter(
-                Q(category__name__icontains=category)  # noqa: W503
-                | Q(brand__name__icontains=brand)  # noqa: W503
-            )
-
-        return JsonResponse({"products": list(data)}, status=200)
+        return JsonResponse({"products": list(data.values())}, status=200)
