@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="header-row">
                     <div class="col-md-3 col-sm-8 col-xs-7 logo">
-                        <a href="#" title="Abufulan"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
+                        <a href="{% url 'shop:home' %}" title="Abufulan"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
                                 class="img-reponsive"></a>
                     </div>
                     <div class="topbar-mobile hidden-lg hidden-md" style="padding: 20px;">
@@ -586,7 +586,7 @@
                 <div class="row ">
                     <div class="col-md-3 col-xs-12 ">
                         <div class="photo">
-                            <a href="#"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
+                            <a href="{% url 'shop:home' %}"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
                                     class="img-responsive"></a>
                         </div>
                         <p class="info-desc">Welcome to the home of quality. We are authorised Apple and Samsung
