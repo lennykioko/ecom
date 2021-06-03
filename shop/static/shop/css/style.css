@@ -181,6 +181,12 @@ ol {
   margin: 0;
 }
 
+.header-row {
+  margin-left: -15px;
+  margin-right: -15px;
+  display: flex;
+}
+
 .row-no-padding {
   margin-left: 0;
   margin-right: 0;
@@ -3218,8 +3224,10 @@ span.phone:before,
 /*==============================
           -- Logo --
 ==============================*/
-.bottom {
-  padding: 24px 0;
+@media (min-width: 800px) {
+  .bottom {
+    padding: 24px 0;
+  }
 }
 
 .logo a {
@@ -9597,6 +9605,7 @@ footer.v5 .container {
 
   .product-list-item > * {
     display: block;
+    margin-top: 50px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 480px) {
