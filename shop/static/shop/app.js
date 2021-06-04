@@ -1,5 +1,5 @@
-const BASE_URL = "https://abufulan.co.ke/";
-// const BASE_URL = "http://127.0.0.1:8000/";
+// const BASE_URL = "https://abufulan.co.ke/";
+const BASE_URL = "http://127.0.0.1:8000/";
 
 let categories;
 let brands;
@@ -96,7 +96,7 @@ const fillCategories = async () => {
         navigateCategories.insertAdjacentHTML(
             "beforeend",
             `<li>
-                <a href="#">Phones</a><span class="icon"></span>
+                <a href="#">${categ}</a><span class="icon"></span>
                 <div class="dropdown-content">
                     <ul class="level1">
                         <li class="sub-menu col-3">
@@ -155,8 +155,7 @@ const fillShopSidNavCategories = async () => {
         shopSideNavCategories.insertAdjacentHTML(
             "beforeend",
             `<li class="" value=${item.name}>
-            <a href="#" value=${item.name}>${item.name}</a>
-            <span class="number">#</span>
+            <a onclick="#" value=${item.name}>${item.name}</a>
         </li>`
         );
     });
@@ -167,10 +166,10 @@ const fillShopSidNavBrands = async (categoryBrands) => {
     shopSideNavBrands.innerHTML = "";
     categoryBrands?.map((v) => {
         shopSideNavCategories.insertAdjacentHTML(
-            "beforeend", `<div class="checkbox">
-                        <label>
-                        <input type="checkbox" value=${v.name}>${v.name}</label>
-                    </div>`
+            "beforeend",
+            `<div class="checkbox">
+                <label><input type="checkbox" value=${v.name}>${v.name}</label>
+            </div>`
         );
     });
 };

@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet' %}">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet' %}">
     <script async type="text/javascript" src="{% static 'shop/js/jquery.js' %}"></script>
+    <script async type="text/javascript" src="{% static 'shop/shop.js' %}"></script>
 </head>
 
 <body>
@@ -45,29 +46,29 @@
         </div>
     </div>
     <header>
-        
+
 
         <div class="bottom">
             <div class="container">
                 <div class="header-row">
-                    <div class="col-md-3 col-sm-8 col-xs-7 logo">
+                    <div class="col-md-3 col-sm-8 col-xs-7 logo" style="padding-right: 0px;">
                         <a href="{% url 'shop:home' %}" title="Abufulan"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
                                 class="img-reponsive"></a>
                     </div>
-                    <div class="topbar-mobile hidden-lg hidden-md" style="padding: 20px;">
+                    <div class="topbar-mobile hidden-lg hidden-md">
                         <form action="#" class="search-form">
                             <input type="text" name="s" class="form-control" placeholder="SEARCH...">
                             <button type="submit" class="search-icon"></button>
                         </form>
                     </div>
-                    <div class="col-md-9 col-sm-4 col-xs-5 nextlogo">
-                        <div class="search hidden-xs hidden-sm">
+                    <div class="col-md-9 col-sm-4 col-xs-5 nextlogo hidden-xs hidden-sm">
+                        <div class="search ">
                             <form action="#" class="search-form">
                                 <input type="text" name="s" class="form-control" placeholder="SEARCH...">
                                 <button type="submit" class="search-icon"></button>
                             </form>
                         </div>
-                        
+
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -269,30 +270,14 @@
                                 </div>
                                 <div class="block-content">
                                     <ul id="sideNavCategories">
-                                        <li class="active">
+                                        <!-- <li class="active">
                                             <a href="#">Laptop & Computer</a>
                                             <span class="number">(08)</span>
                                         </li>
                                         <li>
                                             <a href="#">Accessories</a>
                                             <span class="number">(16)</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">Gaming</a>
-                                            <span class="number">(20)</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">Mac Computers</a>
-                                            <span class="number">(09)</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">Ultrabooks</a>
-                                            <span class="number">(51)</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">Printers & Ink</a>
-                                            <span class="number">(07)</span>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -670,7 +655,6 @@
     <script defer type="text/javascript" src="{% static 'shop/js/slick.min.js' %}"></script>
     <script defer type="text/javascript" src="{% static 'shop/js/bootstrap-slider.min.js' %}"></script>
     <script defer type="text/javascript" src="{% static 'shop/js/main.js' %}"></script>
-    <script defer type="text/javascript" src="{% static 'shop/app.js' %}"></script>
 </body>
 
 </html>
