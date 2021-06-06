@@ -4,6 +4,7 @@ const BASE_URL = "http://127.0.0.1:8000/";
 let categories;
 let brands;
 let products;
+let activeCategory;
 
 
 const mainContent = document.querySelector("#mainContent");
@@ -12,13 +13,12 @@ const shopSideNavCategories = document.querySelector("#sideNavCategories");
 const shopSideNavBrands = document.querySelector("#shopSideNavBrands");
 
 shopSideNavBrands.addEventListener("click", (event) => {
-    event.preventDefault();
     console.log(event.target.value);
 });
 
 shopSideNavCategories.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log(event);
+    fillShopSidNavBrands(event.target.innerHTML);
 });
 
 function commaThousand(num) {
@@ -55,6 +55,18 @@ const getCategories = async (category) => {
         let res = await fetch(url);
         res = await res.json();
         return res.categories;
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+const getBrandsOfCategory = async (category) => {
+    try {
+        let url = new URL(`${BASE_URL}brands?category=${category}`);
+
+        let res = await fetch(url);
+        res = await res.json();
+        return res.brands;
     } catch (err) {
         console.log(err);
     }
@@ -115,8 +127,7 @@ const fillCategories = async () => {
 const handleSearch = async (search) => {
     const response = await getProducts(search);
     const data = response.products;
-    products = response.products;
-    displayProducts(products);
+    displayProducts(data);
 };
 
 const displayProducts = async (data) => {
@@ -155,20 +166,20 @@ const fillShopSidNavCategories = async () => {
         shopSideNavCategories.insertAdjacentHTML(
             "beforeend",
             `<li class="" value=${item.name}>
-            <a onclick="#" value=${item.name}>${item.name}</a>
+            <a href=${BASE_URL}catalogue?category=${item.name}>${item.name}</a>
         </li>`
         );
     });
 };
 
-const fillShopSidNavBrands = async (categoryBrands) => {
-    const response = await getCategoriesAndBrands();
+const fillShopSidNavBrands = async (category) => {
+    const response = await getBrandsOfCategory(category);
     shopSideNavBrands.innerHTML = "";
-    categoryBrands?.map((v) => {
-        shopSideNavCategories.insertAdjacentHTML(
+    response?.map((brand) => {
+        shopSideNavBrands.insertAdjacentHTML(
             "beforeend",
             `<div class="checkbox">
-                <label><input type="checkbox" value=${v.name}>${v.name}</label>
+                <label><input type="checkbox" value=${brand.name}>${brand.name}</label>
             </div>`
         );
     });
