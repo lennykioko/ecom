@@ -146,5 +146,5 @@ const fillProducts = async (params) => {
     });
 };
 
-fillProducts(null);
+fillProducts('featured=true');
 fillCategoryDropdown();
