@@ -1,5 +1,5 @@
-// const BASE_URL = "https://abufulan.co.ke/";
-const BASE_URL = "http://127.0.0.1:8000/";
+const BASE_URL = "https://abufulan.co.ke/";
+// const BASE_URL = "http://127.0.0.1:8000/";
 
 let categories;
 let brands;

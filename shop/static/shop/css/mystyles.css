@@ -1,3 +1,9 @@
-#categories .level2 .col-inner a {
+#categories .level2 .col-inner a,
+#sideBrands .checkbox label input[type="checkbox"] {
     text-transform: capitalize;
+}
+
+
+.product-list.grid_full.grid_sidebar .product-list-item:only-child {
+    width: 85%;
 }

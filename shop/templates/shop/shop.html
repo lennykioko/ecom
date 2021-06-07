@@ -14,17 +14,17 @@
     <link rel="stylesheet" href="{% static 'shop/css/slick-theme.css' %}">
     <link rel="stylesheet" href="{% static 'shop/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/mystyles.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
     <script async type="text/javascript" src="{% static 'shop/js/jquery.js' %}"></script>
-    <script async type="text/javascript" src="{% static 'shop/app.js' %}"></script>
 </head>
 
 <body>
-    <div class="modal fade" id="myModal" role="dialog">
+    <!-- <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-            <!-- Modal content-->
+            <!-- Modal content
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -44,9 +44,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <header>
-
 
         <div class="bottom">
             <div class="container">
@@ -56,24 +55,24 @@
                                 class="img-reponsive"></a>
                     </div>
                     <div class="topbar-mobile hidden-lg hidden-md">
-                        <form action="#" class="search-form">
-                            <input type="text" name="s" class="form-control" placeholder="SEARCH...">
+                        <form class="search-form">
+                            <input type="text" name="search" class="form-control" placeholder="SEARCH...">
                             <button type="submit" class="search-icon"></button>
                         </form>
                     </div>
                     <div class="col-md-9 col-sm-4 col-xs-5 nextlogo hidden-xs hidden-sm">
-                        <div class="search ">
-                            <form action="#" class="search-form">
-                                <input type="text" name="s" class="form-control" placeholder="SEARCH...">
+                        <div id="search-md" class="search">
+                            <form class="search-form">
+                                <input type="text" name="search" class="form-control" placeholder="SEARCH...">
                                 <button type="submit" class="search-icon"></button>
                             </form>
                         </div>
-
                         <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="menu">
             <div class="container">
                 <div class="row">
@@ -83,15 +82,14 @@
                                 <div class="menu-heading js-nav-menu">ALL CATEGORIES</div>
                                 <div class="vertical-wrapper v3 js-dropdown-menu">
                                     <ul class="level0" id="categories">
-                                        <!-- <li><a href="#">camera</a><span class="icon icon-camera"></span></li> -->
-                                        <li>
+                                        <!-- dropdown category data inserted here -->
+                                        <!-- <li>
                                             <a href="#">Phones</a><span class="icon"></span>
                                             <div class="dropdown-content">
                                                 <ul class="level1" >
                                                     <li class="sub-menu col-3">
                                                         <a href="#">PHONES</a>
                                                         <ul class="level2">
-
                                                             <li class="col-inner"><a href="#">Samsang</a></li>
                                                             <li class="col-inner"><a href="#">Iphone</a></li>
                                                             <li class="col-inner"><a href="#">Xiaomi</a></li>
@@ -99,67 +97,11 @@
                                                             <li class="col-inner"><a href="#">Infinix</a></li>
                                                             <li class="col-inner"><a href="#">Huawei</a></li>
                                                             <li class="col-inner"><a href="#">Xtigi</a></li>
-
                                                         </ul>
                                                     </li>
                                                 </ul>
-
                                             </div>
-
-                                        </li>
-                                        <li>
-                                            <a href="#">Laptops</a><span class="icon"></span>
-                                            <div class="dropdown-content">
-                                                <ul class="level1">
-                                                    <li class="sub-menu col-3">
-                                                        <a href="#">LAPTOPS</a>
-                                                        <ul class="level2">
-
-                                                            <li class="col-inner"><a href="#">MAC Book</a></li>
-                                                            <li class="col-inner"><a href="#">HP</a></li>
-                                                            <li class="col-inner"><a href="#">Dell</a></li>
-                                                            <li class="col-inner"><a href="#">Acer</a></li>
-                                                            <li class="col-inner"><a href="#">Lenovo</a></li>
-                                                            <li class="col-inner"><a href="#">Toshiba</a></li>
-                                                            <li class="col-inner"><a href="#">ASUS</a></li>
-
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                                <div class="clearfix"></div>
-
-                                            </div>
-                                        </li>
-
-                                        <li class="game">
-                                            <a href="#">Accessories</a>
-                                            <div class="dropdown-content">
-                                                <ul class="level1">
-                                                    <li class="sub-menu col-3">
-                                                        <a href="#">ACCESSORIES</a>
-                                                        <ul class="level2">
-
-                                                            <li class="col-inner"><a href="#">Smart Watch</a></li>
-                                                            <li class="col-inner"><a href="#">Headphones</a></li>
-                                                            <li class="col-inner"><a href="#">Phone case</a></li>
-                                                            <li class="col-inner"><a href="#">Straps</a></li>
-
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                                <div class="clearfix"></div>
-
-
-                                            </div>
-
-                                        </li>
-                                        <!-- <li><a href="#">headphone</a></li> -->
-                                        <!-- <li><a href="#">mouse</a></li> -->
-                                        <!-- <li><a href="#">washing machine</a></li> -->
-                                        <!-- <li><a href="#">air conditional</a></li> -->
-                                        <!-- <li><a href="#">accessories</a></li> -->
-                                        <!-- <li><a href="#">others</a></li> -->
-
+                                        </li> -->
                                     </ul>
                                 </div>
                             </nav>
@@ -241,7 +183,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="widget-banner">
-                <a href="#" class="images"><img src="{% static 'shop/img/images/products.jpg' %}" alt="images"
+                <a href="javascript:void(0)" class="images"><img src="{% static 'shop/img/images/products.jpg' %}" alt="images"
                         class="img-responsive"></a>
             </div>
             <div class="widget-product-list">
@@ -269,7 +211,7 @@
                                     <h3>Categories</h3>
                                 </div>
                                 <div class="block-content">
-                                    <ul id="sideNavCategories">
+                                    <ul id="sideCategories">
                                         <!-- <li class="active">
                                             <a href="#">Laptop & Computer</a>
                                             <span class="number">(08)</span>
@@ -286,7 +228,7 @@
                                     <h3>BRANDS</h3>
                                 </div>
                                 <div class="block-content">
-                                    <form id="shopSideNavBrands">
+                                    <form id="sideBrands">
                                         <!-- <div class="checkbox">
                                             <label>
                                                 <input type="checkbox" value="">Accesi</label>
@@ -301,34 +243,33 @@
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="box box-view">
-                                        <span>Showing 1–12 of 40 results</span>
-                                        <div class="button-view">
-                                            <span class="col"><i class="ion-ios-keypad fa-3a"></i></span>
-                                            <span class="list"><i class="icon-grid-4"></i></span>
-                                        </div>
+                                        <span>Showing 1-50 of total results</span>
                                     </div>
                                 </div>
                                 <div class="col-md-7 margin-top3">
                                     <div class="box show pull-left">
                                         <span>Show</span>
-                                        <button class="dropdown-toggle" type="button" data-toggle="dropdown">12
+                                        <button class="dropdown-toggle" type="button" data-toggle="dropdown">50
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">12</a></li>
-                                            <li><a href="#">24</a></li>
-                                            <li><a href="#">36</a></li>
+                                            <li><a href="javascript:void(0)">50</a></li>
+                                            <!-- <li><a href="#">24</a></li>
+                                            <li><a href="#">36</a></li> -->
                                         </ul>
                                         <span>per page</span>
                                     </div>
                                     <div class="box sort pull-right">
                                         <span>Sort by:</span>
                                         <button class="dropdown-toggle" type="button" data-toggle="dropdown" id="menu2">
-                                            <span class="dropdown-label">Featured</span>
+                                            <!-- text inserted dynamically with JS -->
+                                            <span id="orderBy" class="dropdown-label"></span>
                                         </button>
                                         <ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
-                                            <li><a href="#" title="">Featured</a></li>
-                                            <li><a href="#" title="">New</a></li>
-                                            <li><a href="#" title="">Best Selling</a></li>
+                                            <li><a href="javascript:void(0)" onclick="buildQuery('order', 'Newest')" title="Newest">Newest</a></li>
+                                            <li><a href="javascript:void(0)" onclick="buildQuery('order', 'Oldest')" title="Oldest">Oldest</a></li>
+                                            <li><a href="javascript:void(0)" onclick="buildQuery('order', 'Featured')" title="Featured">Featured</a></li>
+                                            <li><a href="javascript:void(0)" onclick="buildQuery('order', 'DESC')" title="DESC">Price - High to Low</a></li>
+                                            <li><a href="javascript:void(0)" onclick="buildQuery('order', 'ASC')" title="ASC">Price - Low to High</a></li>
                                         </ul>
                                     </div>
                                     <div class="clearfix"></div>
@@ -336,7 +277,9 @@
                             </div>
                         </div>
                         <div class="product-list grid_full grid_sidebar grid-uniform" id="mainContent">
-                            <div class="product-list-item">
+                            <!-- products are inserted here -->
+
+                            <!-- <div class="product-list-item">
                                 <div class="product-item-img">
                                     <a href="#"><img src="{% static 'shop/img/products/product1.png' %}" alt="images"
                                             class="img-responsive"></a>
@@ -345,153 +288,37 @@
                                 <div class="product-item-info">
                                     <h3><a href="#" title="">Sony Xperia Z</a></h3>
 
-                                    <!--<div class="product-item-star ratingstar sm">
+                                    <div class="product-item-star ratingstar sm">
+                                        <a href="#"><i class="fa fa-star-b fa-1" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-star-b fa-1" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-star-b fa-1" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-star-b fa-1" aria-hidden="true"></i></a>
                                         <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <span class="number">(12)</span>
-                                    </div>-->
+                                        <span class="number">(4)</span>
+                                    </div>
 
                                     <div>Has a Ram of 6 GB and a storage of 16 GB. Camera is 32MP.</div>
                                     <div class="prod-price">
                                         <span class="price black">$199.69</span>
                                     </div>
 
+                                    <div class="button-ver2">
+                                        <a href="tel:254792029968" class="addcart-ver2" title="Call to order"><span
+                                            class="icon"></span>CALL TO ORDER</a>
+                                    </div>
+                                </div>
+                            </div> -->
 
-                                    <div class="button-ver2">
-                                        <a href="tel:254792029968" class="addcart-ver2" title="Add to cart"><span
-                                                class="icon"></span>CALL TO ORDER</a>
-                                        <!-- <a href="#" class="quickview" title="quick view"><i class="ion-eye fa-4" aria-hidden="true"></i></a>
-                                        <a href="#" class="wishlist" title="wishlist"><i class="ion-heart fa-4" aria-hidden="true"></i></a> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-item">
-                                <div class="product-item-img">
-                                    <a href="#"><img src="{% static 'shop/img/products/product2.png' %}" alt="images"
-                                            class="img-responsive"></a>
-                                </div>
-                                <div class="product-item-info">
-                                    <h3><a href="#" title="">Sony Xperia X Compact - SN5605 Unlocked Smartphone</a></h3>
-                                    <div class="product-item-star ratingstar sm">
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <span class="number">(12)</span>
-                                    </div>
-                                    <div class="prod-price">
-                                        <span class="price black">$199.69</span>
-                                    </div>
-                                    <div class="button-ver2">
-                                        <a href="#" class="addcart-ver2" title="Add to cart"><span
-                                                class="icon"></span>ADD TO CART</a>
-                                        <a href="#" class="quickview" title="quick view"><i class="ion-eye fa-4"
-                                                aria-hidden="true"></i></a>
-                                        <a href="#" class="wishlist" title="wishlist"><i class="ion-heart fa-4"
-                                                aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-item">
-                                <div class="product-item-img">
-                                    <a href="#"><img src="{% static 'shop/img/products/product3.png'%}" alt="images"
-                                            class="img-responsive"></a>
-                                    <div class="label label-2 red label-top-20">Hot</div>
-                                </div>
-                                <div class="product-item-info">
-                                    <h3><a href="#" title="">Sony Xperia X Compact - SN5605 Unlocked Smartphone</a></h3>
-                                    <div class="product-item-star ratingstar sm">
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <span class="number">(12)</span>
-                                    </div>
-                                    <div class="prod-price">
-                                        <span class="price black">$199.69</span>
-                                    </div>
-                                    <div class="button-ver2">
-                                        <a href="#" class="addcart-ver2" title="Add to cart"><span
-                                                class="icon"></span>ADD TO CART</a>
-                                        <a href="#" class="quickview" title="quick view"><i class="ion-eye fa-4"
-                                                aria-hidden="true"></i></a>
-                                        <a href="#" class="wishlist" title="wishlist"><i class="ion-heart fa-4"
-                                                aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-item">
-                                <div class="product-item-img">
-                                    <a href="#"><img src="{% static 'shop/img/products/product4.png' %}" alt="images"
-                                            class="img-responsive"></a>
-                                </div>
-                                <div class="product-item-info">
-                                    <h3><a href="#" title="">Sony Xperia X Compact - SN5605 Unlocked Smartphone</a></h3>
-                                    <div class="product-item-star ratingstar sm">
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <span class="number">(12)</span>
-                                    </div>
-                                    <div class="prod-price">
-                                        <span class="price black">$199.69</span>
-                                    </div>
-                                    <div class="button-ver2">
-                                        <a href="#" class="addcart-ver2" title="Add to cart"><span
-                                                class="icon"></span>ADD TO CART</a>
-                                        <a href="#" class="quickview" title="quick view"><i class="ion-eye fa-4"
-                                                aria-hidden="true"></i></a>
-                                        <a href="#" class="wishlist" title="wishlist"><i class="ion-heart fa-4"
-                                                aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-item">
-                                <div class="product-item-img">
-                                    <a href="#"><img src="{% static 'shop/img/products/product5.png' %}" alt="images"
-                                            class="img-responsive"></a>
-                                    <div class="label label-2 red label-top-20">Hot</div>
-                                </div>
-                                <div class="product-item-info">
-                                    <h3><a href="#" title="">Sony Xperia X Compact - SN5605 Unlocked Smartphone</a></h3>
-                                    <div class="product-item-star ratingstar sm">
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
-                                        <span class="number">(12)</span>
-                                    </div>
-                                    <div class="prod-price">
-                                        <span class="price black">$199.69</span>
-                                    </div>
-                                    <div class="button-ver2">
-                                        <a href="#" class="addcart-ver2" title="Add to cart"><span
-                                                class="icon"></span>ADD TO CART</a>
-                                        <a href="#" class="quickview" title="quick view"><i class="ion-eye fa-4"
-                                                aria-hidden="true"></i></a>
-                                        <a href="#" class="wishlist" title="wishlist"><i class="ion-heart fa-4"
-                                                aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="product-pagination">
                             <ul class="pagination">
-                                <li><a href="#"><i class="ion-chevron-left"></i></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">...</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#"><i class="ion-chevron-right"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="ion-chevron-left"></i></a></li>
+                                <li class="active"><a href="javascript:void(0)">1</a></li>
+                                <li><a href="javascript:void(0)">2</a></li>
+                                <li><a href="javascript:void(0)">3</a></li>
+                                <li><a href="javascript:void(0)">...</a></li>
+                                <li><a href="javascript:void(0)">5</a></li>
+                                <li><a href="javascript:void(0)"><i class="ion-chevron-right"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -568,7 +395,8 @@
                                 <li class="clearfix"></li>
                                 <li><i class="ion-email-unread fa-4" aria-hidden="true"></i>
                                     <p class="title-contain"><a
-                                            href="mailto:sales@abufulan.co.ke">sales@abufulan.co.ke</a>
+                                        style="text-transform: lowercase;"
+                                        href="mailto:sales@abufulan.co.ke">sales@abufulan.co.ke</a>
                                     </p>
                                 </li>
                                 <li class="clearfix"></li>
@@ -612,17 +440,17 @@
 
         <div class="copyright">
             <div class="container">
-                <span>© <a href="#" title="">Abufulan store</a> - All Rights Reserved.</span>
+                <span>© <a href="javascript:void(0)" title="">Abufulan store</a> - All Rights Reserved.</span>
                 <ul class="payment">
-                    <li><a href="#"><img src="{% static 'shop/img/paypal.png' %}" alt="images"
+                    <li><a href="javascript:void(0)"><img src="{% static 'shop/img/paypal.png' %}" alt="images"
                                 class="img-responsive"></a>
                     </li>
-                    <li><a href="#"><img src="{% static 'shop/img/visa.png' %}" alt="images" class="img-responsive"></a>
+                    <li><a href="javascript:void(0)"><img src="{% static 'shop/img/visa.png' %}" alt="images" class="img-responsive"></a>
                     </li>
-                    <li><a href="#"><img src="{% static 'shop/img/american.png' %}" alt="images"
+                    <li><a href="javascript:void(0)"><img src="{% static 'shop/img/american.png' %}" alt="images"
                                 class="img-responsive"></a>
                     </li>
-                    <li><a href="#"><img src="{% static 'shop/img/mastercard.png' %}" alt="images"
+                    <li><a href="javascript:void(0)"><img src="{% static 'shop/img/mastercard.png' %}" alt="images"
                                 class="img-responsive"></a>
                     </li>
                 </ul>
@@ -635,6 +463,8 @@
     <script defer type="text/javascript" src="{% static 'shop/js/slick.min.js' %}"></script>
     <script defer type="text/javascript" src="{% static 'shop/js/bootstrap-slider.min.js' %}"></script>
     <script defer type="text/javascript" src="{% static 'shop/js/main.js' %}"></script>
+    <script async type="text/javascript" src="{% static 'shop/shop.js' %}"></script>
+
 </body>
 
 </html>

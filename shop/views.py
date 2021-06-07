@@ -59,7 +59,7 @@ class ProductView(View):
         category = request.GET.get("category")
         brands = request.GET.get("brands")
 
-        priceOrder = request.GET.get("priceOrder")
+        order = request.GET.get("order")
 
         limit = request.GET.get("limit")
 
@@ -83,12 +83,24 @@ class ProductView(View):
             brands = brands.split(',')
             data = data.filter(brand__name__in=brands)
 
-        if priceOrder:
-            if priceOrder.upper() == 'DESC':
+        if order:
+            if order.upper() == 'NEWEST':
+                data = data.order_by('-id')
+
+            if order.upper() == 'OLDEST':
+                data = data.order_by('id')
+
+            elif order.upper() == 'FEATURED':
+                data = data.filter(featured=True).order_by('-id')
+
+            elif order.upper() == 'DESC':
                 data = data.order_by('-price')
 
-            elif priceOrder.upper() == 'ASC':
+            elif order.upper() == 'ASC':
                 data = data.order_by('price')
+
+            else:
+                data = data.order_by('-id')
 
         if limit:
             try:
