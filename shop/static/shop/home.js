@@ -1,5 +1,5 @@
-// const BASE_URL = "https://abufulan.co.ke/";
-const BASE_URL = "http://127.0.0.1:8000/";
+const BASE_URL = "https://abufulan.co.ke/";
+// const BASE_URL = "http://127.0.0.1:8000/";
 
 
 const searchForm = document.querySelector(".search-form");
@@ -36,7 +36,8 @@ const getProducts = async (params) => {
     try {
         const url = new URL(`${BASE_URL}products?${params}`);
         const res = await fetch(url);
-        return res.json();
+        const result = await res.json();
+        return result.products;
     } catch (err) {
         console.log(err);
     }
@@ -46,7 +47,7 @@ const getCategoriesAndBrands = async () => {
     try {
         const url = new URL(`${BASE_URL}categorybrands`);
         const res = await fetch(url);
-        result = await res.json();
+        const result = await res.json();
         return result.categorybrands;
     } catch (err) {
         console.log(err);
@@ -88,12 +89,12 @@ const fillCategoryDropdown = async () => {
     });
 };
 
-searchForm && searchForm.addEventListener("submit", (event) => {
+searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
     searchBtn.click();
 });
 
-searchBtn && searchBtn.addEventListener("click", async () => {
+searchBtn.addEventListener("click", async () => {
     buildQuery("search", searchInput.value)
 })
 
@@ -109,10 +110,9 @@ searchBtnMd.addEventListener("click", async () => {
 
 const fillProducts = async (params) => {
     const response = await getProducts(params);
-    const data = response.products;
     featuredContent.innerHTML = "";
 
-    data.map((item) => {
+    response?.map((item) => {
         featuredContent.insertAdjacentHTML(
             "beforeend",
             `
@@ -122,8 +122,7 @@ const fillProducts = async (params) => {
                         <a href="javascript:void(0)"><img src="/media/${item.image}" alt=${item.name}
                                 class="img-responsive"></a>
                         <div class="button">
-                            <a href="javascript:void(0)" class="addcart">ADD TO CART</a>
-                            <a href="javascript:void(0)" class="view"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a href="tel:254792029968" class="addcart">CALL TO ORDER</a>
                         </div>
                     </div>
                     <div class="prod-info">
