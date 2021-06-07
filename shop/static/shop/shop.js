@@ -194,7 +194,7 @@ const fillProducts = async (params) => {
             "beforeend",
             `<div class= "product-list-item">
             <div style="height:270px; display:flex; align-items:center;" class="product-item-img">
-                <a href="#"><img src="/media/${item.image}" alt=${item.name}
+                <a href="javascript:void(0)"><img src="/media/${item.image}" alt=${item.name}
                 class="img-responsive"></a>
                 <div class="label label-2 red label-top-20">Hot</div>
                 </div>
