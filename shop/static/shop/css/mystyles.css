@@ -7,3 +7,12 @@
 .product-list.grid_full.grid_sidebar .product-list-item:only-child {
     width: 85%;
 }
+
+.product-list .product-item-info h3 {
+    margin: 10px 0;
+}
+
+.product-list .product-item-info h3 a {
+    font-family: inherit;
+    font-size: 20px;
+}
