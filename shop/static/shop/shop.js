@@ -105,6 +105,8 @@ searchForm.addEventListener("submit", (event) => {
 });
 
 searchBtn.addEventListener("click", async () => {
+    clearQuery("category");
+    clearQuery("brands");
     buildQuery("search", searchInput.value)
 });
 
@@ -115,6 +117,8 @@ searchFormMd.addEventListener("submit", (event) => {
 });
 
 searchBtnMd.addEventListener("click", async () => {
+    clearQuery("category");
+    clearQuery("brands");
     buildQuery("search", searchInputMd.value)
 });
 
