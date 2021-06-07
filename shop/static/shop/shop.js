@@ -203,7 +203,7 @@ const fillProducts = async (params) => {
                 <div class="label label-2 red label-top-20">Hot</div>
                 </div>
                 <div class="product-item-info">
-                <h3 class="black"><a href="javascript:void(0)" title=${item.name}>${item.name}</a></h3>
+                <h3 class="black"><a href="javascript:void(0)">${item.name}</a></h3>
                 <div style="height:70px; overflow:auto">${item.description}</div>
                 <div class="prod-price">
                     <span class="price black">Ksh. ${commaThousand(item.price)}</span>
