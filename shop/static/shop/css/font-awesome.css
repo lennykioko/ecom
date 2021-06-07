@@ -184,6 +184,11 @@
 .fa-star-o:before {
   content: "\f006";
 }
+/* additional brand color */
+.fa-star-b:before {
+  content: "\f006";
+  color: #F36127;
+}
 .fa-user:before {
   content: "\f007";
 }
