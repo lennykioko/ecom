@@ -162,7 +162,7 @@ const fillSideCategories = async () => {
     sideCategories.innerHTML =
     `
     <li class=${activeCategory ==  "ALL" ? 'active' : undefined} value="ALL">
-        <a href="javascript:void(0)" onclick="clearQuery('category'); clearQuery('brands')">All</a>
+        <a href="javascript:void(0)" onclick="clearQuery('category'); clearQuery('brands'); clearQuery('search')">All</a>
     </li>
     `;
 
