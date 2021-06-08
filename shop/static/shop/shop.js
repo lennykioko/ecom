@@ -184,7 +184,7 @@ const fillSideBrands = async (category) => {
         sideBrands.insertAdjacentHTML(
             "beforeend",
             `<div class="checkbox">
-                <label><input ${activeBrand.toUpperCase() == brand.name.toUpperCase() ? 'checked' : undefined} type="checkbox" onclick="buildQuery('brands', '${brand.name}')" value=${brand.name}>${brand.name}</label>
+                <label><input ${activeBrand == brand.name ? 'checked' : undefined} type="checkbox" onclick="buildQuery('brands', '${brand.name}')" value=${brand.name}>${brand.name}</label>
             </div>`
         );
     });
