@@ -19,6 +19,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 let activeCategory = urlParams.get("category") ? urlParams.get("category") : 'ALL';
+let activeBrand = urlParams.get("brands");
 
 const ordersDict = {
     'Newest':'Newest',
@@ -169,7 +170,7 @@ const fillSideCategories = async () => {
     response?.map((item) => {
         sideCategories.insertAdjacentHTML(
             "beforeend",
-            `<li class=${activeCategory == item.name.toUpperCase()  ? 'active' : undefined} value=${item.name}>
+            `<li class=${activeCategory.toUpperCase() == item.name.toUpperCase()  ? 'active' : undefined} value=${item.name}>
             <a href="javascript:void(0)" onclick="buildQuery('category', '${item.name}')">${item.name}</a>
         </li>`
         );
@@ -183,7 +184,7 @@ const fillSideBrands = async (category) => {
         sideBrands.insertAdjacentHTML(
             "beforeend",
             `<div class="checkbox">
-                <label><input type="checkbox" onclick="buildQuery('brands', '${brand.name}')" value=${brand.name}>${brand.name}</label>
+                <label><input ${activeBrand == brand.name ? 'checked' : undefined} type="checkbox" onclick="buildQuery('brands', '${brand.name}')" value=${brand.name}>${brand.name}</label>
             </div>`
         );
     });
