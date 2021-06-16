@@ -38,3 +38,11 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.product-list .product-item-info h3 {
+  height: 50px;
+}
+
+.product-list .product-item-info .addcart-ver2 {
+  margin-top: 10px;
+}
