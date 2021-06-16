@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Abufulan</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'shop/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'shop/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/mystyles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+    <script async type="text/javascript" src="{% static 'shop/js/jquery.js' %}"></script>
+</head>
+
+<body>
+    <!-- <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">SEARCH HERE</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <form method="get" class="searchform" action="/search" role="search">
+                            <input type="hidden" name="type" value="product">
+                            <input type="text" name="q" class="form-control control-search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default button_search" type="button"><i data-toggle="dropdown"
+                                        class="ion-ios-search"></i></button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <header>
+
+        <div class="bottom">
+            <div class="container">
+                <div class="header-row">
+                    <div class="col-md-3 col-sm-8 col-xs-7 logo" style="padding-right: 0px;">
+                        <a href="{% url 'shop:home' %}" title="Abufulan"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
+                                class="img-reponsive"></a>
+                    </div>
+                    <div class="topbar-mobile hidden-lg hidden-md">
+                        <form class="search-form">
+                            <input type="text" name="search" class="form-control" placeholder="SEARCH...">
+                            <button type="submit" class="search-icon"></button>
+                        </form>
+                    </div>
+                    <div class="col-md-9 col-sm-4 col-xs-5 nextlogo hidden-xs hidden-sm">
+                        <div id="search-md" class="search">
+                            <form class="search-form">
+                                <input type="text" name="search" class="form-control" placeholder="SEARCH...">
+                                <button type="submit" class="search-icon"></button>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-6 column-left">
+                        <aside id="column-left">
+                            <nav class="navbar-default">
+                                <div class="menu-heading js-nav-menu">ALL CATEGORIES</div>
+                                <div class="vertical-wrapper v3 js-dropdown-menu">
+                                    <ul class="level0" id="categories">
+                                        <!-- dropdown category data inserted here -->
+                                        <!-- <li>
+                                            <a href="#">Phones</a><span class="icon"></span>
+                                            <div class="dropdown-content">
+                                                <ul class="level1" >
+                                                    <li class="sub-menu col-3">
+                                                        <a href="#">PHONES</a>
+                                                        <ul class="level2">
+                                                            <li class="col-inner"><a href="#">Samsang</a></li>
+                                                            <li class="col-inner"><a href="#">Iphone</a></li>
+                                                            <li class="col-inner"><a href="#">Xiaomi</a></li>
+                                                            <li class="col-inner"><a href="#">Tecno</a></li>
+                                                            <li class="col-inner"><a href="#">Infinix</a></li>
+                                                            <li class="col-inner"><a href="#">Huawei</a></li>
+                                                            <li class="col-inner"><a href="#">Xtigi</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </nav>
+                        </aside>
+                    </div>
+                    <div class="col-md-9 col-sm-8 col-xs-6 column-right">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="menu-title">MENU</span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="menubar js-menubar">
+                                <li class=" menu-homepage menu-item-has-child dropdown">
+                                    <a href="{% url 'shop:home' %}" title="Home"><i class="fa fa-home"></i>home</a>
+                                    <span class="plus js-plus-icon"></span>
+                                </li>
+                                <li class=" menu-demo-page menu-item-has-child dropdown">
+                                    <a href="{% url 'shop:about' %}" title="About Us"><i
+                                            class="fa fa-info-circle"></i>&nbsp;
+                                        About Us </a>
+                                    <span class="plus js-plus-icon"></span>
+
+                                    <!-- <div class="dropdown-menu dropdown-menu-bg">
+                                            <ul class="level1">
+                                                <li class="sub-menu col-3">
+                                                    <a href="#">Cart pages</a>
+                                                    <ul class="level2">
+                                                        <li class="col-inner"><a href="checkout-1.html" title="">Shopping Cart</a></li>
+                                                        <li class="col-inner"><a href="checkout-2.html" title="">Check Out</a></li>
+                                                        <li class="col-inner"><a href="checkout-3.html" title="">Order</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sub-menu col-3">
+                                                    <a href="#">Product Pages</a>
+                                                    <ul class="level2">
+                                                        <li class="col-inner"><a href="shop-single.html" title="">Shop Single V1</a></li>
+                                                        <li class="col-inner"><a href="shop-single-v2.html" title="">Shop Single V2</a></li>
+                                                        <li class="col-inner"><a href="#" title="">Shop Single V3</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sub-menu col-3">
+                                                    <a href="#">NEW Arrival</a>
+                                                    <ul class="level2">
+                                                        <li class="text-center"><a href="comming-soon.html"><img src="img/megaimg.png" alt="images" class="img-responsive"></a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                        </div> -->
+
+                                </li>
+                                <li class="dropdown menu-contact-page menu-item-has-child">
+                                    <a href="{% url 'shop:contact' %}" title="Contact Us"><i
+                                            class="fa fa-paper-plane"></i>&nbsp;
+                                        CONTACT US</a>
+                                    <span class="plus js-plus-icon"></span>
+
+                                    <!-- <ul class="dropdown-menu menu-level">
+                                            <li><a href="contact_us.html" title="contact us">Contact Us </a></li>
+                                            <li><a href="about-us.html" title="about us">About Us</a></li>
+                                        </ul> -->
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+    <section class="shop-list-v2-page">
+        <div class="container">
+            <div class="heading-sub">
+                <h3 class="pull-left">shop list</h3>
+                <ul class="other-link-sub pull-right">
+                    <li><a href="{% url 'shop:home' %}">Home</a></li>
+                    <li><a class="active" href="{% url 'shop:catalogue' %}">Shop</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="widget-banner">
+                <a href="javascript:void(0)" class="images"><img src="{% static 'shop/img/images/products.jpg' %}" alt="images"
+                        class="img-responsive"></a>
+            </div>
+            <div class="widget-product-list">
+                <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                        <div class="filter-block">
+                            <!-- <div class="filter-block-shop filter-price">
+                                <div class="block-title">
+                                    <h3>FILTER BY PRICE</h3>
+                                </div>
+                                <div class="block-content">
+                                    <div class="price-range-holder">
+                                        <input type="text" class="price-slider" value="">
+                                        <span class="min-max">
+                                            Price: $990 - $3450
+                                        </span>
+                                        <span class="filter-button">
+                                            <a href="#">Filter</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="filter-block-shop filter-cate">
+                                <div class="block-title">
+                                    <h3>Categories</h3>
+                                </div>
+                                <div class="block-content">
+                                    <ul id="sideCategories">
+                                        <!-- <li class="active">
+                                            <a href="#">Laptop & Computer</a>
+                                            <span class="number">(08)</span>
+                                        </li>
+                                        <li>
+                                            <a href="#">Accessories</a>
+                                            <span class="number">(16)</span>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="filter-block-shop">
+                                <div class="block-title">
+                                    <h3>BRANDS</h3>
+                                </div>
+                                <div class="block-content">
+                                    <form id="sideBrands">
+                                        <!-- <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">Accesi</label>
+                                        </div> -->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-xs-12">
+                        <div class="filter-block bd">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="box box-view">
+                                        <span>Showing 1-50 of total results</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 margin-top3">
+                                    <div class="box show pull-left">
+                                        <span>Show</span>
+                                        <button class="dropdown-toggle" type="button" data-toggle="dropdown">50
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="javascript:void(0)">50</a></li>
+                                            <!-- <li><a href="#">24</a></li>
+                                            <li><a href="#">36</a></li> -->
+                                        </ul>
+                                        <span>per page</span>
+                                    </div>
+                                    <div class="box sort pull-right">
+                                        <span>Sort by:</span>
+                                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" id="menu2">
+                                            <!-- text inserted dynamically with JS -->
+                                            <span id="orderBy" class="dropdown-label"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
+                                            <li><a href="javascript:void(0)" onclick="buildQuery('order', 'Newest')" title="Newest">Newest</a></li>
+                                            <li><a href="javascript:void(0)" onclick="buildQuery('order', 'Oldest')" title="Oldest">Oldest</a></li>
+                                            <li><a href="javascript:void(0)" onclick="buildQuery('order', 'Featured')" title="Featured">Featured</a></li>
+                                            <li><a href="javascript:void(0)" onclick="buildQuery('order', 'DESC')" title="DESC">Price - High to Low</a></li>
+                                            <li><a href="javascript:void(0)" onclick="buildQuery('order', 'ASC')" title="ASC">Price - Low to High</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-list grid_full grid_sidebar grid-uniform" id="mainContent">
+                            <!-- products are inserted here -->
+
+                            <!-- <div class="product-list-item">
+                                <div class="product-item-img">
+                                    <a href="#"><img src="{% static 'shop/img/products/product1.png' %}" alt="images"
+                                            class="img-responsive"></a>
+                                    <div class="label label-2 red label-top-20">Hot</div>
+                                </div>
+                                <div class="product-item-info">
+                                    <h3><a href="#" title="">Sony Xperia Z</a></h3>
+
+                                    <div class="product-item-star ratingstar sm">
+                                        <a href="#"><i class="fa fa-star-b fa-1" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-star-b fa-1" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-star-b fa-1" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-star-b fa-1" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-star-o fa-1" aria-hidden="true"></i></a>
+                                        <span class="number">(4)</span>
+                                    </div>
+
+                                    <div>Has a Ram of 6 GB and a storage of 16 GB. Camera is 32MP.</div>
+                                    <div class="prod-price">
+                                        <span class="price black">$199.69</span>
+                                    </div>
+
+                                    <div class="button-ver2">
+                                        <a href="tel:254792029968" class="addcart-ver2" title="Call to order"><span
+                                            class="icon"></span>CALL TO ORDER</a>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                        </div>
+                        <div class="product-pagination">
+                            <ul class="pagination">
+                                <li><a href="javascript:void(0)"><i class="ion-chevron-left"></i></a></li>
+                                <li class="active"><a href="javascript:void(0)">1</a></li>
+                                <li><a href="javascript:void(0)">2</a></li>
+                                <li><a href="javascript:void(0)">3</a></li>
+                                <li><a href="javascript:void(0)">...</a></li>
+                                <li><a href="javascript:void(0)">5</a></li>
+                                <li><a href="javascript:void(0)"><i class="ion-chevron-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="{% static 'shop/img/gift.png' %}" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Deal of the day<br></span> check out today's deal
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="{% static 'shop/img/fly.png' %}" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">We Deliver<br></span> Right to your doorstep
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="{% static 'shop/img/return.png' %}" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Quality Products<br></span> Certified Dealer
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 fea-column-inner">
+                    <div class="fea-box">
+                        <div class="photo">
+                            <img src="{% static 'shop/img/secu.png' %}" alt="images" class="img-reponsive">
+                        </div>
+                        <p class="inform-ver2">
+                            <span class="strong">Customer Service<br></span> We are proud of best service
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="info">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-3 col-xs-12 ">
+                        <div class="photo">
+                            <a href="{% url 'shop:home' %}"><img src="{% static 'shop/img/images/logoleft.png' %}" alt="images"
+                                    class="img-responsive"></a>
+                        </div>
+                        <p class="info-desc">Welcome to the home of quality. We are authorised Apple and Samsung
+                            resellers. </p>
+                        <div class="widget-info">
+                            <ul>
+                                <li><i class="ion-ios-location fa-4" aria-hidden="true"></i>Jamia shopping mall, Shop
+                                    G64,
+                                    Nairobi, Kenya.</li>
+                                <li class="clearfix"></li>
+                                <li><i class="ion-ios-telephone fa-4" aria-hidden="true"></i>
+                                    <p class="title-contain">+254 792 029 968</p>
+                                </li>
+                                <li class="clearfix"></li>
+                                <li><i class="ion-email-unread fa-4" aria-hidden="true"></i>
+                                    <p class="title-contain"><a
+                                        style="text-transform: lowercase;"
+                                        href="mailto:abufulanstore@gmail.com">abufulanstore@gmail.com</a>
+                                    </p>
+                                </li>
+                                <li class="clearfix"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <h3>let us help you</h3>
+                                <ul class="fmenu">
+                                    <li><a href="https://api.whatsapp.com/send?phone=25492029698"
+                                            target="_blank">whatsApp</a></li>
+                                    <li><a href="tel:+254792029698">Call us today</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 col-xs-12 pd-left">
+                                <h3>useful links</h3>
+                                <ul class="fmenu">
+                                    <li><a href="{% url 'shop:home' %}">Home</a></li>
+                                    <li><a href="{% url 'shop:catalogue' %}">Shop</a></li>
+                                    <li><a href="{% url 'shop:about' %}">About</a></li>
+                                    <li><a href="{% url 'shop:contact' %}">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <h3 class="titles">FIND US ON:</h3>
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/Abufulanstore/?ref=py_c"><i
+                                        class="ion-social-facebook fa-3" aria-hidden="true"></i></a></li>
+                            <li><a href="https://twitter.com/abufulanstore"><i class="ion-social-twitter fa-3"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram fa-3" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div class="container">
+                <span>© <a href="javascript:void(0)" title="">Abufulan store</a> - All Rights Reserved.</span>
+                <ul class="payment">
+                    <li><a href="javascript:void(0)"><img src="{% static 'shop/img/paypal.png' %}" alt="images"
+                                class="img-responsive"></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><img src="{% static 'shop/img/visa.png' %}" alt="images" class="img-responsive"></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><img src="{% static 'shop/img/american.png' %}" alt="images"
+                                class="img-responsive"></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><img src="{% static 'shop/img/mastercard.png' %}" alt="images"
+                                class="img-responsive"></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </footer>
+    <script defer type="text/javascript" src="{% static 'shop/js/bootstrap.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/owl.carousel.min.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/slick.min.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/bootstrap-slider.min.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'shop/js/main.js' %}"></script>
+    <script async type="text/javascript" src="{% static 'shop/shop.js' %}"></script>
+
+</body>
+
+</html>

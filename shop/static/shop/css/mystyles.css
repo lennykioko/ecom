@@ -1,0 +1,40 @@
+#categories .level2 .col-inner a,
+#sideBrands .checkbox label input[type="checkbox"] {
+    text-transform: capitalize;
+}
+
+
+.product-list.grid_full.grid_sidebar .product-list-item:only-child {
+    width: 85%;
+}
+
+.product-list .product-item-info h3 {
+    margin: 10px 0;
+}
+
+.product-list .product-item-info h3 a {
+    font-family: inherit;
+    font-size: 18px;
+    color: black;
+    font-weight: 410;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -1,136 +1,190 @@
-const BASE_URL = `${window.location.href}`
+const BASE_URL = "https://abufulan.co.ke/";
+// const BASE_URL = "http://127.0.0.1:8000/";
+
+let categories;
+let brands;
 let products;
+let activeCategory;
+
 
 const mainContent = document.querySelector("#mainContent");
+const navigateCategories = document.querySelector("#categories");
+const shopSideNavCategories = document.querySelector("#sideNavCategories");
+const shopSideNavBrands = document.querySelector("#shopSideNavBrands");
 
-const searchForm1 = document.querySelector("#searchForm1");
-const searchInput1 = document.querySelector("#searchInput1");
-
-const searchForm2 = document.querySelector("#searchForm2");
-const searchInput2 = document.querySelector("#searchInput2");
-
-const quickview = document.querySelector("#quickview-wrapper");
-
-
-searchForm1.addEventListener("submit", (event) => {
-    event.preventDefault();
-    handleSearch(searchInput1.value);
+shopSideNavBrands.addEventListener("click", (event) => {
+    console.log(event.target.value);
 });
 
-searchForm2.addEventListener("submit", (event) => {
+shopSideNavCategories.addEventListener("click", (event) => {
     event.preventDefault();
-    handleSearch(searchInput2.value);
+    fillShopSidNavBrands(event.target.innerHTML);
 });
 
 function commaThousand(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-const loader = `<div class="mx-auto vh-100 text-center d-flex justify-content-center">
-  <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
-</div>`;
-
-
-const getSearchItems = async (search) => {
-    mainContent.innerHTML = loader;
-
+const getCategoriesAndBrands = async () => {
     try {
-        let url = search ? new URL(`${BASE_URL}/ajax/?search=${search}`) : new URL(`${BASE_URL}/ajax/`);
+        let url = new URL(`${BASE_URL}categorybrands`);
 
-        const res = await fetch(url);
-        mainContent.innerHTML = "";
-        return res.json();
-    } catch(err) {
+        let res = await fetch(url);
+        res = await res.json();
+        return res.categorybrands;
+    } catch (err) {
         console.log(err);
     }
 };
 
-const handleSearch = async (search) => {
-    const response = await getSearchItems(search);
-    const data = response.data
-    products = response.data
+const getBrands = async (category) => {
+    try {
+        let url = category ? new URL(`${BASE_URL}brands?category=${category}`) : new URL(`${BASE_URL}brands/`);
 
-    data?.map((item) => {
-      mainContent.insertAdjacentHTML(
-          "beforeend",
-          `<div class="col-lg-4 col-md-6">
-              <div class="product-item">
-                  <div class="product-img">
-                      <a href="#" data-toggle="modal" onclick="setProduct(${item.id})" data-target="#productModal">
-                          <img src="/media/${ item.product_image }" alt="${item.product_name}"/>
-                      </a>
-                  </div>
-                  <div class="product-info">
-                      <h6 class="product-title">
-                          <a href="#" data-toggle="modal" onclick="setProduct(${item.id})" data-target="#productModal">${item.product_name}</a>
-                      </h6>
-                      <div class="pro-rating">
-                          <a href="#"><i class="zmdi zmdi-star"></i></a>
-                          <a href="#"><i class="zmdi zmdi-star"></i></a>
-                          <a href="#"><i class="zmdi zmdi-star"></i></a>
-                          <a href="#"><i class="zmdi zmdi-star-half"></i></a>
-                          <a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-                      </div>
-                      <h3 class="pro-price">KSh ${ commaThousand(item.price) }</h3>
-                      <ul class="action-button">
-                          <li>
-                              <a href="#" data-toggle="modal" onclick="setProduct(${item.id})" class="read-more" data-target="#productModal" title="Read More">
-                                  <i class="zmdi zmdi-eye"></i>
-                              </a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>`
+        const res = await fetch(url);
+        return res.json();
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+const getCategories = async (category) => {
+    try {
+        let url = new URL(`${BASE_URL}categories`);
+
+        let res = await fetch(url);
+        res = await res.json();
+        return res.categories;
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+const getBrandsOfCategory = async (category) => {
+    try {
+        let url = new URL(`${BASE_URL}brands?category=${category}`);
+
+        let res = await fetch(url);
+        res = await res.json();
+        return res.brands;
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+const getProducts = async (search = false, limit = false, feature = false, category = false, brand = false) => {
+    mainContent.innerHTML = "";
+
+    try {
+        let url = new URL(`${BASE_URL}products/`);
+
+        // url = search && new URL(`${BASE_URL}products?search=${search}`);
+        // url = limit && new URL(`${BASE_URL}products?limit=${limit}`);
+        // url = limit && featured && new URL(`${BASE_URL}products?limit=${limit}&featured=${featured}`);
+        // url = category && brand && new URL(`${BASE_URL}products?category=${category}&brand=${brand}`);
+
+        const res = await fetch(url);
+        mainContent.innerHTML = "";
+        return res.json();
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+const fillCategories = async () => {
+    const response = await getCategoriesAndBrands();
+    navigateCategories.innerHTML = "";
+    let brands = "";
+    let categ = "";
+
+    response?.map((item) => {
+        brands = "";
+        Object.entries(item).forEach(([key, value]) => {
+            categ = key;
+            value?.map((v) => {
+                brands += `<li class="col-inner"><a href=${BASE_URL}?category=${v.name}>${v.name}</a></li>`
+            });
+        });
+        navigateCategories.insertAdjacentHTML(
+            "beforeend",
+            `<li>
+                <a href="#">${categ}</a><span class="icon"></span>
+                <div class="dropdown-content">
+                    <ul class="level1">
+                        <li class="sub-menu col-3">
+                            <a href="#">${categ}</a>
+                            <ul class="level2">
+                            ${brands}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </li>`
         );
     });
 };
 
-
-const setProduct = async (item_id) => {
-    let item = products.filter(item => item.id == item_id);
-    item = item[0]
-    quickview.innerHTML =
-      `<div class="modal fade" id="productModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-              <div class="modal-product clearfix">
-                  <div class="product-images">
-                    <div class="main-image images">
-                        <img alt="" src="/media/${ item.product_image }">
-                    </div>
-                  </div><!-- .product-images -->
-
-                  <div class="product-info">
-                    <h1>${item.product_name}</h1>
-                    <div class="price-box-3">
-                        <div class="s-price-box">
-                            <span class="new-price">KSh ${ commaThousand(item.price) }</span>
-                            <span class="old-price">KSh ${ commaThousand(item.old_price) }</span>
-                        </div>
-                    </div>
-                    <a href="tel:0792029968" class="see-all font-weight-bold ">0792 029 968</a>
-                    <div class="quick-add-to-cart">
-                        <button class="single_add_to_cart_button" type="button">Call Now</buton>
-                    </div>
-                    <div class="quick-desc">
-                        ${item.description}
-                    </div>
-
-                  </div><!-- .product-info -->
-                </div><!-- .modal-product -->
-            </div><!-- .modal-body -->
-            </div><!-- .modal-content -->
-        </div><!-- .modal-dialog -->
-    </div>`;
+const handleSearch = async (search) => {
+    const response = await getProducts(search);
+    const data = response.products;
+    displayProducts(data);
 };
 
+const displayProducts = async (data) => {
+    data?.map((item) => {
+        mainContent.insertAdjacentHTML(
+            "beforeend",
+            `<div class= "product-list-item">
+            <div style="height:270px; display:flex; align-items:center;" class="product-item-img">
+                <a href="#"><img src="/media/${item.image}" alt=${item.name}
+                class="img-responsive"></a>
+                <div class="label label-2 red label-top-20">Hot</div>
+                </div>
+                <div class="product-item-info">
+                <h3 class="black" style="font-weight:bold><a href="#" title="">${item.name}</a></h3>
+                <div style="height:70px; overflow:auto">${item.description}</div>
+                <div class="prod-price">
+                    <span class="price black">Ksh. ${commaThousand(item.price)}</span>
+                </div>
+                <div class="button-ver2">
+                    <a href="tel:254792029968" class="addcart-ver2" title="Add to cart"><span
+                    class="icon"></span>CALL TO ORDER</a>
+                    <!-- <a href="#" class="quickview" title="quick view"><i class="ion-eye fa-4" aria-hidden="true"></i></a>
+                    <a href="#" class="wishlist" title="wishlist"><i class="ion-heart fa-4" aria-hidden="true"></i></a> -->
+                </div>
+                </div>
+            </div>`
+        );
+    });
+}
 
-// empty search returns all
-handleSearch();
+const fillShopSidNavCategories = async () => {
+    const response = await getCategories();
+    shopSideNavCategories.innerHTML = "";
+
+    response?.map((item) => {
+        shopSideNavCategories.insertAdjacentHTML(
+            "beforeend",
+            `<li class="" value=${item.name}>
+            <a href=${BASE_URL}catalogue?category=${item.name}>${item.name}</a>
+        </li>`
+        );
+    });
+};
+
+const fillShopSidNavBrands = async (category) => {
+    const response = await getBrandsOfCategory(category);
+    shopSideNavBrands.innerHTML = "";
+    response?.map((brand) => {
+        shopSideNavBrands.insertAdjacentHTML(
+            "beforeend",
+            `<div class="checkbox">
+                <label><input type="checkbox" value=${brand.name}>${brand.name}</label>
+            </div>`
+        );
+    });
+};
+
+if (mainContent) handleSearch();
+if (shopSideNavCategories) fillShopSidNavCategories();
+fillCategories();
