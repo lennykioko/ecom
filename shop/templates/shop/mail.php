@@ -21,6 +21,7 @@
         // Set the recipient email address.
         // FIXME: Update this to your desired email address.
         $recipient = "abufulanstore@gmail.com";
+        $recipientcc = "info@abufulan.co.ke";
 
         // Set the email subject.
         $subject = "New contact from $name";
@@ -36,7 +37,7 @@
         $email_headers = "From: $name <$email>";
 
         // Send the email.
-        if (mail($recipient, $subject, $email_content, $email_headers)) {
+        if (mail($recipient, $recipientcc, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
             echo "Thank You! Your message has been sent.";
