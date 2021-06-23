@@ -198,9 +198,9 @@ const fillProducts = async (params) => {
         mainContent.insertAdjacentHTML(
             "beforeend",
             `<div class= "product-list-item">
-            <div style="height:270px; display:flex; align-items:center;" class="product-item-img">
+            <div style="max-height:280px; display:flex; align-items:center;" class="product-item-img">
                 <a href="javascript:void(0)"><img src="/media/${item.image}" alt=${item.name}
-                class="img-responsive"></a>
+                class="img-responsive" style="max-height:280px;"></a>
                 <div class="label label-2 red label-top-20">Hot</div>
                 </div>
                 <div class="product-item-info">

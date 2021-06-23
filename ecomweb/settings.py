@@ -146,3 +146,21 @@ USE_THOUSAND_SEPARATOR = True
 
 # for caching
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# email settings
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = os.environ['EMAIL_HOST']
+EMAIL_PORT = os.environ['EMAIL_PORT']
+EMAIL_USE_TLS = os.environ['EMAIL_USE_TLS']
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'mail.abufulan.co.ke'
+# EMAIL_PORT = 26
+# EMAIL_USE_TLS = False
+# EMAIL_HOST_USER = 'admin@abufulan.co.ke'
+# EMAIL_HOST_PASSWORD = ''

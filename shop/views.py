@@ -1,6 +1,8 @@
 from django.views.generic import View, TemplateView
 from django.http import JsonResponse
 from django.db.models import Q
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail
 
 from .models import Category, Brand, Product
 
@@ -13,12 +15,40 @@ class AboutView(TemplateView):
     template_name = 'shop/about-us.html'
 
 
-class ContactView(TemplateView):
-    template_name = 'shop/contact-us.html'
-
-
 class ShopView(TemplateView):
     template_name = 'shop/shop.html'
+
+
+class ContactView(View):
+    def get(self, request):
+        return render(request, 'shop/contact-us.html')
+
+    # FORM AND SENDMAIL
+
+    def post(self, request):
+        if request.method == 'POST':
+            name = request.POST['first_name']
+            email = request.POST['email']
+            phone = request.POST['phone']
+            subject = request.POST['subject']
+            message = request.POST['message']
+
+            full_message = f'''
+                Name: {name} \n
+                Email: {email} \n
+                Phone: {phone} \n
+                Subject: {subject} \n
+                Message: {message} \n'''
+
+            send_mail(
+                subject,
+                full_message,
+                'admin@abufulan.co.ke',
+                ['info@abufulan.co.ke', 'abufulanstore@gmail.com'],
+                fail_silently=False,
+            )
+
+        return redirect('/contact/')
 
 
 # API CALLS
