@@ -160,7 +160,7 @@ EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'mail.abufulan.co.ke'
-# EMAIL_PORT = 26
+# EMAIL_PORT = 587
 # EMAIL_USE_TLS = False
 # EMAIL_HOST_USER = 'admin@abufulan.co.ke'
 # EMAIL_HOST_PASSWORD = ''
